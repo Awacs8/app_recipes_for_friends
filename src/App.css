@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+}
+.header{
+  width: 100%;
+}
+h1{
+  color: darkorange;
+  font-family: 'Gloria Hallelujah', cursive;
+  text-shadow: 2px 5px 5px rgba(51, 50, 43, 0.767);
+  padding: 5%;
+  width: 20%;
+}
+.form{
+  border: darkorange solid;
+  width: 40%;
+}
+label{
+  font-family: 'Gloria Hallelujah';
+}
+input{
+  border-radius: 30%;
+  border: darkorange solid;
+  height: 20px;
+}
+.nav_bar{
+  width: 100%;
+  list-style: none;
+  
+}
+.nav_item{
+  width: 23%;
+  border: darkorange  solid;
+  margin: 3px;
+  font-size: 20px;
+  font-weight: 500;
+  color: darkorange;
+  padding: 5px;
+
+}
+.recipe{
+  background-color: rgba(255, 140, 0, 0.548);
+  width: 30%;
+}
+.footer{
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  background-color: rgb(221, 134, 21);
+  font-family: 'Gloria Hallelujah', cursive;
+}
