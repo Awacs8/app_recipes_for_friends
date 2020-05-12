@@ -5,17 +5,24 @@
 }
 .header{
   width: 100%;
+  display: block;
+  text-align: center;
+  background-color: rgb(73, 235, 67) ;
 }
 h1{
   color: darkorange;
+  font-size: 50px;
   font-family: 'Gloria Hallelujah', cursive;
-  text-shadow: 2px 5px 5px rgba(51, 50, 43, 0.767);
+  text-shadow: 2px 5px 5px rgba(44, 44, 41, 0.767);
   padding: 5%;
-  width: 20%;
+  width: 40%;
+  display: inline-block;
 }
 .form{
-  border: darkorange solid;
+  
   width: 40%;
+  display: inline-block;
+
 }
 label{
   font-family: 'Gloria Hallelujah';
@@ -26,11 +33,12 @@ input{
   height: 20px;
 }
 .nav_bar{
-  width: 100%;
   list-style: none;
-  
+  display: block;
 }
 .nav_item{
+  clear: both;
+  display: inline-block;
   width: 23%;
   border: darkorange  solid;
   margin: 3px;
@@ -41,8 +49,15 @@ input{
 
 }
 .recipe{
-  background-color: rgba(255, 140, 0, 0.548);
-  width: 30%;
+  background-color: rgba(233, 133, 10, 0.733);
+  width: 40%;
+  margin: 3px;
+}
+.main{
+  height: 100vh;
+  background-color: burlywood;
+  padding: 3px;
+  background-image: url('https://lostsurfboards.net/wp-content/uploads/2017/10/cork-wallpaper-25-wallpaper-background-hd.jpg');
 }
 .footer{
   width: 100%;

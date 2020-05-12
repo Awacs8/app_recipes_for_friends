@@ -1,9 +1,9 @@
 import axios from 'axios';
-const url=(`https://localhost:4000/api`);
+const url=(`http://localhost:4000/api`);
 
 
 export const registerUser = async (user) => {
-    return await axios.put(`${url}/users`, user)
+    return await axios.put(`${url}/users/register`, user)
 }
 export const logIn = async (username, password)=>{
     return await axios.post(`${url}/users/login`, {username, password})

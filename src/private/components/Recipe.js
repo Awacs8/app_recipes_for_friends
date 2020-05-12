@@ -1,22 +1,17 @@
 import React from 'react';
 import '../../App.css'
 
-const Recipe=()=>{
+const Recipe=({recipe})=>{
     return(
         <div className = "recipe">
-            <p>Naziv recepta:</p>
-            <p>Tezina:Lako/Srednje/Tesko</p>
-            <p>Vreme pripreme:</p>
+            <h3>Naziv recepta: {recipe.name}</h3>
+            <p>Tezina: {recipe.difficulty}</p>
+            <p>Vreme pripreme: {recipe.preparation_time} min</p>
             <ul>Sastojci:
-                <li>Sastojak: Kolicina: Jedinica mere:</li>
-                <li>Sastojak: Kolicina: Jedinica mere:</li>
-                <li>Sastojak: Kolicina: Jedinica mere:</li>
-                <li>Sastojak: Kolicina: Jedinica mere:</li>
+                {recipe.ingredients.map(el=>(<li>{el.name} {el.quantity} {el.unit_of_measure}</li>))}
             </ul>
             <ul>Nacin pripreme:
-                <li>Korak 1</li>
-                <li>Korak 2</li>
-                <li>Korak 3</li>
+                {recipe.preparation_steps.map(el=>(<li>{el}</li>))}   
             </ul>
 
         </div>

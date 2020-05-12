@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {useHistory, Link} from 'react-router-dom';
-import {logIn,setToken,setId} from '../../services/auth_service';
+// import {useHistory, Link} from 'react-router-dom';
+// import {logIn,setToken,setId} from '../../services/auth_service';
 
 export const LogIn=()=>{
     const [username,setUsername]=useState('');
