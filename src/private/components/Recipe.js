@@ -1,18 +1,19 @@
 import React from 'react';
-import '../../App.css'
+import './recipe.css'
 
 const Recipe=({recipe})=>{
     return(
         <div className = "recipe">
-            <h3>Naziv recepta: {recipe.name}</h3>
-            <p>Tezina: {recipe.difficulty}</p>
-            <p>Vreme pripreme: {recipe.preparation_time} min</p>
-            <ul>Sastojci:
-                {recipe.ingredients.map(el=>(<li>{el.name} {el.quantity} {el.unit_of_measure}</li>))}
+            <h2>{recipe.name}</h2>
+            <p><b>Težina:</b> {recipe.difficulty}</p>
+            <p><b>Vreme pripreme:</b> {recipe.preparation_time} min</p>
+            <ul><b>Sastojci:</b>
+                {recipe.ingredients.map(el=>(<li key={el.name}>{el.name} {el.quantity} {el.unit_of_measure}</li>))}
             </ul>
-            <ul>Nacin pripreme:
-                {recipe.preparation_steps.map(el=>(<li>{el}</li>))}   
+            <ul><b>Način pripreme:</b>
+                {recipe.preparation_steps.map(el=>(<li key={el}>{el}</li>))}   
             </ul>
+            <button>dodaj u omiljene</button>
 
         </div>
     )

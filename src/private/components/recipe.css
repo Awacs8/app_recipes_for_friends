@@ -1,0 +1,25 @@
+.recipe_list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  
+  }
+  .recipe{
+    background-color: rgba(233, 133, 10, 0.733);
+    margin: 3px;
+    padding: 20px;
+    width: 80%;
+    font-family: 'Gloria Hallelujah';
+  }
+
+  /* .recipe:hover{
+  } */
+  button{
+    background-color: rgb(218, 120, 22);
+    font-family: 'Gloria Hallelujah';
+    padding: 3px;
+    border: orange solid;
+    border-radius: 15%;
+  }
+  button:focus{
+    outline: none;
+  }

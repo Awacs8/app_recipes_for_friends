@@ -5,22 +5,18 @@ import './App.css';
 // import PublicRoute from './public/PublicRoute'
 import { Welcome } from './public/components/Welcome'
 import Main from './private/components/Main'
+import AddRecipe from './private/components/AddRecipe'
 // import {Header} from './public/components/Header'
 import Footer from './public/components/Footer'
 import {getRecipes} from './services/api_service'
-
-
-
-
 
 function App() {
     const [recipes, setRecipes] = useState([]);
 
     useEffect(()=>{
         getRecipes().then(response=>{
-          console.log(response.data.recipes)
+          // console.log(response.data.recipes)
           setRecipes(response.data.recipes)
-          
         })
       },[])
   
@@ -29,7 +25,7 @@ function App() {
     <>
     <Welcome />
     <Main recipes={recipes}/>
-    
+    <AddRecipe />
     <Footer />
     </>
   );
