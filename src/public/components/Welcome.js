@@ -1,10 +1,12 @@
 import React from 'react'
-import { Header } from './Header'
+import {LogIn} from './LogIn'
+import {Register} from './Register'
 
 export const Welcome = () =>{
     return(
         <div>
-            <Header />
+            <LogIn />
+            <Register />
         </div>
     )
 }

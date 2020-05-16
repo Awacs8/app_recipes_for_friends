@@ -1,14 +1,21 @@
-import React, {useState, useDebugValue} from 'react';
+import React, {useState,useEffect} from 'react';
 import RecipeList from './RecipeList';
 import Select from './Select';
 import Search from './Search';
-// import {getUserById,getId} from '../../services/auth_service';
+import {getRecipes} from '../../services/api_service'
 
 
-const Main=({recipes})=>{
-// const [user,setUser]=useState([]);
+const Main=()=>{
+const [recipes, setRecipes] = useState([]);
 const [selected, setSelected] = useState([])
 const [search, setSearch] = useState([])
+
+useEffect(()=>{
+    getRecipes().then(response=>{
+      // console.log(response.data.recipes)
+      setRecipes(response.data.recipes)
+    })
+  },[])
 
     const  handleChange = (e) =>{
             e.preventDefault();

@@ -1,9 +1,9 @@
 import axios from 'axios';
-const url=(`http://localhost:4000/api`);
+const url=(`http://localhost:4000/json`);
 
 
 export const registerUser = async (user) => {
-    return await axios.put(`${url}/users/register`, user)
+    return await axios.post(`${url}/users`, user)
 }
 export const logIn = async (username, password)=>{
     return await axios.post(`${url}/users/login`, {username, password})
@@ -11,8 +11,8 @@ export const logIn = async (username, password)=>{
 export const getAllUsers = async () => {
     return await axios.get(`${url}/users`)
 }
-export const getUserById = async (user_id) => {
-    return await axios.get(`${url}/users/${user_id}`)
+export const getUserById = async (id) => {
+    return await axios.get(`${url}/users/${id}`)
 }
 export const setToken = (token) => {
     state.token = token;

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 // // import {useHistory} from 'react-router-dom';
-// import {registerUser, logIn, setToken, setId} from '../../../services/auth_service';
+import {registerUser} from './../../services/auth_service';
 
 export const Register=()=>{
-    const [name,setName]=useState('');
-    const [surname,setSurname]=useState('');
+    const [first_name,setName]=useState('');
+    const [last_name,setSurname]=useState('');
     const [email,setEmail]=useState('');
     const [username,setUsername]=useState('');
     const [password,setPassword]=useState('');
@@ -13,33 +13,29 @@ export const Register=()=>{
     // const history=useHistory();
 
     let user={
-        name: name,
-        surname: surname,
+        first_name: first_name,
+        last_name: last_name,
         username: username,
         password: password,
         email: email
     }
     
 
-    // const handleClick = () => {
-    //     if(name.trim()==='' || surname.trim()==='' || username.trim()==='' || 
-    //     password.trim()==='' || confirmPass.trim()==='' || email.trim()===''){
-    //         window.confirm("Fill out all fields");
-    //         return;}
-    //     if(password !== confirmPass){
-    //         window.alert('Confirm password')
-    //         return;
-    //     }
-    //     else{
-    //         registerUser(user).then(() => {
-    //             logIn(username,password).then(res => {
-    //                 setToken(res.data.token);
-    //                 setId(res.data.user.user_id);
-    //                 history.push('/main');
-    //             }) 
-    //          })
-    //     }
-    // }
+    const handleClick = () => {
+        if(first_name.trim()==='' || last_name.trim()==='' || username.trim()==='' || 
+        password.trim()==='' || confirmPass.trim==='' || email.trim()===''){
+            window.confirm("Fill out all fields");
+            return;}
+        if(password !== confirmPass){
+            window.alert('Porvtdi lozinku!')
+            return;
+        }
+        else{
+            registerUser(user).then(() => {
+                    console.log('uspesno!')
+             })
+        }
+    }
     return(
         <div className="form">
             <label>FirstName:</label><br/>
@@ -54,7 +50,7 @@ export const Register=()=>{
             <input type="password" onInput={(e)=>setPassword(e.target.value)}></input><br/>
             <label>Confirm password:</label><br/>
             <input type="password" onInput={(e)=>setConfirmPass(e.target.value)}></input><br/>
-            {/* <button onClick={handleClick}>SignUp</button> */}
+            <button onClick={handleClick}>SignUp</button>
         </div>
     )
 }
