@@ -1,7 +1,7 @@
 import axios from 'axios';
-const url=(`http://localhost:4000/json`);
+const url=(`http://localhost:4000/api`);
 
-
+//user_service
 export const registerUser = async (user) => {
     return await axios.post(`${url}/users`, user)
 }
@@ -14,6 +14,18 @@ export const getAllUsers = async () => {
 export const getUserById = async (id) => {
     return await axios.get(`${url}/users/${id}`)
 }
+export const deleteUser = () => {
+    return new Promise (resolve => {
+    state.token = null;
+    state.id = null
+    localStorage.removeItem('token');
+    localStorage.removeItem('id');
+        resolve();
+    })
+}
+
+//auth
+
 export const setToken = (token) => {
     state.token = token;
     localStorage.setItem('token',token);
@@ -41,13 +53,4 @@ export const getToken = () => {
 }
 export const isLogIn=()=>{
     return state.token || localStorage.getItem('token')
-}
-export const deleteUser = () => {
-    return new Promise (resolve => {
-        state.token = null;
-        state.id = null
-        localStorage.removeItem('token');
-        localStorage.removeItem('id');
-        resolve();
-    })
 }

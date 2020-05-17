@@ -17,7 +17,7 @@ const AddRecipe = () =>{
 
             <input type='radio' value='lako' name='težina'/>
             <label>lako</label>
-            <input type='radio' value='srednje' name='težuna'/>
+            <input type='radio' value='srednje' name='težina'/>
             <label>srednje</label>
             <input type='radio' value='teško' name='težina'/>
             <label>teško</label><br/>
