@@ -7,7 +7,7 @@ const Recipe=({recipe})=>{
             <h2>{recipe.name}</h2>
             <p><b>Težina:</b> {recipe.difficulty}</p>
             <p><b>Vreme pripreme:</b> {recipe.preparation_time} min</p>
-            <ul><b>Sastojci:</b>
+            <ul><b>Sastojci:</b> <sup>*za uporedjivanje jedinica mere pogledaj odeljak saveti</sup>
                 {recipe.ingredients.map(el=>(<li key={el.name}>{el.name} {el.quantity} {el.unit_of_measure}</li>))}
             </ul>
             <ul><b>Način pripreme:</b>

@@ -44,6 +44,7 @@ const AddRecipe = () =>{
             <label>Koraci: </label><br/>
             <textarea /><br/>
             <button>dodaj sledeći korak</button>
+            <button>dodaj recept</button>
         </div>
     )
 }

@@ -1,6 +1,6 @@
-import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import { isLogIn } from '../services/auth_service';
+import React from 'react'
+import { Route, Redirect } from 'react-router-dom'
+import { isLogIn } from '../services/auth_service'
 
 const PublicRoute = ({component:Component, ...rest}) => {
     return (
@@ -9,7 +9,7 @@ const PublicRoute = ({component:Component, ...rest}) => {
         <Redirect to="/main"/> :
         <Component {...props} />
     )} />
-);  
-}; 
+)
+}
     
 export default PublicRoute

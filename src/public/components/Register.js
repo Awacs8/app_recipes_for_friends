@@ -39,6 +39,7 @@ export const Register=()=>{
                     setToken(res.data.token)
                     setId(res.data.user.id)
                     history.push('/main')
+                    window.location.reload()
                 }) 
              })
         }
@@ -57,7 +58,7 @@ export const Register=()=>{
             <input type="password" onInput={(e)=>setPassword(e.target.value)}></input><br/>
             <label>Confirm password:</label><br/>
             <input type="password" onInput={(e)=>setConfirmPass(e.target.value)}></input><br/>
-            <p>{`${error}`}</p><br/>
+            <label>{`${error}`}</label><br/>
             <button onClick={handleClick}>SignUp</button>
         </div>
     )

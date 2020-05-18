@@ -4,10 +4,12 @@
   padding: 0;
 }
 body{
+  font-family: 'Gloria Hallelujah';
   background-image: url('https://lostsurfboards.net/wp-content/uploads/2017/10/cork-wallpaper-25-wallpaper-background-hd.jpg');
 }
 .header{
   width: 100%;
+  padding-bottom: 20px;
   display: block;
   text-align: center;
   /* background-color: rgb(73, 235, 67) ; */
@@ -33,9 +35,7 @@ body{
   margin-top: 5px;
   background-color: rgba(48, 43, 43, 0.541);
 }
-.form p{
-  font-family: 'Gloria Hallelujah', cursive;
-}
+
 .form button{
   height: 35px;
   width: 70px;
@@ -61,6 +61,7 @@ input{
   border: darkorange solid;
   background-color: rgb(238, 238, 76);
   height: 30px;
+  margin: 3px;
 }
 input:focus{
   border: red solid 3px;
@@ -124,12 +125,41 @@ ul{
   margin-left: 30%;
   background-color: rgba(214, 131, 35, 0.521);
 }
+.profile{
+  margin: 5%;
+}
+.user{
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(233, 133, 10, 0.733);
+  height: 400px;
+  width: 25%;
+}
+.user img{
+  height: 60%;
+  width: 80%;
+  margin: 5%;
+}
+.user-list{
+  background-color: rgba(233, 133, 10, 0.733);
+  width: 40%;
+  margin: 10%;
+  padding: 20px;
+}
+.user-list ul{
+  padding-left: 5%;
+}
+.user-list li{
+  background-color: orange;
+  margin: 5px;
+  padding: 3px;
+  text-align: center;
+}
 .footer{
   width: 100%;
   height: 100px;
   text-align: center;
   background-color: rgb(221, 134, 21);
-  font-family: 'Gloria Hallelujah', cursive;
   background-image: url('https://st2.depositphotos.com/2013817/7377/v/950/depositphotos_73777067-stock-illustration-seamless-texture-with-kitchen-utensils.jpg');
   background-size: cover;
   padding-top: 35px;

@@ -21,7 +21,8 @@ export const LogIn=()=>{
                     setId(res.data.user.id)
                     history.push('/main')
                     setError('')
-                    }) 
+                    window.location.reload()   
+                    })
                 } 
   }
 
@@ -33,7 +34,7 @@ export const LogIn=()=>{
             <label>Password:</label><br/>
             <input type="password" onInput={(e)=>{e.preventDefault();
                                setPassword(e.target.value)}}/><br/>
-                               <p>{`${error}`}</p>
+                               <label>{`${error}`}</label>
             <button onClick={handleClick}>LogIn</button><br/>
         </div>
 
