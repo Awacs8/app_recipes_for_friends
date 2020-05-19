@@ -3,7 +3,7 @@ import {Register} from './Register'
 
 export const Welcome = () =>{
     return(
-        <div>
+        <div className="grid">
             <Register />
         </div>
     )

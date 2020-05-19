@@ -45,10 +45,10 @@ export const Register=()=>{
         }
     }
     return(
-        <div className="form">
-            <label>FirstName:</label><br/>
+        <form>
+            <label>Ime:</label><br/>
             <input  type="text" onInput={(e)=>setName(e.target.value)}></input><br/>
-            <label>LastName:</label><br/>
+            <label>Prezime:</label><br/>
             <input  type="text" onInput={(e)=>setSurname(e.target.value)}></input><br/>
             <label>Email:</label><br/>
             <input  type="email" onInput={(e)=>setEmail(e.target.value)}></input><br/>
@@ -56,10 +56,10 @@ export const Register=()=>{
             <input type="text" onInput={(e)=>setUsername(e.target.value)}></input><br/>
             <label>Password:</label><br/>
             <input type="password" onInput={(e)=>setPassword(e.target.value)}></input><br/>
-            <label>Confirm password:</label><br/>
+            <label>Potvrdi password:</label><br/>
             <input type="password" onInput={(e)=>setConfirmPass(e.target.value)}></input><br/>
-            <label>{`${error}`}</label><br/>
+            <span>{`${error}`}</span><br/>
             <button onClick={handleClick}>SignUp</button>
-        </div>
+        </form>
     )
 }

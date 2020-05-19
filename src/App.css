@@ -10,7 +10,6 @@ body{
 .header{
   width: 100%;
   padding-bottom: 20px;
-  display: block;
   text-align: center;
   /* background-color: rgb(73, 235, 67) ; */
   background-size: cover;
@@ -19,24 +18,44 @@ body{
   h1{
   color: rgb(255, 115, 0);
   font-size: 50px;
-  font-family: 'Gloria Hallelujah', cursive;
   text-shadow: 2px 5px 5px rgb(151, 16, 16);
   padding: 5%;
   width: 30%;
   display: inline-block;
 }
-.form{
+h2{
+  text-align: center;
+  background-color: rgba(255, 166, 0, 0.603);
+}
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 600px 1fr;
+}
+form {
+  background-color: rgba(233, 133, 10, 0.733);
+  grid-column-start: 2;
+  grid-column-end: 3;
+  color: rgb(252, 99, 11);
+  text-align: center;
+  margin: 20px 0px;
+}
+#login{
   width: 40%;
   padding: 5%;
   display: inline-block;
   color: rgb(252, 99, 11);
+  background-color: rgba(0, 0, 0, 0.185);
 }
-.form label{
+label{
   margin-top: 5px;
   background-color: rgba(48, 43, 43, 0.541);
 }
+span{
+  color: rgb(230, 224, 224);
+  font-weight: 700;
+}
 
-.form button{
+form button{
   height: 35px;
   width: 70px;
   font-weight: 600;
@@ -47,16 +66,16 @@ body{
   border: orange solid;
   border-radius: 15%;
   font-family: 'Gloria Hallelujah';
-
 }
+
 label{
-  font-family: 'Gloria Hallelujah';
   font-size: 18px;
   font-weight: 800;
+  padding-left: 5px;
 }
 input{
-  font-family: 'Gloria Hallelujah';
   font-size: 15px;
+  font-family: 'Gloria Hallelujah';
   border-radius: 30%;
   border: darkorange solid;
   background-color: rgb(238, 238, 76);
@@ -70,7 +89,6 @@ input:focus{
   outline: none;
 }
 textarea{
-  font-family: 'Gloria Hallelujah';
   font-size: 15px;
   border-radius: 10%;
   border: darkorange solid;
@@ -107,23 +125,31 @@ select:focus{
   margin: 3px;
   font-size: 20px;
   font-weight: 600;
+  text-align: center;
   color: rgb(12, 12, 11);
   padding: 5px;
-  font-family: 'Gloria Hallelujah', cursive;
   background-color: rgba(255, 68, 0, 0.562);
+}
+
+.nav_item a {
+  text-decoration: none;
+  color:black;
 }
 
 ul{
   list-style-type: none ;
 }
+
 .main{
   height: auto;
   padding: 3px;
 }
 .add_recipe{
-  width: max-content;
-  margin-left: 30%;
   background-color: rgba(214, 131, 35, 0.521);
+  grid-column-start: 2;
+  grid-column-end: 3;
+  margin: 20px 0px;
+  padding: 40px;
 }
 .profile{
   margin: 5%;

@@ -2,6 +2,9 @@ import React from 'react';
 
 const AddRecipe = () =>{
     return(
+        <>
+        <h2>Popuni formu i podeli recept sa nama</h2>
+        <div className="grid">
         <div className='add_recipe'>
             <label>Naziv recepta: </label>
             <input type='text' /><br/>
@@ -14,7 +17,6 @@ const AddRecipe = () =>{
                 <option>Dezerti</option>
             </select><br/>
             <label>Težina: </label>
-
             <input type='radio' value='lako' name='težina'/>
             <label>lako</label>
             <input type='radio' value='srednje' name='težina'/>
@@ -40,12 +42,13 @@ const AddRecipe = () =>{
                 <option>tbsp (supena kašika)</option>
             </select><br/>
             <button>dodaj sledeći sastojak</button><br/>
-
             <label>Koraci: </label><br/>
             <textarea /><br/>
-            <button>dodaj sledeći korak</button>
+            <button>dodaj sledeći korak</button><br/>
             <button>dodaj recept</button>
         </div>
+        </div>
+        </>
     )
 }
 export default AddRecipe

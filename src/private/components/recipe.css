@@ -16,9 +16,11 @@
   button{
     background-color: rgb(218, 120, 22);
     font-family: 'Gloria Hallelujah';
-    padding: 3px;
+    font-weight: 600;
+    padding: 6px;
     border: orange solid;
     border-radius: 15%;
+    margin: 8px;
   }
   button:focus{
     outline: none;
