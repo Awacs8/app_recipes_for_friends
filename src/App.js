@@ -18,10 +18,10 @@ function App() {
     <Header />
     <Navbar/>
       <Switch>
-        <PublicRoute component={Welcome} exact path="/" />
         <PrivateRoute component={Main} path="/main" />
         <PrivateRoute component={AddRecipe} path="/addrecipe"/>
         <PrivateRoute component={Profile} path="/profile"/>
+        <PublicRoute component={Welcome} exact path="/" />
         <Redirect from="/" to="/main" />
       </Switch>
       <Footer />
