@@ -3,8 +3,8 @@ import {useHistory} from 'react-router-dom'
 import {registerUser, logIn, setToken, setId} from './../../services/auth_service'
 
 export const Register=()=>{
-    const [first_name,setName]=useState('')
-    const [last_name,setSurname]=useState('')
+    const [first_name,setFirst_name]=useState('')
+    const [last_name,setLast_name]=useState('')
     const [email,setEmail]=useState('')
     const [username,setUsername]=useState('')
     const [password,setPassword]=useState('')
@@ -29,7 +29,7 @@ export const Register=()=>{
             setError('Popuni sva polja')
             return;}
         if(password !== confirmPass){
-            setError('potvrdi lozizznku')
+            setError('potvrdi lozinku')
             return
         }
         else{
@@ -39,17 +39,17 @@ export const Register=()=>{
                     setToken(res.data.token)
                     setId(res.data.user.id)
                     history.push('/main')
-                    window.location.reload()
+                    // window.location.reload()
                 }) 
              })
         }
     }
     return(
-        <form>
+        <div className="form">
             <label>Ime:</label><br/>
-            <input  type="text" onInput={(e)=>setName(e.target.value)}></input><br/>
+            <input  type="text" onInput={(e)=>setFirst_name(e.target.value)}></input><br/>
             <label>Prezime:</label><br/>
-            <input  type="text" onInput={(e)=>setSurname(e.target.value)}></input><br/>
+            <input  type="text" onInput={(e)=>setLast_name(e.target.value)}></input><br/>
             <label>Email:</label><br/>
             <input  type="email" onInput={(e)=>setEmail(e.target.value)}></input><br/>
             <label>Username:</label><br/>
@@ -60,6 +60,6 @@ export const Register=()=>{
             <input type="password" onInput={(e)=>setConfirmPass(e.target.value)}></input><br/>
             <span>{`${error}`}</span><br/>
             <button onClick={handleClick}>SignUp</button>
-        </form>
+        </div>
     )
 }

@@ -17,10 +17,11 @@
     background-color: rgb(218, 120, 22);
     font-family: 'Gloria Hallelujah';
     font-weight: 600;
-    padding: 6px;
+    padding: 8px;
     border: orange solid;
     border-radius: 15%;
     margin: 8px;
+    
   }
   button:focus{
     outline: none;

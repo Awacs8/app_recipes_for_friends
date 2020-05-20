@@ -16,7 +16,7 @@ export const LogIn=()=>{
             return
         } else {
             logIn(username,password).then(res => {
-                console.log(res)
+                // console.log(res)
                 setToken(res.data.token)
                 setId(res.data.user.id)
                 history.push('/main')
@@ -27,7 +27,7 @@ export const LogIn=()=>{
     }
 
     return(
-        <div id="login" >
+        <div id="login">
             <label>Username:</label><br/>
             <input type="text" onInput={(e)=>{e.preventDefault();
                                setUsername(e.target.value)}}/><br/>

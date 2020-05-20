@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Redirect, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Redirect} from 'react-router-dom';
 import './App.css';
 import PrivateRoute from './private/PrivateRoute'
 import PublicRoute from './public/PublicRoute'
@@ -22,7 +22,7 @@ function App() {
         <PrivateRoute component={Main} path="/main" />
         <PrivateRoute component={AddRecipe} path="/addrecipe"/>
         <PrivateRoute component={Profile} path="/profile"/>
-        {/* <Redirect from="/" to="/main" /> */}
+        <Redirect from="/" to="/main" />
       </Switch>
       <Footer />
     </Router>
