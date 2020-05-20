@@ -9,6 +9,5 @@ const PrivateRoute = ({component: Component, ...rest}) => {
         <Redirect to="/" />}
         </Route>
       )
-    }
-
+}
 export default PrivateRoute
