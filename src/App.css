@@ -47,10 +47,14 @@ h2{
   color: rgb(252, 99, 11);
   background-color: rgba(0, 0, 0, 0.185);
 }
+
 label{
   margin-top: 5px;
   background-color: rgba(48, 43, 43, 0.541);
+  font-size: 16px;
+  padding-left: 5px;
 }
+
 span{
   color: rgb(230, 224, 224);
   font-weight: 700;
@@ -69,11 +73,6 @@ span{
   font-family: 'Gloria Hallelujah';
 } */
 
-label{
-  font-size: 18px;
-  font-weight: 800;
-  padding-left: 5px;
-}
 input{
   font-size: 15px;
   font-family: 'Gloria Hallelujah';
@@ -83,12 +82,14 @@ input{
   height: 30px;
   margin: 3px;
 }
+
 input:focus{
   border: red solid 3px;
-  border-radius: 3%;
+  border-radius: 8%;
   text-align: center;
   outline: none;
 }
+
 textarea{
   font-size: 15px;
   border-radius: 10%;
@@ -97,9 +98,12 @@ textarea{
   width: 400px;
   height: 100px;
 }
+
 textarea:focus{
   outline: none;
+  border: red solid 3px;
 }
+
 select{
   font-family: 'Gloria Hallelujah';
   font-size: 15px;
@@ -109,15 +113,18 @@ select{
   width: 130px;
   background-color: rgb(238, 238, 76);
 }
+
 select:focus{
   border: red solid 3px;
   border-radius: 3%;
   outline: none;
 }
+
 .nav_bar{
   list-style: none;
   display: block;
 }
+
 .nav_item{
   clear: both;
   display: inline-block;
@@ -138,12 +145,30 @@ select:focus{
 }
 
 ul{
-  list-style-type: none ;
+  list-style-type: none;
 }
 
 .main{
-  height: auto;
+  height: 100vh;
+  overflow: auto;
+  width: 80%;
   padding: 3px;
+  margin: 0 auto;
+}
+
+::-webkit-scrollbar{
+  width: 20px;
+}
+::-webkit-scrollbar-track{
+  box-shadow: inset 0 0 5px brown;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+  background: chocolate;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover{
+  background: orange;
 }
 .add_recipe{
   background-color: rgba(214, 131, 35, 0.521);
@@ -156,21 +181,21 @@ ul{
   margin: 5%;
 }
 .user{
-  margin: 0 auto;
+  margin: 10px auto;
   padding: 20px;
   background-color: rgba(233, 133, 10, 0.733);
-  height: 400px;
-  width: 25%;
+  height: 350px;
+  width: 250px;
 }
 .user img{
   height: 60%;
   width: 80%;
-  margin: 5%;
+  margin: auto 25px;
 }
 .user-list{
   background-color: rgba(233, 133, 10, 0.733);
   width: 40%;
-  margin: 10%;
+  margin: 20px;
   padding: 20px;
 }
 .user-list ul{
@@ -189,7 +214,7 @@ ul{
   background-color: rgb(221, 134, 21);
   background-image: url('https://st2.depositphotos.com/2013817/7377/v/950/depositphotos_73777067-stock-illustration-seamless-texture-with-kitchen-utensils.jpg');
   background-size: cover;
-  padding-top: 35px;
+  padding-top: 50px;
 }
 .footer h3{
   background-color: rgba(36, 31, 31, 0.726);

@@ -58,7 +58,7 @@ export const Register=()=>{
             <input type="password" onInput={(e)=>setPassword(e.target.value)}></input><br/>
             <label>Potvrdi password:</label><br/>
             <input type="password" onInput={(e)=>setConfirmPass(e.target.value)}></input><br/>
-            <span>{`${error}`}</span><br/>
+            <span>{`${error}`}</span>
             <button onClick={handleClick}>SignUp</button>
         </div>
     )
