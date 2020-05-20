@@ -7,7 +7,7 @@ const LogOut = () =>{
 
     const handleClick = () =>{
         deleteUser().then(()=>{
-            history.push('/login')
+            history.push('/')
             window.location.reload()
         })
     }
