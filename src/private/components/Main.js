@@ -5,7 +5,7 @@ import Search from './Search';
 import {getRecipes} from '../../services/api_service'
 
 
-const Main=()=>{
+const Main=({setSaved})=>{
 const [recipes, setRecipes] = useState([]);
 const [selected, setSelected] = useState([])
 const [search, setSearch] = useState([])
@@ -52,7 +52,7 @@ useEffect(()=>{
         <div className='main'>
             <Select handleChange={handleChange} selected={selected}/>
             <Search search={search} handleSearch={handleSearch} />
-            <RecipeList recipes={recipes}/>
+            <RecipeList recipes={recipes} setSaved={setSaved}/>
         </div>
     )
 }

@@ -21,7 +21,7 @@ export const LogIn=()=>{
                 setId(res.data.user.id)
                 history.push('/main')
                 setError('')
-                window.location.reload()   
+                // window.location.reload()   
             })
         } 
     }

@@ -128,7 +128,7 @@ select:focus{
 .nav_item{
   clear: both;
   display: inline-block;
-  width: 23%;
+  width: 18%;
   border: darkorange  solid;
   margin: 3px;
   font-size: 20px;

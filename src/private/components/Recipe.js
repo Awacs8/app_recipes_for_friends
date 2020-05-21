@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
 import './recipe.css'
 
-const Recipe=({recipe})=>{
+const Recipe=({recipe, setSaved})=>{
     const [all, setAll] = useState(false)
+    const [info, setInfo] = useState('')
+
     const seeAll = () =>{
         setAll(true)
     }
 
     const exit = () =>{
         setAll(false)
+    }
+
+    const saveRecipe = () =>{
+        setSaved(saved=>[...saved, recipe])
+        setInfo('* pogledaj u sačuvanim receptima')
     }
 
     return(
@@ -26,7 +33,8 @@ const Recipe=({recipe})=>{
                 <ul><b>Način pripreme:</b>
                 {recipe.preparation_steps.map(el=>(<li key={el}>{el}</li>))}   
                 </ul>
-                <button>dodaj u omiljene</button>
+                <button onClick={saveRecipe}>dodaj u omiljene</button>
+                <sup>{info}</sup>
                 <button onClick={exit}>zatvori</button>
             </div>
             
@@ -34,7 +42,7 @@ const Recipe=({recipe})=>{
         </div>
     )
 }
-export default Recipe;
+export default Recipe
 
 
 

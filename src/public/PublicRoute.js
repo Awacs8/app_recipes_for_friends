@@ -4,18 +4,12 @@ import { isLogIn } from '../services/auth_service'
 
 const PublicRoute = ({component:Component, ...rest}) => {
     return (
-        <Route>{isLogIn() ? 
-        <Redirect to="/"/>:
-        <Component {...rest} /> }
-        </Route>
-  )}
+    <Route {...rest} render={props => (
+        isLogIn() ?
+        <Redirect to="/main"/> :
+        <Component {...props} />
+    )} />
+)}
     
 export default PublicRoute
 
-// return (
-//     <Route {...rest} render={props => (
-//         isLogIn() ?
-//         <Redirect to="/main"/> :
-//         <Component {...props} />
-//     )} />
-// )

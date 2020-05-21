@@ -5,7 +5,7 @@ const Select = ({selected, handleChange}) =>{
 
     return (
         <div>
-            <label>Prikaži po kategorijama</label>
+            <label>Prikaži po kategorijama </label>
             <select onChange={handleChange}>
                 <option value='izaberi'>svi recepti</option>
                 <option value='lako'>lako</option>
