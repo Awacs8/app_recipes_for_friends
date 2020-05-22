@@ -18,9 +18,8 @@ export const Register=()=>{
         last_name: last_name,
         email: email,
         username: username,
-        password: password,
-        
-    }
+        password: password  
+        }
     
 
     const handleClick = () => {
@@ -41,7 +40,7 @@ export const Register=()=>{
                     history.push('/main')
                     // window.location.reload()
                 }) 
-             })
+            })
         }
     }
     return(

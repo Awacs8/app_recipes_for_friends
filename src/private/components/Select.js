@@ -1,7 +1,7 @@
 import React from 'react'
 import Recipe from './Recipe'
 
-const Select = ({selected, handleChange}) =>{
+const Select = ({selected, handleChange,setSaved}) =>{
 
     return (
         <div>
@@ -13,7 +13,7 @@ const Select = ({selected, handleChange}) =>{
                 <option value='teško'>tesko</option>
             </select>
             <div className='recipe_list'>
-            {selected.map(recipe => <Recipe key={recipe.id} recipe={recipe}/>)}
+            {selected.map(recipe => <Recipe key={recipe.id} recipe={recipe} setSaved={setSaved} />)}
             </div>
         </div>
     )

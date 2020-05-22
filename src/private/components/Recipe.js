@@ -37,8 +37,6 @@ const Recipe=({recipe, setSaved})=>{
                 <sup>{info}</sup>
                 <button onClick={exit}>zatvori</button>
             </div>
-            
-
         </div>
     )
 }

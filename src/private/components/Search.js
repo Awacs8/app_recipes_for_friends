@@ -2,7 +2,7 @@ import React from 'react'
 import Recipe from './Recipe'
 
 
-const Search = ({search, handleSearch}) =>{
+const Search = ({search, handleSearch, setSaved}) =>{
     
     return(
         <>
@@ -11,7 +11,7 @@ const Search = ({search, handleSearch}) =>{
             <input onChange={handleSearch}/>
         </div>
         <div className='recipe_list'>
-            {search.map(recipe => <Recipe key={recipe.id} recipe={recipe}/>)}
+            {search.map(recipe => <Recipe key={recipe.id} recipe={recipe} setSaved={setSaved} />)}
         </div>
         </>
     )

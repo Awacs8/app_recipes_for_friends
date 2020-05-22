@@ -50,8 +50,8 @@ useEffect(()=>{
 
     return(
         <div className='main'>
-            <Select handleChange={handleChange} selected={selected}/>
-            <Search search={search} handleSearch={handleSearch} />
+            <Select handleChange={handleChange} selected={selected} setSaved={setSaved}/>
+            <Search search={search} handleSearch={handleSearch} setSaved={setSaved} />
             <RecipeList recipes={recipes} setSaved={setSaved}/>
         </div>
     )
