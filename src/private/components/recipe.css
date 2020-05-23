@@ -18,7 +18,7 @@
   transform: rotate(-3deg);
 }
   
-.recipe:hover{
+/* .recipe:hover{
   margin-left: 50px;
   -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
   -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
@@ -29,7 +29,7 @@
   -o-transform: scale(1.25);
   position:relative;
   z-index:5;
-}
+} */
 
 button{
   background-color: rgb(218, 120, 22);

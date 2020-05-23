@@ -40,14 +40,6 @@ useEffect(()=>{
     }
     // console.log(selected)
 
-// useEffect(()=>{
-//     let id=getId();
-//     getUserById(id).then(res =>{
-//         setUser(res.data.user);
-//     });
-// },[])
-// console.log(user)
-
     return(
         <div className='main'>
             <Select handleChange={handleChange} selected={selected} setSaved={setSaved}/>
