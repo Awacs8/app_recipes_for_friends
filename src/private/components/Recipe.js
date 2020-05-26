@@ -29,7 +29,7 @@ const Recipe=({recipe, setSaved})=>{
             <div style={{display: all?"block":"none", overflow:"visible"}}>
                 <ul><b>Sastojci:</b> 
                 <sup>*za uporedjivanje jedinica mere pogledaj odeljak saveti</sup>
-                {recipe.ingredients.map(el=>(<li key={el.name}>{el.name} {el.quantity} {el.unit_of_measure}</li>))}
+                {recipe.ingredients.map(el=>(<li key={el.ingName}>{el.ingName} {el.quantity} {el.unit_of_measure}</li>))}
                 </ul>
                 <ul><b>Način pripreme:</b>
                 {recipe.preparation_steps.map(el=>(<li key={el}>{el}</li>))}   
