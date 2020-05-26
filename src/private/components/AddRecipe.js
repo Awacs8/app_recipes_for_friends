@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
+import { sendRecipes } from '../../services/api_service'
 
 const AddRecipe = () =>{
     const [name, setName] = useState('')
     const [category, setCategory] = useState('')
     const [difficulty, setDifficulty] = useState('')
     const [preparation_time, setPreparation_time] = useState('')
-    // const [ingredients, setIngredients]=([])
+    const [ingName, setIngName]=useState('')
+    const [quantity, setQuantity]=useState('')
+    const [unit_of_measure, setUnit_of_measure]=useState('')
+    const [ingredients, setIngredients]=useState([])
     const [preparation_steps, setPreparation_steps]=useState([])
     const [preparation_step, setPreparation_step]=useState('')
     
@@ -16,29 +20,36 @@ const AddRecipe = () =>{
         category: category,
         difficulty: difficulty,
         preparation_time: preparation_time,
-        preparation_steps: preparation_steps
-        // ingredients: [
-            //     // {
-                //     //     name: name,
-                //     //     quantity: quantity,
-                //     //     unit_of_measure: unit_of_measure
-                //     // }
-                // ],
-                
+        ingredients: ingredients,
+        preparation_steps: preparation_steps           
+    }
+
+    const ingredient = {
+        ingName:ingName,
+        quantity:quantity,
+        unit_of_measure:unit_of_measure
+    }
+
+    const addIngredient = (e) =>{
+        e.preventDefault()
+        ingredients.push(ingredient)
+        setIngredients(ingredients)
+        setIngName('')
+        setQuantity('')
+        setUnit_of_measure('')
     }
             
     const addStep = (e) =>{
         e.preventDefault()
         preparation_steps.push(preparation_step)
-        // console.log(preparation_step)
         setPreparation_steps(preparation_steps)
-        // console.log(preparation_steps)
     }
     
-
     const sendRecipe = () =>{
         console.log(recipe)
-        // window.location.reload()
+        sendRecipes(recipe).then(()=>{
+            console.log('uspesnoPostavljen')
+        })  
     }
 
     return(
@@ -71,11 +82,11 @@ const AddRecipe = () =>{
             <input type='number' onInput={(e)=>setPreparation_time(e.target.value)}/><br/>
             <label>Sastojci: </label><br/>
             <label>naziv sastojka: </label>
-            <input type='text' /><br/>
+            <input type='text' onInput={(e)=>setIngName(e.target.value)}/><br/>
             <label> količina: </label>
-            <input type='text' /><br/>
+            <input type='text' onInput={(e)=>setQuantity(e.target.value)}/><br/>
             <label> jedinica mere: </label>
-            <select>
+            <select onChange={(e)=>setUnit_of_measure(e.target.value)}>
                 <option>kom</option>
                 <option>kg</option>
                 <option>g</option>
@@ -85,7 +96,7 @@ const AddRecipe = () =>{
                 <option>tsp (kafena kašićica)</option>
                 <option>tbsp (supena kašika)</option>
             </select><br/>
-            <button>dodaj sledeći sastojak</button><br/>
+            <button onClick={addIngredient}>dodaj sledeći sastojak</button><br/>
             <label>Koraci: </label><br/>
             <input type='text' onInput={(e)=>setPreparation_step(e.target.value)}/><br/>
             <button onClick={addStep}>dodaj sledeći korak</button><br/>
@@ -97,13 +108,13 @@ const AddRecipe = () =>{
             <p><b>Kategorija: </b>{recipe.category}</p>
             <p><b>Težina:</b> {recipe.difficulty}</p>
             <p><b>Vreme pripreme:</b> {recipe.preparation_time} min</p>
-                {/* <ul><b>Sastojci:</b> 
-                <sup>*za uporedjivanje jedinica mere pogledaj odeljak saveti</sup>
-                {recipe.ingredients.map(el=>(<li key={el.name}>{el.name} {el.quantity} {el.unit_of_measure}</li>))}
-                </ul> */}
-                <ul><b>Način pripreme:</b>
+            <ul><b>Sastojci:</b> 
+            <sup>*za uporedjivanje jedinica mere pogledaj odeljak saveti</sup>
+                {recipe.ingredients.map(el=>(<li key={el.ingName}>{el.ingName} {el.quantity} {el.unit_of_measure}</li>))}
+            </ul>
+            <ul><b>Način pripreme:</b>
                 {recipe.preparation_steps.map(el=>(<li key={el}>{el}</li>))}   
-                </ul>
+            </ul>
         </div>
         </div>
         </>
