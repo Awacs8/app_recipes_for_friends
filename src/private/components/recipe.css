@@ -59,3 +59,19 @@ button:focus{
 button:hover{
   background-color: orangered;
 }
+
+
+@media only screen and (max-width: 950px) {
+  .recipe_list{
+    display: grid;
+    grid-template-columns: 1fr; 
+  }
+  .recipe{
+    background-color: rgba(233, 133, 10, 0.733);
+    margin: 8px;
+    padding: 20px;
+    width: 80%;
+    font-family: 'Gloria Hallelujah';
+    transform: none;
+  }
+}

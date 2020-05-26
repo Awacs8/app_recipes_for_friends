@@ -1,5 +1,7 @@
 import React from 'react'
 import Recipe from  './Recipe'
+import '../../App.css'
+import './recipe.css'
 
 const RecipeList = ({recipes, setSaved}) =>{
     return(

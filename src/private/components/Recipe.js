@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './recipe.css'
+import '../../App.css'
 
 const Recipe=({recipe, setSaved})=>{
     const [all, setAll] = useState(false)
