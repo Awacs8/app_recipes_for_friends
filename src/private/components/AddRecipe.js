@@ -12,8 +12,7 @@ const AddRecipe = () =>{
     const [ingredients, setIngredients]=useState([])
     const [preparation_steps, setPreparation_steps]=useState([])
     const [preparation_step, setPreparation_step]=useState('')
-    
-    
+    const [info, setInfo] = useState('')
     
     let recipe={
         name: name,
@@ -43,25 +42,27 @@ const AddRecipe = () =>{
         e.preventDefault()
         preparation_steps.push(preparation_step)
         setPreparation_steps(preparation_steps)
+        setPreparation_step('')
     }
     
     const sendRecipe = () =>{
-        console.log(recipe)
+        // console.log(recipe)
         sendRecipes(recipe).then(()=>{
             console.log('uspesnoPostavljen')
-        })  
+            setInfo('Tvoj recept se nalazi na listi svih recepata')
+        })
     }
 
     return(
         <>
         <h2>Popuni formu i podeli recept sa nama</h2>
-
         <div className="add">
         <div className='add_recipe'>
             <label>Naziv recepta: </label>
             <input type='text' onInput={(e)=>setName(e.target.value)}/><br/>
             <label>Kategorija: </label>
             <select onChange={(e)=>setCategory(e.target.value)}>
+                <option>izaberi...</option>
                 <option>Supe/čorbe</option>
                 <option>Testa/pite</option>
                 <option>Namazi</option>
@@ -87,6 +88,7 @@ const AddRecipe = () =>{
             <input type='text' onInput={(e)=>setQuantity(e.target.value)}/><br/>
             <label> jedinica mere: </label>
             <select onChange={(e)=>setUnit_of_measure(e.target.value)}>
+                <option>izaberi...</option>
                 <option>kom</option>
                 <option>kg</option>
                 <option>g</option>
@@ -98,9 +100,9 @@ const AddRecipe = () =>{
             </select><br/>
             <button onClick={addIngredient}>dodaj sledeći sastojak</button><br/>
             <label>Koraci: </label><br/>
-            <input type='text' onInput={(e)=>setPreparation_step(e.target.value)}/><br/>
+            <textarea type='text' onInput={(e)=>setPreparation_step(e.target.value)}/><br/>
             <button onClick={addStep}>dodaj sledeći korak</button><br/>
-            <button onClick={sendRecipe}>dodaj recept</button>
+            
         </div>
         <div className="recipe_view">
             <h3>Pregled recepta</h3>
@@ -115,6 +117,8 @@ const AddRecipe = () =>{
             <ul><b>Način pripreme:</b>
                 {recipe.preparation_steps.map(el=>(<li key={el}>{el}</li>))}   
             </ul>
+            <button onClick={sendRecipe}>dodaj recept</button>
+            <sup>{info}</sup>
         </div>
         </div>
         </>

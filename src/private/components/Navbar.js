@@ -8,13 +8,15 @@ const Navbar = () =>{
         <ul className = 'nav_bar'>
             <Link to="/main">
                 <li className = 'nav_item'> svi recepti</li>
-            </Link>
-            {/* <ul>
-                <li>Namazi</li>
-                <li>Testa/pite</li>
-                <li>Glavna jela</li>
-                <li>Dezerti</li>
-            </ul> */}
+                </Link>
+                {/* <ul>
+                    <li>Supe/čorbe</li>
+                    <li>Namazi</li>
+                    <li>Testa/pite</li>
+                    <li>Glavna jela</li>
+                    <li>Dezerti</li>
+                </ul>   */}
+            
             <li className = 'nav_item'>saveti</li>
             <Link to='/saved'>
                 <li className = 'nav_item'>sačuvani recepti</li>

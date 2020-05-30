@@ -45,7 +45,7 @@ useEffect(()=>{
             <Select handleChange={handleChange} selected={selected} setSaved={setSaved}/>
             <Search search={search} handleSearch={handleSearch} setSaved={setSaved} />
             <RecipeList recipes={recipes} setSaved={setSaved}/>
-        </div>
+        </div>        
     )
 }
 

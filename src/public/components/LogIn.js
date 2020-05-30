@@ -14,12 +14,19 @@ export const LogIn=()=>{
         password.trim()===''){
             setError("Popuni sva polja")
             return
-        } else {
+        } 
+        // else if(
+        //     username !== res.data.user.username ||
+        //     password !== res.data.user.password
+        // ){
+        //     setError("Pogresno korisnicko ime ili passwword")
+        // }
+        else {
             logIn(username,password).then(res => {
-                // console.log(res)
+                console.log(res)
                 setToken(res.data.token)
                 setId(res.data.user.id)
-                history.push('/main')
+                history.push('/')
                 setError('')
                 // window.location.reload()   
             })
