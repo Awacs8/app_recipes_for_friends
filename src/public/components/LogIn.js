@@ -11,16 +11,10 @@ export const LogIn=()=>{
 
     const handleClick = () => {
         if(username.trim()==='' || 
-        password.trim()===''){
+            password.trim()===''){
             setError("Popuni sva polja")
             return
         } 
-        // else if(
-        //     username !== res.data.user.username ||
-        //     password !== res.data.user.password
-        // ){
-        //     setError("Pogresno korisnicko ime ili passwword")
-        // }
         else {
             logIn(username,password).then(res => {
                 console.log(res)
@@ -28,7 +22,9 @@ export const LogIn=()=>{
                 setId(res.data.user.id)
                 history.push('/')
                 setError('')
-                // window.location.reload()   
+                window.location.reload()   
+            }).catch(()=>{
+                setError('pogresan username ili password')
             })
         } 
     }
