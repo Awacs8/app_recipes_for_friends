@@ -16,7 +16,7 @@ const SavedRecipes = ({saved}) =>{
                 {recipe.ingredients.map(el=>(<li key={el.name}>{el.name} {el.quantity} {el.unit_of_measure}</li>))}
                 </ul>
                 <ul><b>Način pripreme:</b>
-                {recipe.preparation_steps.map(el=>(<li key={el}>{el}</li>))}   
+                {recipe.preparation_steps.map(el=>(<li key={el.id}>{el}</li>))}   
                 </ul>
             </div>)}
         </div>

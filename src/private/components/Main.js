@@ -1,51 +1,44 @@
-import React, {useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import RecipeList from './RecipeList';
 import Select from './Select';
 import Search from './Search';
-import {getRecipes} from '../../services/api_service'
+import { getRecipes } from '../../services/api_service';
 
 
-const Main=({setSaved})=>{
-const [recipes, setRecipes] = useState([]);
-const [selected, setSelected] = useState([])
-const [search, setSearch] = useState([])
+const Main = ({ setSaved }) => {
+    const [recipes, setRecipes] = useState([]);
+    const [filtered, setFiltered] = useState([]);
 
-useEffect(()=>{
-    getRecipes().then(response=>{
-      // console.log(response.data.recipes)
-      setRecipes(response.data.recipes)
-    })
-  },[])
+    useEffect(() => {
+        getRecipes().then(response => {
+            setRecipes(response.data.recipes)
+        })
+    }, [])
 
-    const  handleChange = (e) =>{
-            e.preventDefault();
-            let selValue=e.target.value
-            if(selValue==='izaberi'){
-                setSelected([])
-            }else{
-                const selected=recipes.filter(el=>el.difficulty===selValue)
-                setSelected(selected)
-            }
-            
+    useEffect(() => {
+        setFiltered(recipes)
+    }, [recipes])
+
+    const handleChange = (e) => {
+        let selectedValue = e.target.value
+        let tmp = [...recipes]
+        const selected = tmp.filter(el => el.difficulty === selectedValue)
+        selectedValue === 'izaberi' ? setFiltered(recipes) : setFiltered(selected)
     }
-    const handleSearch = (e) =>{
+
+    const handleSearch = (e) => {
         e.preventDefault();
-        if(e.target.value===''){
-            setSearch([])
-        }else{
-            const search=recipes.filter(recipe=>recipe.name.toLowerCase()
-        .includes(e.target.value.toLowerCase()))
-        setSearch(search)
-        }
+        let search = recipes.filter(recipe => recipe.name.toLowerCase()
+            .includes(e.target.value.toLowerCase()))
+        setFiltered(search)
     }
-    // console.log(selected)
 
-    return(
+    return (
         <div className='main'>
-            <Select handleChange={handleChange} selected={selected} setSaved={setSaved}/>
-            <Search search={search} handleSearch={handleSearch} setSaved={setSaved} />
-            <RecipeList recipes={recipes} setSaved={setSaved}/>
-        </div>        
+            <Select handleChange={handleChange} />
+            <Search handleSearch={handleSearch} />
+            <RecipeList filtered={filtered} setSaved={setSaved} />
+        </div>
     )
 }
 
