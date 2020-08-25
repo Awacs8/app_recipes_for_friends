@@ -20,7 +20,7 @@ export const LogIn=()=>{
                 console.log(res)
                 setToken(res.data.token)
                 setId(res.data.user.id)
-                history.push('/')
+                history.push('/main')
                 setError('')
                 window.location.reload()   
             }).catch(()=>{

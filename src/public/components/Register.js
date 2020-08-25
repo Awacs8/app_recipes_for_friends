@@ -38,7 +38,7 @@ export const Register=()=>{
                     setToken(res.data.token)
                     setId(res.data.user.id)
                     history.push('/main')
-                    // window.location.reload()
+                    window.location.reload()
                 }) 
             })
         }
