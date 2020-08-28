@@ -19,7 +19,7 @@ export const LogIn = () => {
             logIn(username, password).then(res => {
                 setToken(res.data.token)
                 setId(res.data.user.id)
-                history.push('/main')
+                history.push('/')
                 setError('')
                 window.location.reload()
             }).catch(() => {
