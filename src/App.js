@@ -16,8 +16,11 @@ function App() {
   const [saved, setSaved] = useState([])
 
   useEffect(() => {
-    // console.log(saved)
+    console.log(saved)
   }, [saved])
+
+  
+
   return (
     <>
       <Router>

@@ -38,7 +38,7 @@ export const Register = () => {
                 logIn(username, password).then(res => {
                     setToken(res.data.token)
                     setId(res.data.user.id)
-                    history.push('/')
+                    history.push('/main')
                     window.location.reload()
                 })
             })
