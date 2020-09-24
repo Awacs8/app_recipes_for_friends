@@ -11,6 +11,7 @@ import Footer from './public/components/Footer'
 import Navbar from './private/components/Navbar'
 import Profile from './private/components/Profile'
 import SavedRecipes from './private/components/SavedRecipes'
+import Tips from './private/components/Tips';
 
 function App() {
   const [saved, setSaved] = useState([])
@@ -19,7 +20,7 @@ function App() {
     console.log(saved)
   }, [saved])
 
-  
+
 
   return (
     <>
@@ -28,6 +29,7 @@ function App() {
         <Navbar />
         <Switch>
           <PrivateRoute component={Main} setSaved={setSaved} path="/main" />
+          <PrivateRoute component={Tips} path="/tips" />
           <PrivateRoute component={AddRecipe} path="/addrecipe" />
           <PrivateRoute component={Profile} path="/profile" />
           <PrivateRoute component={SavedRecipes} saved={saved} path="/saved" />
