@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/app_recipes_for_friends/static/css/main.7557c34f.chunk.css",
+    "main.js": "/app_recipes_for_friends/static/js/main.e7b8ab5e.chunk.js",
+    "main.js.map": "/app_recipes_for_friends/static/js/main.e7b8ab5e.chunk.js.map",
+    "runtime-main.js": "/app_recipes_for_friends/static/js/runtime-main.1f52e6f2.js",
+    "runtime-main.js.map": "/app_recipes_for_friends/static/js/runtime-main.1f52e6f2.js.map",
+    "static/js/2.b82c86fb.chunk.js": "/app_recipes_for_friends/static/js/2.b82c86fb.chunk.js",
+    "static/js/2.b82c86fb.chunk.js.map": "/app_recipes_for_friends/static/js/2.b82c86fb.chunk.js.map",
+    "index.html": "/app_recipes_for_friends/index.html",
+    "precache-manifest.abd29431c76df3cd44ffa79b0d691db2.js": "/app_recipes_for_friends/precache-manifest.abd29431c76df3cd44ffa79b0d691db2.js",
+    "service-worker.js": "/app_recipes_for_friends/service-worker.js",
+    "static/css/main.7557c34f.chunk.css.map": "/app_recipes_for_friends/static/css/main.7557c34f.chunk.css.map",
+    "static/js/2.b82c86fb.chunk.js.LICENSE.txt": "/app_recipes_for_friends/static/js/2.b82c86fb.chunk.js.LICENSE.txt",
+    "static/media/chef.jpg": "/app_recipes_for_friends/static/media/chef.dd4fb36f.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1f52e6f2.js",
+    "static/js/2.b82c86fb.chunk.js",
+    "static/css/main.7557c34f.chunk.css",
+    "static/js/main.e7b8ab5e.chunk.js"
+  ]
+}
