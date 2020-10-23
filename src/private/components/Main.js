@@ -1,45 +1,45 @@
-import React, { useState, useEffect } from 'react';
-import RecipeList from './RecipeList';
-import Select from './Select';
-import Search from './Search';
-import { getRecipes } from '../../services/api_service';
+import React, { useState, useEffect } from "react";
+import RecipeList from "./RecipeList";
+import Select from "./Select";
+import Search from "./Search";
+import { getRecipes } from "../../services/api_service";
 
+const Main = ({ setSaved, saved }) => {
+  const [recipes, setRecipes] = useState([]);
+  const [filtered, setFiltered] = useState([]);
 
-const Main = ({ setSaved }) => {
-    const [recipes, setRecipes] = useState([]);
-    const [filtered, setFiltered] = useState([]);
+  useEffect(() => {
+    getRecipes().then((response) => {
+      setRecipes(response.data.recipes);
+    });
+  }, []);
 
-    useEffect(() => {
-        getRecipes().then(response => {
-            setRecipes(response.data.recipes)
-        })
-    }, [])
+  useEffect(() => {
+    setFiltered(recipes);
+  }, [recipes]);
 
-    useEffect(() => {
-        setFiltered(recipes)
-    }, [recipes])
+  const handleChange = (e) => {
+    let selectedValue = e.target.value;
+    let tmp = [...recipes];
+    const selected = tmp.filter((el) => el.difficulty === selectedValue);
+    selectedValue === "izaberi" ? setFiltered(recipes) : setFiltered(selected);
+  };
 
-    const handleChange = (e) => {
-        let selectedValue = e.target.value
-        let tmp = [...recipes]
-        const selected = tmp.filter(el => el.difficulty === selectedValue)
-        selectedValue === 'izaberi' ? setFiltered(recipes) : setFiltered(selected)
-    }
+  const handleSearch = (e) => {
+    e.preventDefault();
+    let search = recipes.filter((recipe) =>
+      recipe.name.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+    setFiltered(search);
+  };
 
-    const handleSearch = (e) => {
-        e.preventDefault();
-        let search = recipes.filter(recipe => recipe.name.toLowerCase()
-            .includes(e.target.value.toLowerCase()))
-        setFiltered(search)
-    }
-
-    return (
-        <div className='main'>
-            <Select handleChange={handleChange} />
-            <Search handleSearch={handleSearch} />
-            <RecipeList filtered={filtered} setSaved={setSaved} />
-        </div>
-    )
-}
+  return (
+    <div className="main">
+      <Select handleChange={handleChange} />
+      <Search handleSearch={handleSearch} />
+      <RecipeList filtered={filtered} setSaved={setSaved} saved={saved} />
+    </div>
+  );
+};
 
 export default Main;
