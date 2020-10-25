@@ -3,16 +3,11 @@ import Recipe from "./Recipe";
 import "../../App.css";
 import "./recipe.css";
 
-const RecipeList = ({ filtered, setSaved, saved }) => {
+const RecipeList = ({ filtered, handleClick }) => {
   return (
     <div className="recipe_list">
       {filtered.map((recipe) => (
-        <Recipe
-          key={recipe.id}
-          recipe={recipe}
-          setSaved={setSaved}
-          saved={saved}
-        />
+        <Recipe key={recipe.id} recipe={recipe} handleClick={handleClick} />
       ))}
     </div>
   );

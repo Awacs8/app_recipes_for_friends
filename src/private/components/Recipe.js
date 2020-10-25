@@ -2,26 +2,9 @@ import React, { useState } from "react";
 import "./recipe.css";
 import "../../App.css";
 
-const Recipe = ({ recipe }) => {
-  const [saved, setSaved] = useState([]);
-  const [all, setAll] = useState(false);
+const Recipe = ({ recipe, handleClick }) => {
+  const [show, setShow] = useState(false);
   const [info, setInfo] = useState("");
-
-  const seeAll = () => {
-    setAll(true);
-  };
-
-  const exit = () => {
-    setAll(false);
-  };
-
-  const saveRecipe = (e) => {
-    e.preventDefault();
-    setSaved((saved) => {
-      return [...saved, recipe];
-    });
-    setInfo("* pogledaj u sačuvanim receptima");
-  };
 
   return (
     <div className="recipe">
@@ -32,10 +15,13 @@ const Recipe = ({ recipe }) => {
       <p>
         <b>Vreme pripreme:</b> {recipe.preparation_time} min
       </p>
-      <button onClick={seeAll} style={{ display: all ? "none" : "block" }}>
+      <button
+        onClick={() => setShow(!show)}
+        style={{ display: show ? "none" : "block" }}
+      >
         pogledaj recept
       </button>
-      <div style={{ display: all ? "block" : "none", overflow: "visible" }}>
+      <div style={{ display: show ? "block" : "none", overflow: "visible" }}>
         <ul>
           <b>Sastojci:</b>
           {/* <sup>*za uporedjivanje jedinica mere pogledaj odeljak saveti</sup> */}
@@ -51,9 +37,16 @@ const Recipe = ({ recipe }) => {
             <li key={el}>{el}</li>
           ))}
         </ul>
-        <button onClick={saveRecipe}>dodaj u omiljene</button>
+        <button
+          onClick={() => {
+            handleClick(recipe);
+            setInfo("* pogledaj u sačuvanim receptima");
+          }}
+        >
+          dodaj u omiljene
+        </button>
         <sup>{info}</sup>
-        <button onClick={exit}>zatvori</button>
+        <button onClick={() => setShow(!show)}>zatvori</button>
       </div>
     </div>
   );

@@ -1,12 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Search = ({ handleSearch }) => {
-
-    return (
-        <div>
-            <label>Pronadji recept:</label>
-            <input onChange={handleSearch} />
-        </div>
-    )
-}
-export default Search
+  return (
+    <div>
+      <label>Pronadji recept:</label>
+      <input onChange={handleSearch} />
+    </div>
+  );
+};
+export default Search;

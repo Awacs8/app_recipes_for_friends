@@ -2,11 +2,14 @@ import React, { useState, useEffect } from "react";
 import RecipeList from "./RecipeList";
 import Select from "./Select";
 import Search from "./Search";
+import SavedRecipes from "./SavedRecipes";
 import { getRecipes } from "../../services/api_service";
 
-const Main = ({ setSaved, saved }) => {
+const Main = () => {
   const [recipes, setRecipes] = useState([]);
   const [filtered, setFiltered] = useState([]);
+  const [saved, setSaved] = useState([]);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     getRecipes().then((response) => {
@@ -19,6 +22,7 @@ const Main = ({ setSaved, saved }) => {
   }, [recipes]);
 
   const handleChange = (e) => {
+    e.preventDefault();
     let selectedValue = e.target.value;
     let tmp = [...recipes];
     const selected = tmp.filter((el) => el.difficulty === selectedValue);
@@ -33,11 +37,23 @@ const Main = ({ setSaved, saved }) => {
     setFiltered(search);
   };
 
+  const handleClick = (recipe) => {
+    setSaved([...saved, recipe]);
+    console.log(saved);
+  };
+
   return (
     <div className="main">
       <Select handleChange={handleChange} />
       <Search handleSearch={handleSearch} />
-      <RecipeList filtered={filtered} setSaved={setSaved} saved={saved} />
+      <button
+        style={{ opacity: saved.length > 0 ? "1" : "0.6" }}
+        onClick={() => setShow(!show)}
+      >
+        Sačuvani recepti
+      </button>
+      {show && <SavedRecipes saved={saved} />}
+      <RecipeList filtered={filtered} handleClick={handleClick} />
     </div>
   );
 };

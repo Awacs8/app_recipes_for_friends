@@ -2,8 +2,6 @@ import React from "react";
 import "./recipe.css";
 
 const SavedRecipes = ({ saved }) => {
-  // let save = [...new Set(saved)]
-
   return (
     <div className="main">
       <div className="recipe_list">
