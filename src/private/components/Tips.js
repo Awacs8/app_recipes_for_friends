@@ -2,11 +2,14 @@ import React from "react";
 
 const Tips = () => {
   return (
-    <>
+    <div className="tips">
       <div>
-        <p>Saveti:</p>
+        <label>Saveti:</label>
       </div>
-    </>
+      <div>
+        <label>Korisni linkovi:</label>
+      </div>
+    </div>
   );
 };
 

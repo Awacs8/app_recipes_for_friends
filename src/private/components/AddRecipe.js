@@ -157,8 +157,10 @@ const AddRecipe = () => {
               <li key={el}>{el}</li>
             ))}
           </ul>
-          <button onClick={sendRecipe}>dodaj recept</button>
-          <sup>{info}</sup>
+          <section>
+            <button onClick={sendRecipe}>dodaj recept</button>
+            <sup>{info}</sup>
+          </section>
         </div>
       </div>
     </>

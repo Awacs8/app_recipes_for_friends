@@ -1,21 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap");
+* {
   margin: 0;
   padding: 0;
 }
-body{
-  font-family: 'Gloria Hallelujah';
-  background-image: url('https://lostsurfboards.net/wp-content/uploads/2017/10/cork-wallpaper-25-wallpaper-background-hd.jpg');
+body {
+  font-family: "Gloria Hallelujah";
+  background-image: url("https://lostsurfboards.net/wp-content/uploads/2017/10/cork-wallpaper-25-wallpaper-background-hd.jpg");
 }
-.header{
+.header {
   width: 100%;
   padding-bottom: 20px;
   text-align: center;
   /* background-color: rgb(73, 235, 67) ; */
   background-size: cover;
-  background-image: url('https://st2.depositphotos.com/2013817/7377/v/950/depositphotos_73777067-stock-illustration-seamless-texture-with-kitchen-utensils.jpg');
+  background-image: url("https://st2.depositphotos.com/2013817/7377/v/950/depositphotos_73777067-stock-illustration-seamless-texture-with-kitchen-utensils.jpg");
 }
-h1{
+h1 {
   color: rgb(255, 115, 0);
   font-size: 50px;
   text-shadow: 2px 5px 5px rgb(151, 16, 16);
@@ -23,11 +23,11 @@ h1{
   width: 30%;
   display: inline-block;
 }
-h2{
+h2 {
   text-align: center;
   background-color: rgba(255, 166, 0, 0.603);
 }
-.grid{
+.grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -40,7 +40,7 @@ h2{
   margin: 20px 0px;
   padding: 20px 0px;
 }
-#login{
+#login {
   width: 40%;
   padding: 5%;
   display: inline-block;
@@ -48,7 +48,7 @@ h2{
   background-color: rgba(0, 0, 0, 0.185);
 }
 
-label{
+label {
   margin: 10px;
   background-color: rgba(192, 177, 177, 0.541);
   font-size: 16px;
@@ -57,7 +57,7 @@ label{
   color: rgb(14, 15, 15);
 }
 
-span{
+span {
   color: rgb(230, 224, 224);
   font-weight: 700;
 }
@@ -75,9 +75,9 @@ span{
   font-family: 'Gloria Hallelujah';
 } */
 
-input{
+input {
   font-size: 15px;
-  font-family: 'Gloria Hallelujah';
+  font-family: "Gloria Hallelujah";
   border-radius: 30%;
   border: darkorange solid;
   background-color: rgb(238, 238, 76);
@@ -85,29 +85,29 @@ input{
   margin: 3px;
 }
 
-input:focus{
+input:focus {
   border: red solid 3px;
   border-radius: 8%;
   text-align: center;
   outline: none;
 }
 
-textarea{
+textarea {
   font-size: 15px;
   border-radius: 10%;
   border: darkorange solid;
   background-color: rgb(238, 238, 76);
-  width: 300px;
+  width: 90%;
   height: 100px;
 }
 
-textarea:focus{
+textarea:focus {
   outline: none;
   border: red solid 3px;
 }
 
-select{
-  font-family: 'Gloria Hallelujah';
+select {
+  font-family: "Gloria Hallelujah";
   font-size: 15px;
   font-weight: 600;
   border: darkorange solid;
@@ -116,22 +116,23 @@ select{
   background-color: rgb(238, 238, 76);
 }
 
-select:focus{
+select:focus {
   border: red solid 3px;
   border-radius: 3%;
   outline: none;
 }
 
-.nav_bar{
+.nav_bar {
   list-style: none;
   display: block;
+  margin-left: 20%;
 }
 
-.nav_item{
+.nav_item {
   clear: both;
   display: inline-block;
   width: 17%;
-  border: darkorange  solid;
+  border: darkorange solid;
   margin: 3px;
   font-size: 20px;
   font-weight: 600;
@@ -143,41 +144,41 @@ select:focus{
 
 .nav_item a {
   text-decoration: none;
-  color:black;
+  color: black;
 }
 
-ul{
+ul {
   list-style-type: none;
 }
 
-
-.main{
+.main {
   min-height: 100vh;
+  max-height: 150vh;
   overflow: auto;
   width: 80%;
   padding: 3px;
   margin: 0 auto;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 20px;
 }
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px brown;
   border-radius: 10px;
 }
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background: chocolate;
   border-radius: 10px;
 }
-::-webkit-scrollbar-thumb:hover{
+::-webkit-scrollbar-thumb:hover {
   background: orange;
 }
-.add{
+.add {
   display: grid;
   grid-template-columns: 1fr 35% 35% 1fr;
 }
-.add_recipe{
+.add_recipe {
   background-color: rgba(214, 130, 35, 0.747);
   margin: 20px;
   padding: 40px;
@@ -185,163 +186,174 @@ ul{
   grid-column-end: 3;
   display: inline-block;
 }
-.recipe_view{
-  display: inline-block;
+.recipe_view {
+  display: flex;
+  flex-direction: column;
   background-color: rgba(233, 133, 10, 0.842);
-  margin: 20px ;
+  margin: 20px;
   padding: 20px;
   grid-column-start: 3;
   grid-column-end: 4;
-  font-family: 'Gloria Hallelujah';
-  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
-  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-  -webkit-transform:rotate(-3deg);
-  -o-transform:rotate(-3deg);
-  -moz-transform:rotate(-3deg);
+  font-family: "Gloria Hallelujah";
+  -moz-box-shadow: 5px 5px 7px rgba(33, 33, 33, 1);
+  -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+  box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+  -webkit-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
   transform: rotate(-3deg);
+  height: max-content;
 }
-.recipe_view button{
-  float: right;
-  margin-top: 300px;
+.recipe_view section {
+  margin-top: auto;
+  margin-left: auto;
 }
-.recipe_view h3{
+
+.recipe_view h3 {
   text-align: center;
 }
-.profile{
+.tips {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.tips > div {
+  width: 40%;
+  height: 400px;
+}
+.profile {
   margin: 5%;
 }
-.user{
+.user {
   margin: 10px auto;
   padding: 20px;
   background-color: rgba(233, 133, 10, 0.733);
   height: 350px;
   width: 250px;
 }
-.user img{
+.user img {
   height: 60%;
   width: 80%;
   margin: auto 25px;
 }
-.user-list{
+.user-list {
   background-color: rgba(233, 133, 10, 0.733);
   width: 40%;
   margin: 20px;
   padding: 20px;
 }
-.user-list ul{
+.user-list ul {
   padding-left: 5%;
 }
-.user-list li{
+.user-list li {
   background-color: orange;
   margin: 5px;
   padding: 3px;
   text-align: center;
 }
-.footer{
+.footer {
   width: 100%;
   height: 100px;
   text-align: center;
   background-color: rgb(221, 134, 21);
-  background-image: url('https://st2.depositphotos.com/2013817/7377/v/950/depositphotos_73777067-stock-illustration-seamless-texture-with-kitchen-utensils.jpg');
+  background-image: url("https://st2.depositphotos.com/2013817/7377/v/950/depositphotos_73777067-stock-illustration-seamless-texture-with-kitchen-utensils.jpg");
   background-size: cover;
   padding-top: 50px;
 }
-.footer h3{
+.footer h3 {
   background-color: rgba(36, 31, 31, 0.726);
   color: rgb(238, 170, 25);
 }
 
-@media only screen and (max-width: 600px){
-  
-  h1{
-    width: 80%;
+@media only screen and (max-width: 600px) {
+  .header {
+    width: 100%;
+  }
+  h1 {
+    width: 70%;
     padding-left: 10%;
     margin: 0 auto;
     font-size: 30px;
     display: block;
   }
-  #login{
+  #login {
     width: 80%;
     padding-left: 10%;
     margin: 0 auto;
     padding: 0;
     display: block;
   }
-  .nav_bar{
+  .nav_bar {
     width: 70%;
     margin: 0 auto;
   }
-  .nav_item{
+  .nav_item {
     width: 95%;
     margin: 0 auto;
   }
-  .add{
-    display: block;
+  .add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  .add_recipe{
+  .add_recipe {
     background-color: rgba(214, 131, 35, 0.521);
-    padding: 40px;
-    width: 90%;
-    display: block;
+    width: 60%;
   }
-  .recipe_view{
-    display: block;
+  .recipe_view {
     background-color: rgba(233, 133, 10, 0.733);
-    margin: 20px ;
-    padding: 20px;
-    font-family: 'Gloria Hallelujah';
-    
+    font-family: "Gloria Hallelujah";
   }
 }
 
-@media only screen and (max-width: 950px) and (min-width: 600px){
-  h1{
+@media only screen and (max-width: 950px) and (min-width: 600px) {
+  h1 {
     width: 70%;
     margin: 0 auto;
     padding-left: 10%;
-    
   }
-  #login{
+  #login {
     width: 80%;
     padding-left: 10%;
     margin: 0 auto;
   }
-  .nav_bar{
+  .nav_bar {
     width: 70%;
     margin: 0 auto;
   }
-  .nav_item{
+  .nav_item {
     width: 95%;
     margin: 0 auto;
   }
-  .recipe_list{
+  .recipe_list {
     display: grid;
     grid-template-columns: 1fr;
   }
-  .recipe{
+  .recipe {
     background-color: rgba(233, 133, 10, 0.733);
     margin: 8px;
     padding: 20px;
     width: 80%;
-    font-family: 'Gloria Hallelujah';  
+    font-family: "Gloria Hallelujah";
   }
-  .add{
-    display: block;
+  .add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  .add_recipe{
+  .add_recipe {
     background-color: rgba(214, 131, 35, 0.521);
     margin: 20px;
     padding: 40px;
     width: 80%;
     display: block;
   }
-  .recipe_view{
+  .recipe_view {
     display: block;
     background-color: rgba(233, 133, 10, 0.733);
-    margin: 20px ;
+    margin: 20px;
     padding: 20px;
-    font-family: 'Gloria Hallelujah';
-    
+    font-family: "Gloria Hallelujah";
   }
 }
