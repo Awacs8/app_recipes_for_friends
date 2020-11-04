@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { sendRecipes } from "../../services/api_service";
+import { Link } from "react-router-dom";
 
 const AddRecipe = () => {
   const [name, setName] = useState("");
@@ -33,19 +34,28 @@ const AddRecipe = () => {
     e.preventDefault();
     ingredients.push(ingredient);
     setIngredients(ingredients);
+    setIngName("");
+    setQuantity("");
+    setUnit_of_measure("");
   };
 
   const addStep = (e) => {
     e.preventDefault();
     preparation_steps.push(preparation_step);
     setPreparation_steps(preparation_steps);
+    setPreparation_step("");
   };
 
-  const sendRecipe = () => {
+  const sendRecipe = (e) => {
+    e.preventDefault();
     // console.log(recipe)
     sendRecipes(recipe).then(() => {
       console.log("uspesnoPostavljen");
       setInfo("Tvoj recept se nalazi na listi svih recepata");
+      setName("");
+      setPreparation_time("");
+      setIngredients([]);
+      setPreparation_steps([]);
     });
   };
 
@@ -54,8 +64,15 @@ const AddRecipe = () => {
       <h2>Popuni formu i podeli recept sa nama</h2>
       <div className="add">
         <div className="add_recipe">
-          <label>Naziv recepta: </label>
-          <input type="text" onInput={(e) => setName(e.target.value)} />
+          <label htmlFor="name">Naziv recepta: </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
           <br />
           <label>Kategorija: </label>
           <select onChange={(e) => setCategory(e.target.value)}>
@@ -90,19 +107,34 @@ const AddRecipe = () => {
           />
           <label>teško</label>
           <br />
-          <label>Vreme pripreme (min): </label>
+          <label htmlFor="preparation_time">Vreme pripreme (min): </label>
           <input
             type="number"
-            onInput={(e) => setPreparation_time(e.target.value)}
+            id="htmlFor('preparation_time')"
+            name="preparation_time"
+            value={preparation_time}
+            onChange={(e) => setPreparation_time(e.target.value)}
           />
           <br />
           <label>Sastojci: </label>
           <br />
-          <label>naziv sastojka: </label>
-          <input type="text" onInput={(e) => setIngName(e.target.value)} />
+          <label htmlFor="ingName">naziv sastojka: </label>
+          <input
+            type="text"
+            id="htmlFor=('ingName')"
+            name="ingName"
+            value={ingName}
+            onChange={(e) => setIngName(e.target.value)}
+          />
           <br />
-          <label> količina: </label>
-          <input type="text" onInput={(e) => setQuantity(e.target.value)} />
+          <label htmlFor="quantity"> količina: </label>
+          <input
+            type="text"
+            id="htmlFor=('quantity')"
+            name="quantity"
+            value={quantity}
+            onChange={(e) => setQuantity(e.target.value)}
+          />
           <br />
           <label> jedinica mere: </label>
           <select onChange={(e) => setUnit_of_measure(e.target.value)}>
@@ -113,17 +145,20 @@ const AddRecipe = () => {
             <option>l</option>
             <option>ml</option>
             <option>šolja</option>
-            <option>tsp (kafena kašićica)</option>
+            <option>tsp (kafena kašičica)</option>
             <option>tbsp (supena kašika)</option>
           </select>
           <br />
           <button onClick={addIngredient}>dodaj sledeći sastojak</button>
           <br />
-          <label>Koraci: </label>
+          <label htmlFor="preparation_step">Koraci: </label>
           <br />
           <textarea
             type="text"
-            onInput={(e) => setPreparation_step(e.target.value)}
+            id="htmlFor=('preparation_step')"
+            name="preparation_step"
+            value={preparation_step}
+            onChange={(e) => setPreparation_step(e.target.value)}
           />
           <br />
           <button onClick={addStep}>dodaj sledeći korak</button>
@@ -133,18 +168,31 @@ const AddRecipe = () => {
           <h3>Izgled recepta</h3>
           <h2>{recipe.name}</h2>
           <p>
-            <b>Kategorija: </b>
+            <b>
+              <u>Kategorija:</u>
+            </b>
             {recipe.category}
           </p>
           <p>
-            <b>Težina:</b> {recipe.difficulty}
+            <b>
+              <u>Težina:</u>
+            </b>{" "}
+            {recipe.difficulty}
           </p>
           <p>
-            <b>Vreme pripreme:</b> {recipe.preparation_time} min
+            <b>
+              <u>Vreme pripreme:</u>
+            </b>{" "}
+            {recipe.preparation_time} min
           </p>
           <ul>
-            <b>Sastojci:</b>
-            <sup>*za uporedjivanje jedinica mere pogledaj odeljak saveti</sup>
+            <b>
+              <u>Sastojci:</u>
+            </b>
+            <sup>
+              *za uporedjivanje jedinica mere pogledaj odeljak
+              <Link to="/tips"> saveti</Link>
+            </sup>
             {recipe.ingredients.map((el) => (
               <li key={el.ingName}>
                 {el.ingName} {el.quantity} {el.unit_of_measure}
@@ -152,7 +200,9 @@ const AddRecipe = () => {
             ))}
           </ul>
           <ul>
-            <b>Način pripreme:</b>
+            <b>
+              <u>Način pripreme:</u>
+            </b>
             {recipe.preparation_steps.map((el) => (
               <li key={el}>{el}</li>
             ))}

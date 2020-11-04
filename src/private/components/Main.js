@@ -19,6 +19,7 @@ const Main = () => {
 
   useEffect(() => {
     setFiltered(recipes);
+    // console.log(JSON.stringify(recipes));
   }, [recipes]);
 
   const handleChange = (e) => {
@@ -42,6 +43,11 @@ const Main = () => {
     console.log(saved);
   };
 
+  const removeRecipe = (recipe) => {
+    let save = saved.filter((el) => el.id !== recipe.id);
+    setSaved(save);
+  };
+
   return (
     <div className="main">
       <Select handleChange={handleChange} />
@@ -50,9 +56,9 @@ const Main = () => {
         style={{ opacity: saved.length > 0 ? "1" : "0.6" }}
         onClick={() => setShow(!show)}
       >
-        Sačuvani recepti
+        Sačuvani recepti ({saved.length})
       </button>
-      {show && <SavedRecipes saved={saved} />}
+      {show && <SavedRecipes saved={saved} removeRecipe={removeRecipe} />}
       <RecipeList filtered={filtered} handleClick={handleClick} />
     </div>
   );
