@@ -26,7 +26,7 @@ const Recipe = ({ recipe, handleClick }) => {
           <b>Sastojci:</b>
           {/* <sup>*za uporedjivanje jedinica mere pogledaj odeljak saveti</sup> */}
           {recipe.ingredients.map((el) => (
-            <li key={el.ingName}>
+            <li key={el.index}>
               {el.ingName} {el.quantity} {el.unit_of_measure}
             </li>
           ))}

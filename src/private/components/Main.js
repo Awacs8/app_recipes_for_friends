@@ -4,18 +4,28 @@ import Select from "./Select";
 import Search from "./Search";
 import SavedRecipes from "./SavedRecipes";
 import { getRecipes } from "../../services/api_service";
+import Pagination from "../../utils/Pagination";
 
 const Main = () => {
   const [recipes, setRecipes] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [saved, setSaved] = useState([]);
   const [show, setShow] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(6);
 
   useEffect(() => {
     getRecipes().then((response) => {
       setRecipes(response.data.recipes);
     });
   }, []);
+
+  // useEffect(() => {
+  //   savedRecipes().then((response) => {
+  //     console.log(response.data.savedRecipes);
+  //     setSaved(response.data.savedRecipes);
+  //   });
+  // }, []);
 
   useEffect(() => {
     setFiltered(recipes);
@@ -26,7 +36,11 @@ const Main = () => {
     e.preventDefault();
     let selectedValue = e.target.value;
     let tmp = [...recipes];
-    const selected = tmp.filter((el) => el.difficulty === selectedValue);
+    const selected = tmp.filter(
+      (el) =>
+        el.difficulty === selectedValue ||
+        el.category.toLowerCase() === selectedValue
+    );
     selectedValue === "izaberi" ? setFiltered(recipes) : setFiltered(selected);
   };
 
@@ -39,8 +53,10 @@ const Main = () => {
   };
 
   const handleClick = (recipe) => {
+    // saveRecipe(recipe).then(() => {
+    //   console.log(recipe);
+    // });
     setSaved([...saved, recipe]);
-    console.log(saved);
   };
 
   const removeRecipe = (recipe) => {
@@ -48,18 +64,34 @@ const Main = () => {
     setSaved(save);
   };
 
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirtstItem = indexOfLastItem - itemsPerPage;
+  const currentList = filtered.slice(indexOfFirtstItem, indexOfLastItem);
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <div className="main">
-      <Select handleChange={handleChange} />
-      <Search handleSearch={handleSearch} />
-      <button
-        style={{ opacity: saved.length > 0 ? "1" : "0.6" }}
-        onClick={() => setShow(!show)}
-      >
-        Sačuvani recepti ({saved.length})
-      </button>
-      {show && <SavedRecipes saved={saved} removeRecipe={removeRecipe} />}
-      <RecipeList filtered={filtered} handleClick={handleClick} />
+      <section className="nav_main">
+        <Select handleChange={handleChange} />
+        <Search handleSearch={handleSearch} />
+        <button
+          style={{ opacity: saved.length > 0 ? "1" : "0.6" }}
+          onClick={() => setShow(!show)}
+        >
+          Sačuvani recepti ({saved.length})
+        </button>
+      </section>
+      <section className="display_main">
+        {show && <SavedRecipes saved={saved} removeRecipe={removeRecipe} />}
+        <RecipeList filtered={currentList} handleClick={handleClick} />
+      </section>
+      <Pagination
+        paginate={paginate}
+        totalItems={recipes.length}
+        itemsPerPage={itemsPerPage}
+      />
     </div>
   );
 };

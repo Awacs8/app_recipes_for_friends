@@ -1,5 +1,6 @@
 import React from "react";
 import "./recipe.css";
+import { Link } from "react-router-dom";
 
 const SavedRecipes = ({ saved, removeRecipe }) => {
   return (
@@ -17,7 +18,10 @@ const SavedRecipes = ({ saved, removeRecipe }) => {
             </p>
             <ul>
               <b>Sastojci:</b>
-              <sup>*za uporedjivanje jedinica mere pogledaj odeljak saveti</sup>
+              <sup>
+                *za uporedjivanje jedinica mere pogledaj odeljak{" "}
+                <Link to="/tips"> saveti</Link>
+              </sup>
               {recipe.ingredients.map((el) => (
                 <li key={el.ingName}>
                   {el.ingName} {el.quantity} {el.unit_of_measure}

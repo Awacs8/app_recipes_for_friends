@@ -50,30 +50,21 @@ h2 {
 
 label {
   margin: 10px;
-  background-color: rgba(192, 177, 177, 0.541);
+  background-color: rgba(231, 220, 220, 0.623);
   font-size: 16px;
   font-weight: 600;
   padding-left: 5px;
   color: rgb(14, 15, 15);
+  height: 31px;
 }
 
 span {
   color: rgb(230, 224, 224);
   font-weight: 700;
 }
-
-/* form button{
-  height: 35px;
-  width: 70px;
-  font-weight: 600;
-  color: orangered;
-  background-color: rgba(255, 230, 0, 0.836);
-  margin: 8px;
-  padding-bottom: 5px;
-  border: orange solid;
-  border-radius: 15%;
-  font-family: 'Gloria Hallelujah';
-} */
+a {
+  text-decoration: none;
+}
 
 input {
   font-size: 15px;
@@ -124,14 +115,14 @@ select:focus {
 
 .nav_bar {
   list-style: none;
-  display: block;
-  margin-left: 20%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .nav_item {
-  clear: both;
-  display: inline-block;
-  width: 17%;
+  width: 20%;
   border: darkorange solid;
   margin: 3px;
   font-size: 20px;
@@ -141,23 +132,48 @@ select:focus {
   padding: 5px;
   background-color: rgba(255, 68, 0, 0.562);
 }
-
-.nav_item a {
-  text-decoration: none;
-  color: black;
+.nav_item select {
+  border: hidden;
+  font-size: 20px;
+  font-weight: 600;
+  height: 100%;
+  width: 130px;
+  background-color: rgba(238, 238, 76, 0);
 }
+
+/* .nav_item ul li {
+  display: none;
+}
+.nav_item:hover ul li {
+  display: block;
+} */
 
 ul {
   list-style-type: none;
 }
 
 .main {
-  min-height: 100vh;
-  max-height: 150vh;
-  overflow: auto;
   width: 80%;
   padding: 3px;
   margin: 0 auto;
+}
+
+.nav_main {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.nav_main > button {
+  margin-left: auto;
+}
+.display_main {
+  overflow: auto;
+  min-height: 100vh;
+  max-height: 120vh;
+}
+
+.pagination {
+  display: inline;
 }
 
 ::-webkit-scrollbar {
@@ -285,10 +301,14 @@ ul {
     display: block;
   }
   .nav_bar {
+    list-style: none;
+    display: block;
     width: 70%;
     margin: 0 auto;
   }
   .nav_item {
+    clear: both;
+    display: inline-block;
     width: 95%;
     margin: 0 auto;
   }
@@ -319,10 +339,14 @@ ul {
     margin: 0 auto;
   }
   .nav_bar {
+    list-style: none;
+    display: block;
     width: 70%;
     margin: 0 auto;
   }
   .nav_item {
+    clear: both;
+    display: inline-block;
     width: 95%;
     margin: 0 auto;
   }

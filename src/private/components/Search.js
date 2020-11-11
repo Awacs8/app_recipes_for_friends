@@ -3,7 +3,7 @@ import React from "react";
 const Search = ({ handleSearch }) => {
   return (
     <div>
-      <label>Pronadji recept:</label>
+      <label>pronadji recept:</label>
       <input onChange={handleSearch} />
     </div>
   );

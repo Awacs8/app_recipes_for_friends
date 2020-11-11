@@ -6,24 +6,17 @@ const Navbar = () => {
   return (
     <>
       <ul className="nav_bar">
-        <Link to="/main">
-          <li className="nav_item">početna</li>
+        <Link to="/main" className="nav_item">
+          <li>početna</li>
         </Link>
-        {/* <ul>
-                    <li>Supe/čorbe</li>
-                    <li>Namazi</li>
-                    <li>Testa/pite</li>
-                    <li>Glavna jela</li>
-                    <li>Dezerti</li>
-                </ul>   */}
-        <Link to="/tips">
-          <li className="nav_item">saveti</li>
+        <Link to="/tips" className="nav_item">
+          <li>saveti</li>
         </Link>
-        <Link to="/addrecipe">
-          <li className="nav_item">dodaj recept</li>
+        <Link to="/addrecipe" className="nav_item">
+          <li>dodaj recept</li>
         </Link>
-        <Link to="/profile">
-          <li className="nav_item">tvoj profil</li>
+        <Link to="/profile" className="nav_item">
+          <li>tvoj profil</li>
         </Link>
       </ul>
     </>

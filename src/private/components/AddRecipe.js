@@ -50,9 +50,11 @@ const AddRecipe = () => {
     e.preventDefault();
     // console.log(recipe)
     sendRecipes(recipe).then(() => {
-      console.log("uspesnoPostavljen");
+      console.log(recipe);
       setInfo("Tvoj recept se nalazi na listi svih recepata");
       setName("");
+      setCategory("");
+      setDifficulty("");
       setPreparation_time("");
       setIngredients([]);
       setPreparation_steps([]);
@@ -74,35 +76,40 @@ const AddRecipe = () => {
             required
           />
           <br />
-          <label>Kategorija: </label>
-          <select onChange={(e) => setCategory(e.target.value)}>
+          <label htmlFor="category">Kategorija: </label>
+          <select
+            name="category"
+            id="category"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
             <option>izaberi...</option>
-            <option>Supe/čorbe</option>
-            <option>Testa/pite</option>
-            <option>Namazi</option>
-            <option>Glavna jela</option>
-            <option>Dezerti</option>
+            <option>supe/čorbe</option>
+            <option>testa/pite</option>
+            <option>namazi</option>
+            <option>glavna jela</option>
+            <option>dezerti</option>
           </select>
           <br />
-          <label>Težina: </label>
+          <label htmlFor="difficulty">Težina: </label>
           <input
             type="radio"
             value="lako"
-            name="težina"
+            name="difficulty"
             onClick={(e) => setDifficulty(e.target.value)}
           />
           <label>lako</label>
           <input
             type="radio"
             value="srednje"
-            name="težina"
+            name="difficulty"
             onClick={(e) => setDifficulty(e.target.value)}
           />
           <label>srednje</label>
           <input
             type="radio"
             value="teško"
-            name="težina"
+            name="difficulty"
             onClick={(e) => setDifficulty(e.target.value)}
           />
           <label>teško</label>
