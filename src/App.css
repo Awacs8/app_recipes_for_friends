@@ -117,7 +117,7 @@ select:focus {
   list-style: none;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
 }
 
@@ -162,6 +162,7 @@ ul {
   width: 100%;
   display: flex;
   flex-direction: row;
+  margin: 40px 0 40px 0;
 }
 .nav_main > button {
   margin-left: auto;
@@ -173,7 +174,14 @@ ul {
 }
 
 .pagination {
-  display: inline;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+}
+.pagination > li > button {
+  border-radius: 50%;
+  width: 40px;
 }
 
 ::-webkit-scrollbar {
@@ -282,51 +290,6 @@ ul {
   color: rgb(238, 170, 25);
 }
 
-@media only screen and (max-width: 600px) {
-  .header {
-    width: 100%;
-  }
-  h1 {
-    width: 70%;
-    padding-left: 10%;
-    margin: 0 auto;
-    font-size: 30px;
-    display: block;
-  }
-  #login {
-    width: 80%;
-    padding-left: 10%;
-    margin: 0 auto;
-    padding: 0;
-    display: block;
-  }
-  .nav_bar {
-    list-style: none;
-    display: block;
-    width: 70%;
-    margin: 0 auto;
-  }
-  .nav_item {
-    clear: both;
-    display: inline-block;
-    width: 95%;
-    margin: 0 auto;
-  }
-  .add {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .add_recipe {
-    background-color: rgba(214, 131, 35, 0.521);
-    width: 60%;
-  }
-  .recipe_view {
-    background-color: rgba(233, 133, 10, 0.733);
-    font-family: "Gloria Hallelujah";
-  }
-}
-
 @media only screen and (max-width: 950px) and (min-width: 600px) {
   h1 {
     width: 70%;
@@ -349,6 +312,12 @@ ul {
     display: inline-block;
     width: 95%;
     margin: 0 auto;
+  }
+  .nav_main {
+    flex-direction: column;
+  }
+  .nav_main > button {
+    margin-left: auto;
   }
   .recipe_list {
     display: grid;
@@ -379,5 +348,71 @@ ul {
     margin: 20px;
     padding: 20px;
     font-family: "Gloria Hallelujah";
+  }
+  .grid {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+  }
+  .form > input {
+    width: 70%;
+  }
+  #login > input {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    width: 100%;
+  }
+  h1 {
+    width: 70%;
+    padding-left: 10%;
+    margin: 0 auto;
+    font-size: 30px;
+    display: block;
+  }
+  #login {
+    width: 90%;
+    padding-left: 10%;
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+  }
+  #login > input {
+    width: 70%;
+  }
+  .nav_bar {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .nav_item {
+    width: 70%;
+  }
+  .nav_main {
+    flex-direction: column;
+  }
+  .add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .add_recipe {
+    background-color: rgba(214, 131, 35, 0.521);
+    width: 60%;
+  }
+  .recipe_view {
+    background-color: rgba(233, 133, 10, 0.733);
+    font-family: "Gloria Hallelujah";
+  }
+  .grid {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+  }
+  .form > input {
+    width: 70%;
   }
 }
