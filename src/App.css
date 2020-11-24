@@ -173,6 +173,36 @@ ul {
   max-height: 120vh;
 }
 
+/* CAROUSEL */
+.rec.rec-pagination {
+  margin-bottom: 15px;
+}
+.rec.rec-arrow {
+  padding: 0;
+  border-radius: 20%;
+  background-color: rgba(255, 166, 0, 0.493);
+}
+.rec.rec-arrow:focus:enabled {
+  background-color: rgba(255, 166, 0, 0.295);
+}
+.rec.rec-arrow:hover:enabled {
+  background-color: orangered;
+}
+.rec.rec-arrow:disabled {
+  visibility: hidden;
+}
+.rec.rec-dot_active {
+  border-radius: 0%;
+  background-color: rgba(255, 166, 0, 0.493);
+  box-shadow: 0 0 1px 3px orange;
+}
+.rec.rec-dot_active:focus {
+  box-shadow: 0 0 1px 3px orange;
+}
+.rec.rec-dot:hover {
+  box-shadow: 0 0 1px 3px orange;
+}
+
 .pagination {
   display: flex;
   flex-direction: row;

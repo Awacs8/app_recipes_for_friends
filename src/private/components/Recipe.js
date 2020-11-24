@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./recipe.css";
 import "../../App.css";
+import { v4 as uuidv4 } from "uuid";
 
 const Recipe = ({ recipe, handleClick }) => {
   const [show, setShow] = useState(false);
@@ -26,7 +27,7 @@ const Recipe = ({ recipe, handleClick }) => {
           <b>Sastojci:</b>
           {/* <sup>*za uporedjivanje jedinica mere pogledaj odeljak saveti</sup> */}
           {recipe.ingredients.map((el) => (
-            <li key={el.index}>
+            <li key={uuidv4()}>
               {el.ingName} {el.quantity} {el.unit_of_measure}
             </li>
           ))}
@@ -38,6 +39,7 @@ const Recipe = ({ recipe, handleClick }) => {
           ))}
         </ul>
         <button
+          style={{ opacity: info.length > 0 ? "0.6" : "1" }}
           onClick={() => {
             handleClick(recipe);
             setInfo("* pogledaj u sačuvanim receptima");

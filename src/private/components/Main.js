@@ -4,15 +4,15 @@ import Select from "./Select";
 import Search from "./Search";
 import SavedRecipes from "./SavedRecipes";
 import { getRecipes } from "../../services/api_service";
-import Pagination from "../../utils/Pagination";
+// import Pagination from "../../utils/Pagination";
 
 const Main = () => {
   const [recipes, setRecipes] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [saved, setSaved] = useState([]);
   const [show, setShow] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(6);
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [itemsPerPage] = useState(6);
 
   useEffect(() => {
     getRecipes().then((response) => {
@@ -59,17 +59,19 @@ const Main = () => {
     setSaved([...saved, recipe]);
   };
 
+  const uniqueSaved = [...new Set(saved)];
+
   const removeRecipe = (recipe) => {
     let save = saved.filter((el) => el.id !== recipe.id);
     setSaved(save);
   };
 
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirtstItem = indexOfLastItem - itemsPerPage;
-  const currentList = filtered.slice(indexOfFirtstItem, indexOfLastItem);
-  const paginate = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
+  // const indexOfLastItem = currentPage * itemsPerPage;
+  // const indexOfFirtstItem = indexOfLastItem - itemsPerPage;
+  // const currentList = recipes.slice(indexOfFirtstItem, indexOfLastItem);
+  // const paginate = (pageNumber) => {
+  //   setCurrentPage(pageNumber);
+  // };
 
   return (
     <div className="main">
@@ -77,21 +79,23 @@ const Main = () => {
         <Select handleChange={handleChange} />
         <Search handleSearch={handleSearch} />
         <button
-          style={{ opacity: saved.length > 0 ? "1" : "0.6" }}
+          style={{ opacity: uniqueSaved.length > 0 ? "1" : "0.6" }}
           onClick={() => setShow(!show)}
         >
-          Sačuvani recepti ({saved.length})
+          Sačuvani recepti ({uniqueSaved.length})
         </button>
       </section>
+      {show && (
+        <SavedRecipes uniqueSaved={uniqueSaved} removeRecipe={removeRecipe} />
+      )}
       <section className="display_main">
-        {show && <SavedRecipes saved={saved} removeRecipe={removeRecipe} />}
-        <RecipeList filtered={currentList} handleClick={handleClick} />
+        <RecipeList filtered={filtered} handleClick={handleClick} />
       </section>
-      <Pagination
+      {/* <Pagination
         paginate={paginate}
-        totalItems={recipes.length}
+        totalItems={filtered.length}
         itemsPerPage={itemsPerPage}
-      />
+      /> */}
     </div>
   );
 };

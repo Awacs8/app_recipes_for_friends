@@ -1,12 +1,14 @@
 import React from "react";
 import "./recipe.css";
 import { Link } from "react-router-dom";
+import Carousel from "react-elastic-carousel";
+import { v4 as uuidv4 } from "uuid";
 
-const SavedRecipes = ({ saved, removeRecipe }) => {
+const SavedRecipes = ({ uniqueSaved, removeRecipe }) => {
   return (
     <div className="main">
-      <div className="recipe_list">
-        {saved.map((recipe) => (
+      <Carousel>
+        {uniqueSaved.map((recipe) => (
           <div key={recipe.id} className="saved-recipe">
             <button onClick={() => removeRecipe(recipe)}>X</button>
             <h2>{recipe.name}</h2>
@@ -23,20 +25,20 @@ const SavedRecipes = ({ saved, removeRecipe }) => {
                 <Link to="/tips"> saveti</Link>
               </sup>
               {recipe.ingredients.map((el) => (
-                <li key={el.ingName}>
+                <li key={uuidv4()}>
                   {el.ingName} {el.quantity} {el.unit_of_measure}
                 </li>
               ))}
             </ul>
             <ul>
               <b>Način pripreme:</b>
-              {recipe.preparation_steps.map((el) => (
-                <li key={el}>{el}</li>
+              {recipe.preparation_steps.map((step) => (
+                <li key={uuidv4()}>{step}</li>
               ))}
             </ul>
           </div>
         ))}
-      </div>
+      </Carousel>
     </div>
   );
 };
