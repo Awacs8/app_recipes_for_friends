@@ -23,7 +23,6 @@ function App() {
           <PrivateRoute component={Tips} path="/tips" />
           <PrivateRoute component={AddRecipe} path="/addrecipe" />
           <PrivateRoute component={Profile} path="/profile" />
-          {/* <PrivateRoute component={SavedRecipes} path="/saved" /> */}
           <PublicRoute component={Welcome} exact path="/" />
           <Redirect from="/" to="/main" />
         </Switch>
