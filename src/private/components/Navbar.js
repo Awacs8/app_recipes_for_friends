@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../App.css";
+import { isLogIn } from "../../services/auth_service";
 
 const Navbar = () => {
   return (
-    <>
+    <div style={{ display: isLogIn() ? "block" : "none" }}>
       <ul className="nav_bar">
         <Link to="/main" className="nav_item">
           <li>početna</li>
@@ -19,7 +20,7 @@ const Navbar = () => {
           <li>tvoj profil</li>
         </Link>
       </ul>
-    </>
+    </div>
   );
 };
 export default Navbar;

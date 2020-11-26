@@ -7,6 +7,51 @@ body {
   font-family: "Gloria Hallelujah";
   background-image: url("https://lostsurfboards.net/wp-content/uploads/2017/10/cork-wallpaper-25-wallpaper-background-hd.jpg");
 }
+
+/* Loader */
+
+/* .loader {
+  margin: 0 auto;
+  width: 600px;
+  height: 600px;
+  background-color: orange;
+  -webkit-animation: spin 4s linear infinite; /* Safari */
+/* animation: spin 4s linear infinite;
+  position: relative; */
+/* } */
+/* @-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+} */
+
+/* @keyframes spin {
+  0% {
+    background-color: orange;
+  }
+  25% {
+    background-color: rgba(255, 166, 0, 0.767);
+  }
+  50% {
+    background-color: rgba(255, 166, 0, 0.562);
+  }
+  75% {
+    background-color: rgba(255, 166, 0, 0.274);
+  }
+  100% {
+    background-color: rgba(255, 166, 0, 0.021);
+  }
+}
+.loader > img {
+  width: 60%;
+  height: 60%;
+  margin-top: 25%;
+  opacity: 0.6;
+} */
+
 .header {
   width: 100%;
   padding-bottom: 20px;
@@ -349,6 +394,9 @@ ul {
   .nav_main > button {
     margin-left: auto;
   }
+  .rec.rec-carousel {
+    width: 500px;
+  }
   .recipe_list {
     display: grid;
     grid-template-columns: 1fr;
@@ -396,11 +444,16 @@ ul {
   .header {
     width: 100%;
   }
+  .rec.rec-carousel-wrapper {
+    width: 90%;
+  }
+  .rec.rec-arrow {
+    display: none;
+  }
   h1 {
     width: 70%;
-    padding-left: 10%;
     margin: 0 auto;
-    font-size: 30px;
+    font-size: 20px;
     display: block;
   }
   #login {
@@ -436,6 +489,9 @@ ul {
   .recipe_view {
     background-color: rgba(233, 133, 10, 0.733);
     font-family: "Gloria Hallelujah";
+  }
+  .main {
+    width: 90%;
   }
   .grid {
     display: block;
