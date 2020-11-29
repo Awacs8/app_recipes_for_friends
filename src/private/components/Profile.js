@@ -11,9 +11,6 @@ const Profile = () => {
       //   console.log(response.data)
       setUsers(response.data);
     });
-  }, []);
-
-  useEffect(() => {
     const id = getId();
     getUserById(id).then((response) => {
       const user = response.data;

@@ -117,7 +117,7 @@ const AddRecipe = () => {
           <label htmlFor="preparation_time">Vreme pripreme (min): </label>
           <input
             type="number"
-            id="htmlFor('preparation_time')"
+            id="preparation_time"
             name="preparation_time"
             value={preparation_time}
             onChange={(e) => setPreparation_time(e.target.value)}
@@ -128,7 +128,7 @@ const AddRecipe = () => {
           <label htmlFor="ingName">naziv sastojka: </label>
           <input
             type="text"
-            id="htmlFor=('ingName')"
+            id="ingName"
             name="ingName"
             value={ingName}
             onChange={(e) => setIngName(e.target.value)}
@@ -137,7 +137,7 @@ const AddRecipe = () => {
           <label htmlFor="quantity"> količina: </label>
           <input
             type="text"
-            id="htmlFor=('quantity')"
+            id="quantity"
             name="quantity"
             value={quantity}
             onChange={(e) => setQuantity(e.target.value)}
@@ -162,7 +162,7 @@ const AddRecipe = () => {
           <br />
           <textarea
             type="text"
-            id="htmlFor=('preparation_step')"
+            id="preparation_step"
             name="preparation_step"
             value={preparation_step}
             onChange={(e) => setPreparation_step(e.target.value)}

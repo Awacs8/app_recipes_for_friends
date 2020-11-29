@@ -10,6 +10,13 @@ export const sendRecipes = async (recipe) => {
   return await axios.post(`${url}/recipes`, recipe);
 };
 
+export const getTips = async () => {
+  return await axios.get(`${url}/tips`);
+};
+export const sendTips = async (tip) => {
+  return await axios.post(`${url}/tips`, tip);
+};
+
 // export const saveRecipe = async (recipe) => {
 //   return await axios.post(`${url1}/users/:id/saved_recipes`, recipe);
 // };

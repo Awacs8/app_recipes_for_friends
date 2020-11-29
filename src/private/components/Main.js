@@ -57,6 +57,7 @@ const Main = () => {
     //   console.log(recipe);
     // });
     setSaved([...saved, recipe]);
+    console.log(saved);
   };
 
   const uniqueSaved = [...new Set(saved)];

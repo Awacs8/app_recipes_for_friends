@@ -11,6 +11,7 @@ import Footer from "./public/components/Footer";
 import Navbar from "./private/components/Navbar";
 import Profile from "./private/components/Profile";
 import Tips from "./private/components/Tips";
+import AddTip from "./private/components/AddTip";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Switch>
           <PrivateRoute component={Main} path="/main" />
           <PrivateRoute component={Tips} path="/tips" />
+          <PrivateRoute component={AddTip} path="/addtip" />
           <PrivateRoute component={AddRecipe} path="/addrecipe" />
           <PrivateRoute component={Profile} path="/profile" />
           <PublicRoute component={Welcome} exact path="/" />

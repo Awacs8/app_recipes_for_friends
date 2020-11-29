@@ -311,16 +311,33 @@ ul {
 .recipe_view h3 {
   text-align: center;
 }
+
 .tips {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
 }
-.tips > div {
+.add_tip {
   width: 40%;
   height: 400px;
+  margin: 30px auto;
+  background-color: rgba(233, 133, 10, 0.89);
 }
+.tips_list {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  justify-content: center;
+}
+.tips_list > div {
+  background-color: rgba(233, 133, 10, 0.89);
+  width: 200px;
+  height: 200px;
+  overflow: auto;
+  padding: 10px;
+  margin: 10px;
+}
+
 .profile {
   margin: 5%;
 }
@@ -492,6 +509,13 @@ ul {
   }
   .main {
     width: 90%;
+  }
+  .add_tip {
+    width: 80%;
+  }
+  .tips_list > div {
+    width: 250px;
+    height: 250px;
   }
   .grid {
     display: block;
