@@ -259,20 +259,22 @@ ul {
   width: 40px;
 }
 
+/* scrollbar */
+
 ::-webkit-scrollbar {
-  width: 20px;
+  width: 10px;
 }
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px brown;
-  border-radius: 10px;
+  box-shadow: inset 0 0 8px brown;
 }
 ::-webkit-scrollbar-thumb {
   background: chocolate;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: orange;
 }
+
 .add {
   display: grid;
   grid-template-columns: 1fr 35% 35% 1fr;

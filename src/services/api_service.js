@@ -13,13 +13,15 @@ export const sendRecipes = async (recipe) => {
 export const getTips = async () => {
   return await axios.get(`${url}/tips`);
 };
+
 export const sendTips = async (tip) => {
   return await axios.post(`${url}/tips`, tip);
 };
 
-// export const saveRecipe = async (recipe) => {
-//   return await axios.post(`${url1}/users/:id/saved_recipes`, recipe);
-// };
-// export const savedRecipes = async () => {
-//   return await axios.get(`${url1}/users/:id/saved_recipes`);
-// };
+export const saveRecipe = async (id, recipe) => {
+  return await axios.put(`${url}/users/${id}`, recipe);
+};
+
+export const removeSavedRecipe = async (id, recipe) => {
+  return await axios.delete(`${url}/users/${id}`, { data: { recipe } });
+};

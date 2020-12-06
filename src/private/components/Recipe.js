@@ -2,10 +2,24 @@ import React, { useState } from "react";
 import "./recipe.css";
 import "../../App.css";
 import { v4 as uuidv4 } from "uuid";
+import { getId } from "../../services/auth_service";
+import { saveRecipe } from "../../services/api_service";
 
-const Recipe = ({ recipe, handleClick }) => {
+const Recipe = ({ recipe }) => {
   const [show, setShow] = useState(false);
   const [info, setInfo] = useState("");
+  const id = getId();
+
+  const handleClick = (recipe) => {
+    saveRecipe(id, recipe)
+      .then(() => {
+        setInfo("* pogledaj u sačuvanim receptima");
+      })
+      .catch((error) => {
+        setInfo("*recept je već sačuvan");
+        console.log(error);
+      });
+  };
 
   return (
     <div className="recipe">
@@ -42,7 +56,6 @@ const Recipe = ({ recipe, handleClick }) => {
           style={{ opacity: info.length > 0 ? "0.6" : "1" }}
           onClick={() => {
             handleClick(recipe);
-            setInfo("* pogledaj u sačuvanim receptima");
           }}
         >
           dodaj u omiljene

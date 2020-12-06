@@ -6,16 +6,18 @@ import chef from "../../utils/img/chef.jpg";
 const Profile = () => {
   const [user, setUser] = useState({});
   const [users, setUsers] = useState([]);
+
   useEffect(() => {
     getAllUsers().then((response) => {
       //   console.log(response.data)
       setUsers(response.data);
     });
+
     const id = getId();
+
     getUserById(id).then((response) => {
       const user = response.data;
       setUser(user);
-      // console.log(user)
     });
   }, []);
 

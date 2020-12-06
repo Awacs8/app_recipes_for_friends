@@ -9,7 +9,6 @@ import { getRecipes } from "../../services/api_service";
 const Main = () => {
   const [recipes, setRecipes] = useState([]);
   const [filtered, setFiltered] = useState([]);
-  const [saved, setSaved] = useState([]);
   const [show, setShow] = useState(false);
   // const [currentPage, setCurrentPage] = useState(1);
   // const [itemsPerPage] = useState(6);
@@ -19,13 +18,6 @@ const Main = () => {
       setRecipes(response.data.recipes);
     });
   }, []);
-
-  // useEffect(() => {
-  //   savedRecipes().then((response) => {
-  //     console.log(response.data.savedRecipes);
-  //     setSaved(response.data.savedRecipes);
-  //   });
-  // }, []);
 
   useEffect(() => {
     setFiltered(recipes);
@@ -52,21 +44,6 @@ const Main = () => {
     setFiltered(search);
   };
 
-  const handleClick = (recipe) => {
-    // saveRecipe(recipe).then(() => {
-    //   console.log(recipe);
-    // });
-    setSaved([...saved, recipe]);
-    console.log(saved);
-  };
-
-  const uniqueSaved = [...new Set(saved)];
-
-  const removeRecipe = (recipe) => {
-    let save = saved.filter((el) => el.id !== recipe.id);
-    setSaved(save);
-  };
-
   // const indexOfLastItem = currentPage * itemsPerPage;
   // const indexOfFirtstItem = indexOfLastItem - itemsPerPage;
   // const currentList = recipes.slice(indexOfFirtstItem, indexOfLastItem);
@@ -80,17 +57,16 @@ const Main = () => {
         <Select handleChange={handleChange} />
         <Search handleSearch={handleSearch} />
         <button
-          style={{ opacity: uniqueSaved.length > 0 ? "1" : "0.6" }}
+          // style={{ opacity: uniqueSaved.length > 0 ? "1" : "0.6" }}
           onClick={() => setShow(!show)}
         >
-          Sačuvani recepti ({uniqueSaved.length})
+          Sačuvani recepti
+          {/* ({uniqueSaved.length}) */}
         </button>
       </section>
-      {show && (
-        <SavedRecipes uniqueSaved={uniqueSaved} removeRecipe={removeRecipe} />
-      )}
+      {show && <SavedRecipes />}
       <section className="display_main">
-        <RecipeList filtered={filtered} handleClick={handleClick} />
+        <RecipeList filtered={filtered} />
       </section>
       {/* <Pagination
         paginate={paginate}
