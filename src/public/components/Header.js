@@ -7,7 +7,9 @@ import { isLogIn } from "../../services/auth_service";
 export const Header = () => {
   return (
     <div className="header">
-      <h1>RECEPTI ZA PRIJATELJE</h1>
+      <h1 style={{ width: isLogIn() ? "80%" : "30%" }}>
+        RECEPTI ZA PRIJATELJE
+      </h1>
       {isLogIn() ? <LogOut /> : <LogIn />}
     </div>
   );

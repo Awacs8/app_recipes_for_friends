@@ -4,6 +4,7 @@ const Select = ({ handleChange }) => {
   return (
     <div>
       <label>sortiraj po</label>
+      <br />
       <select onChange={handleChange}>
         <option value="izaberi">...težini</option>
         <option value="lako">lako</option>

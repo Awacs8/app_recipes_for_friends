@@ -22,7 +22,13 @@ const Recipe = ({ recipe }) => {
   };
 
   return (
-    <div className="recipe">
+    <div
+      className="recipe"
+      style={{
+        flex: show ? "0 70%" : "0 40%",
+        transform: show ? "rotate(0deg)" : "rotate(-3deg)",
+      }}
+    >
       <h2>{recipe.name}</h2>
       <p>
         <b>Težina:</b> {recipe.difficulty}

@@ -8,6 +8,7 @@ import { removeSavedRecipe } from "../../services/api_service";
 
 const SavedRecipes = () => {
   const [saved, setSaved] = useState([]);
+  const [info, setInfo] = useState("");
   const id = getId();
 
   useEffect(() => {
@@ -18,13 +19,14 @@ const SavedRecipes = () => {
 
   const removeRecipe = (recipe) => {
     removeSavedRecipe(id, recipe).then((response) => {
-      window.alert(`obrisi recept ${recipe.name}?`);
+      setInfo(`obrisan recept ${recipe.name}`);
       setSaved(response.data.saved_recipes);
     });
   };
 
   return (
     <div className="main">
+      <label>{info}</label>
       <Carousel>
         {saved.map((recipe) => (
           <div key={recipe.id} className="saved-recipe">
