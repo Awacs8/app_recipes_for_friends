@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import {
   registerUser,
   logIn,
   setToken,
   setId,
 } from "./../../services/auth_service";
+import { Loader } from "./Loader";
 
 export const Register = () => {
   const [first_name, setFirst_name] = useState("");
@@ -15,6 +16,7 @@ export const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const history = useHistory();
 
@@ -42,50 +44,79 @@ export const Register = () => {
       setError("potvrdi lozinku");
       return;
     } else {
-      registerUser(user).then(() => {
-        logIn(username, password).then((res) => {
-          setToken(res.data.token);
-          setId(res.data.user.id);
-          history.push("/");
-          window.location.reload();
+      setLoading(true);
+      registerUser(user)
+        .then(() => {
+          logIn(username, password).then((res) => {
+            setToken(res.data.token);
+            setId(res.data.user.id);
+            history.push("/");
+            window.location.reload();
+          });
+        })
+        .catch((error) => {
+          setLoading(false);
+          setError("Korisnik već postoji. Promeni username.");
+          console.log(error);
         });
-      });
     }
   };
   return (
-    <div className="form">
-      <label>Ime:</label>
-      <br />
-      <input type="text" onInput={(e) => setFirst_name(e.target.value)}></input>
-      <br />
-      <label>Prezime:</label>
-      <br />
-      <input type="text" onInput={(e) => setLast_name(e.target.value)}></input>
-      <br />
-      <label>Email:</label>
-      <br />
-      <input type="email" onInput={(e) => setEmail(e.target.value)}></input>
-      <br />
-      <label>Username:</label>
-      <br />
-      <input type="text" onInput={(e) => setUsername(e.target.value)}></input>
-      <br />
-      <label>Password:</label>
-      <br />
-      <input
-        type="password"
-        onInput={(e) => setPassword(e.target.value)}
-      ></input>
-      <br />
-      <label>Potvrdi password:</label>
-      <br />
-      <input
-        type="password"
-        onInput={(e) => setConfirmPass(e.target.value)}
-      ></input>
-      <br />
-      <span>{`${error}`}</span>
-      <button onClick={handleClick}>SignUp</button>
-    </div>
+    <>
+      {loading ? (
+        <Loader />
+      ) : (
+        <div className="form">
+          <label>Ime:</label>
+          <br />
+          <input
+            type="text"
+            onInput={(e) => setFirst_name(e.target.value)}
+          ></input>
+          <br />
+          <label>Prezime:</label>
+          <br />
+          <input
+            type="text"
+            onInput={(e) => setLast_name(e.target.value)}
+          ></input>
+          <br />
+          <label>Email:</label>
+          <br />
+          <input type="email" onInput={(e) => setEmail(e.target.value)}></input>
+          <br />
+          <label>Username:</label>
+          <br />
+          <input
+            type="text"
+            onInput={(e) => setUsername(e.target.value)}
+          ></input>
+          <br />
+          <label>Password:</label>
+          <br />
+          <input
+            type="password"
+            onInput={(e) => setPassword(e.target.value)}
+          ></input>
+          <br />
+          <label>Potvrdi password:</label>
+          <br />
+          <input
+            type="password"
+            onInput={(e) => setConfirmPass(e.target.value)}
+          ></input>
+          <br />
+          <span>{`${error}`}</span>
+          <button onClick={handleClick}>Kreiraj nalog</button>
+          <br />
+          <p>
+            <b>Imaš nalog?</b>
+          </p>
+          <Link to="/login">
+            <p>Klikni za prijavu.</p>
+          </Link>
+        </div>
+      )}
+    </>
   );
 };

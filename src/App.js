@@ -12,6 +12,8 @@ import Navbar from "./private/components/Navbar";
 import Profile from "./private/components/Profile";
 import Tips from "./private/components/Tips";
 import AddTip from "./private/components/AddTip";
+import { LogIn } from "./public/components/LogIn";
+import { Register } from "./public/components/Register";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Header />
         <Navbar />
         <Switch>
+          <PublicRoute component={LogIn} path="/login" />
+          <PublicRoute component={Register} path="/register" />
           <PrivateRoute component={Main} path="/main" />
           <PrivateRoute component={Tips} path="/tips" />
           <PrivateRoute component={AddTip} path="/addtip" />

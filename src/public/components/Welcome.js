@@ -1,10 +1,10 @@
-import React from 'react'
-import {Register} from './Register'
+import React from "react";
+import { LogIn } from "./LogIn";
 
-export const Welcome = () =>{
-    return(
-        <div className="grid">
-            <Register />
-        </div>
-    )
-}
+export const Welcome = () => {
+  return (
+    <div className="welcome_page">
+      <LogIn />
+    </div>
+  );
+};

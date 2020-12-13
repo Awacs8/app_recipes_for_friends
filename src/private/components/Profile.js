@@ -9,7 +9,6 @@ const Profile = () => {
 
   useEffect(() => {
     getAllUsers().then((response) => {
-      //   console.log(response.data)
       setUsers(response.data);
     });
 
@@ -50,4 +49,5 @@ const Profile = () => {
     </div>
   );
 };
+
 export default Profile;
