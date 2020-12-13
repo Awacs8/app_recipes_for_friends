@@ -62,7 +62,7 @@ export const Register = () => {
     }
   };
   return (
-    <>
+    <div className="welcome_page">
       {loading ? (
         <Loader />
       ) : (
@@ -107,6 +107,7 @@ export const Register = () => {
           ></input>
           <br />
           <span>{`${error}`}</span>
+          <br />
           <button onClick={handleClick}>Kreiraj nalog</button>
           <br />
           <p>
@@ -117,6 +118,6 @@ export const Register = () => {
           </Link>
         </div>
       )}
-    </>
+    </div>
   );
 };

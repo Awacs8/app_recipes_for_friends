@@ -36,7 +36,7 @@ export const LogIn = () => {
   };
 
   return (
-    <>
+    <div className="welcome_page">
       {loading ? (
         <Loader />
       ) : (
@@ -62,6 +62,7 @@ export const LogIn = () => {
           />
           <br />
           <span>{`${error}`}</span>
+          <br />
           <button onClick={handleClick}>Prijavi se</button>
           <br />
           <Link to="/register">
@@ -69,6 +70,6 @@ export const LogIn = () => {
           </Link>
         </div>
       )}
-    </>
+    </div>
   );
 };
