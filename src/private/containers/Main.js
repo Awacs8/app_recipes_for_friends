@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import RecipeList from "./RecipeList";
-import Select from "./Select";
-import Search from "./Search";
-import SavedRecipes from "./SavedRecipes";
+import RecipeList from "../components/RecipeList";
+import Select from "../components/Select";
+import Search from "../components/Search";
+import SavedRecipes from "../components/SavedRecipes";
 import { getRecipes } from "../../services/api_service";
 // import Pagination from "../../utils/Pagination";
 

@@ -1,19 +1,60 @@
-# Aplikacija "Recepti za prijatelje"
+# Friendly recipes
 
-Aplikacija je namenjena osobama koje vole da eksperimentišu sa namirnicama, kreiraju i dele svoje recepte.
+The web app for recipes and cooking tips sharing between users.
+For the frontend development is used ReactJS and for the backend NodeJS.
 
-Kada se učita, prikazuje se početna strana (komponenta: Welcome.js) sa formama za log in ili registraciju korisnika ("public" komponente). Popunjavanjem jedne od njih pristupa se delu aplikacije koji se sastoji od "private" komponenti.
+https://friendlyrecipes.netlify.app/
 
-Početna strana (Main.js) prikazuje listu svih recepata koje je moguce filtrirati po težini ili kategoriji i vršiti pretragu po nazivu.
+.
+├── private
+│ ├── components
+│ │ ├── AddTip.js
+│ │ ├── LogOut.js
+│ │ ├── Navbar.js
+│ │ ├── recipe.css
+│ │ ├── Recipe.js
+│ │ ├── RecipeList.js
+│ │ ├── SavedRecipes.js
+│ │ ├── Search.js
+│ │ ├── Select.js
+│ │ ├── TipsList.js
+│ │ └── UserChange.js
+│ ├── containers
+│ │ ├── AddRecipe.js
+│ │ ├── Main.js
+│ │ ├── Profile.js
+│ │ └── Tips.js
+│ └── PrivateRoute.js
+├── public
+│ ├── components
+│ │ ├── Footer.js
+│ │ ├── Header.js
+│ │ ├── Loader.js
+│ │ ├── LogIn.js
+│ │ └── Register.js
+│ ├── containers
+│ │ └── Welcome.js
+│ └── PublicRoute.js
+├── services
+│ ├── api_service.js
+│ └── auth_service.js
+├── utils
+│ ├── img
+│ │ ├── chef.jpg
+│ │ └── loading.gif
+│ └── Pagination.js
+├── App.css
+├── App.js
+├── App.test.js
+├── index.css
+├── index.js
+└── logo.svg
 
-Klikom na dugme "sačuvaj recept" korisnik dodaje recept na listu sačuvanih sa koje je moguce i izbrisati ga.
-//dodati: dodavanje sačuvanih recepata POST metodom
+## Functionalities
 
-Stranica "dodaj recept" prikazuje formu (popunjavanjem korisnik moze dodati svoj recept na listu svih recepata) i izgled samog recepta pre dodavanja.
-
-saveti:
-//dodati: listu korisnih saveta i mogućnost dodavanja saveta od strane korisnika
-
-profil:
-informacije o ulogovanom korisniku i lista ostalih korisnika servera
-//dodati mogućnost izmene profilne slike, email-a i passworda
+- Creating and signing in users
+- Search recipes by name and filtering by category or difficulty
+- Saving recipes, preview the list of saved and deleting recipes from it.
+- Adding cooking tips on tips list that can be seen by all users
+- Creating recipes
+- Profile page with users informations

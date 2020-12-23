@@ -1,5 +1,5 @@
 import React from "react";
-import { LogIn } from "./LogIn";
+import { LogIn } from "../components/LogIn";
 
 export const Welcome = () => {
   return (

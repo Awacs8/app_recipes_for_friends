@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getTips } from "../../services/api_service";
-import TipsList from "./TipsList";
+import TipsList from "../components/TipsList";
 
 const Tips = () => {
   const [tips, setTips] = useState([]);
