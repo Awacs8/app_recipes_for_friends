@@ -69,8 +69,14 @@ button:hover {
     background-color: rgba(233, 133, 10, 0.733);
     margin: 8px;
     padding: 20px;
-    width: 80%;
+    width: 90%;
     font-family: "Gloria Hallelujah";
     transform: none;
+  }
+  .single_recipe {
+    width: 90%;
+  }
+  .saved-recipe {
+    width: 95%;
   }
 }

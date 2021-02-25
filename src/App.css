@@ -461,7 +461,7 @@ ul {
     height: 60%;
   }
   .rec.rec-carousel-wrapper {
-    width: 90%;
+    width: 95%;
   }
   .rec.rec-arrow {
     display: none;
@@ -476,14 +476,13 @@ ul {
     font-size: 18px;
   }
   .form {
-    width: 60%;
+    width: 90%;
     min-height: 350px;
-
     padding-top: 40px;
     display: block;
   }
   .form > input {
-    width: 70%;
+    width: 80%;
   }
   .nav_bar {
     flex-direction: row;
