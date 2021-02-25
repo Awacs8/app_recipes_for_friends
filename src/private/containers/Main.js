@@ -15,7 +15,7 @@ const Main = () => {
 
   useEffect(() => {
     getRecipes().then((response) => {
-      setRecipes(response.data.recipes);
+      setRecipes(response.data);
     });
   }, []);
 
@@ -30,8 +30,8 @@ const Main = () => {
     let tmp = [...recipes];
     const selected = tmp.filter(
       (el) =>
-        el.difficulty === selectedValue ||
-        el.category.toLowerCase() === selectedValue
+        el.category.toLowerCase() === selectedValue ||
+        el.difficulty === selectedValue
     );
     selectedValue === "izaberi" ? setFiltered(recipes) : setFiltered(selected);
   };
@@ -39,7 +39,7 @@ const Main = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     let search = recipes.filter((recipe) =>
-      recipe.name.toLowerCase().includes(e.target.value.toLowerCase())
+      recipe.title.toLowerCase().includes(e.target.value.toLowerCase())
     );
     setFiltered(search);
   };

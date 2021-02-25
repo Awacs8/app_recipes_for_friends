@@ -3,7 +3,7 @@ import { sendRecipes } from "../../services/api_service";
 import { Link } from "react-router-dom";
 
 const AddRecipe = () => {
-  const [name, setName] = useState("");
+  const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
   const [difficulty, setDifficulty] = useState("");
   const [preparation_time, setPreparation_time] = useState("");
@@ -16,7 +16,7 @@ const AddRecipe = () => {
   const [info, setInfo] = useState("");
 
   let recipe = {
-    name: name,
+    title: title,
     category: category,
     difficulty: difficulty,
     preparation_time: preparation_time,
@@ -48,11 +48,11 @@ const AddRecipe = () => {
 
   const sendRecipe = (e) => {
     e.preventDefault();
-    // console.log(recipe)
+    console.log(recipe);
     sendRecipes(recipe).then(() => {
-      console.log(recipe);
+      // console.log(recipe);
       setInfo("Tvoj recept se nalazi na listi svih recepata");
-      setName("");
+      setTitle("");
       setCategory("");
       setDifficulty("");
       setPreparation_time("");
@@ -69,10 +69,10 @@ const AddRecipe = () => {
           <label htmlFor="name">Naziv recepta: </label>
           <input
             type="text"
-            name="name"
+            name="title"
             id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
             required
           />
           <br />
@@ -108,7 +108,7 @@ const AddRecipe = () => {
           <label>srednje</label>
           <input
             type="radio"
-            value="teško"
+            value="tesko"
             name="difficulty"
             onClick={(e) => setDifficulty(e.target.value)}
           />
@@ -136,7 +136,7 @@ const AddRecipe = () => {
           <br />
           <label htmlFor="quantity"> količina: </label>
           <input
-            type="text"
+            type="number"
             id="quantity"
             name="quantity"
             value={quantity}
@@ -173,7 +173,7 @@ const AddRecipe = () => {
         </div>
         <div className="recipe_view">
           <h3>Izgled recepta</h3>
-          <h2>{recipe.name}</h2>
+          <h2>{recipe.title}</h2>
           <p>
             <b>
               <u>Kategorija:</u>

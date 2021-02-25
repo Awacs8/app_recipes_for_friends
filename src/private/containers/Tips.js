@@ -8,7 +8,7 @@ const Tips = () => {
 
   useEffect(() => {
     getTips().then((response) => {
-      setTips(response.data.tips);
+      setTips(response.data);
     });
   }, []);
 

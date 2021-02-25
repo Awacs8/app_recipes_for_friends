@@ -7,7 +7,7 @@ const RecipeList = ({ filtered, handleClick }) => {
   return (
     <div className="recipe_list">
       {filtered.map((recipe) => (
-        <Recipe key={recipe.id} recipe={recipe} handleClick={handleClick} />
+        <Recipe key={recipe._id} recipe={recipe} handleClick={handleClick} />
       ))}
     </div>
   );

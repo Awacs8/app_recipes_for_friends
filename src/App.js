@@ -14,6 +14,7 @@ import Tips from "./private/containers/Tips";
 import AddTip from "./private/components/AddTip";
 import { LogIn } from "./public/components/LogIn";
 import { Register } from "./public/components/Register";
+import SingleRecipe from "./private/components/SingleRecipe";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <PublicRoute component={LogIn} path="/login" />
           <PublicRoute component={Register} path="/register" />
           <PrivateRoute component={Main} path="/main" />
+          <PrivateRoute component={SingleRecipe} path="/recipe/:_id" />
           <PrivateRoute component={Tips} path="/tips" />
           <PrivateRoute component={AddTip} path="/addtip" />
           <PrivateRoute component={AddRecipe} path="/addrecipe" />

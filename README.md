@@ -5,7 +5,6 @@ For the frontend development is used ReactJS and for the backend NodeJS.
 
 https://friendlyrecipes.netlify.app/
 
-.
 ├── private<br/>
 │ ├── components<br/>
 │ │ ├── AddTip.js<br/>

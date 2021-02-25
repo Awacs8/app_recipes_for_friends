@@ -38,7 +38,7 @@ const Profile = () => {
         <label>Ostatak ekipe:</label>
         <ul>
           {users.map((user) => (
-            <li key={user.id}>
+            <li key={user._id}>
               {user.first_name} {user.last_name} kao {user.username}
               <br />
               Kontakt: {user.email}

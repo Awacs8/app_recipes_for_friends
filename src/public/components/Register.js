@@ -49,7 +49,7 @@ export const Register = () => {
         .then(() => {
           logIn(username, password).then((res) => {
             setToken(res.data.token);
-            setId(res.data.user.id);
+            setId(res.data.user._id);
             history.push("/");
             window.location.reload();
           });

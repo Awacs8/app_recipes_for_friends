@@ -20,11 +20,10 @@ export const LogIn = () => {
       setLoading(true);
       logIn(username, password)
         .then((res) => {
-          console.log(res);
           setToken(res.data.token);
-          setId(res.data.user.id);
+          setId(res.data.user._id);
           history.push("/");
-          // setError("");
+          setError("");
           window.location.reload();
         })
         .catch((error) => {

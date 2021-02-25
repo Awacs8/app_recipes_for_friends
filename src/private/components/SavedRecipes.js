@@ -9,18 +9,19 @@ import { removeSavedRecipe } from "../../services/api_service";
 const SavedRecipes = () => {
   const [saved, setSaved] = useState([]);
   const [info, setInfo] = useState("");
-  const id = getId();
+  const userId = getId();
 
   useEffect(() => {
-    getUserById(id).then((response) => {
+    getUserById(userId).then((response) => {
       setSaved(response.data.saved_recipes);
     });
-  }, [id]);
+  }, [saved]);
 
   const removeRecipe = (recipe) => {
-    removeSavedRecipe(id, recipe).then((response) => {
-      setInfo(`obrisan recept ${recipe.name}`);
+    removeSavedRecipe(userId, recipe).then((response) => {
+      console.log(response.data);
       setSaved(response.data.saved_recipes);
+      setInfo(`obrisan recept ${recipe.title}`);
     });
   };
 
@@ -29,9 +30,9 @@ const SavedRecipes = () => {
       <label>{info}</label>
       <Carousel>
         {saved.map((recipe) => (
-          <div key={recipe.id} className="saved-recipe">
+          <div key={recipe._id} className="saved-recipe">
             <button onClick={() => removeRecipe(recipe)}>X</button>
-            <h2>{recipe.name}</h2>
+            <h2>{recipe.title}</h2>
             <p>
               <b>Težina:</b> {recipe.difficulty}
             </p>
