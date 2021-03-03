@@ -21,59 +21,60 @@ const SingleRecipe = ({ match }) => {
       setIngredients(recipe.ingredients);
       setPreparationsSteps(recipe.preparation_steps);
     });
-  }, []);
+  }, [recipeId]);
 
   const handleClick = (recipe) => {
     saveRecipe(userId, recipe)
       .then(() => {
-        setInfo("* pogledaj u sačuvanim receptima");
+        setInfo("* pogledaj u sačuvanim ");
       })
       .catch((error) => {
-        setInfo("*recept je već sačuvan");
+        setInfo("* recept je već u sačuvanim ");
         console.log(error);
       });
   };
 
   return (
-    <>
-      <Link to="/main">
-        <button>idi na sve recepte</button>
-      </Link>
-
-      <div className="single_recipe">
-        <h2>{recipe.title}</h2>
-        <p>
-          <b>Težina:</b> {recipe.difficulty}
-        </p>
-        <p>
-          <b>Vreme pripreme:</b> {recipe.preparation_time} min
-        </p>
-
-        <ul>
-          <b>Sastojci:</b>
-          {ingredients.map((el) => (
-            <li key={uuidv4()}>
-              {el.ingName} {el.quantity} {el.unit_of_measure}
-            </li>
-          ))}
-        </ul>
-        <ul>
-          <b>Način pripreme:</b>
-          {preparationSteps.map((el) => (
-            <li key={uuidv4()}>{el}</li>
-          ))}
-        </ul>
-        <button
-          style={{ opacity: info.length > 0 ? "0.6" : "1" }}
-          onClick={() => {
-            handleClick(recipe);
-          }}
+    <div className="single_recipe">
+      <h2>{recipe.title}</h2>
+      <p>
+        <b>Težina:</b> {recipe.difficulty}
+      </p>
+      <p>
+        <b>Vreme pripreme:</b> {recipe.preparation_time} min
+      </p>
+      <ul>
+        <b>Sastojci:</b>
+        {ingredients.map((el) => (
+          <li key={uuidv4()}>
+            {el.ingName} {el.quantity} {el.unit_of_measure}
+          </li>
+        ))}
+      </ul>
+      <ul>
+        <b>Način pripreme:</b>
+        {preparationSteps.map((el) => (
+          <li key={uuidv4()}>{el}</li>
+        ))}
+      </ul>
+      <button
+        style={{ opacity: info.length > 0 ? "0.6" : "1" }}
+        onClick={() => {
+          handleClick(recipe);
+        }}
+      >
+        dodaj u omiljene
+      </button>
+      <sup>
+        {info}
+        <Link
+          to="/main"
+          style={{ display: info.length > 0 ? "inline" : "none" }}
         >
-          dodaj u omiljene
-        </button>
-        <sup>{info}</sup>
-      </div>
-    </>
+          receptima
+        </Link>
+      </sup>
+    </div>
   );
 };
 export default SingleRecipe;

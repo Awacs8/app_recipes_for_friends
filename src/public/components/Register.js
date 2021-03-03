@@ -37,7 +37,7 @@ export const Register = () => {
       password.trim() === "" ||
       confirmPass.trim === ""
     ) {
-      setError("Popuni sva polja");
+      setError("popuni sva polja");
       return;
     }
     if (password !== confirmPass) {
@@ -56,7 +56,7 @@ export const Register = () => {
         })
         .catch((error) => {
           setLoading(false);
-          setError("Korisnik već postoji. Promeni username.");
+          setError("korisnik već postoji");
           console.log(error);
         });
     }

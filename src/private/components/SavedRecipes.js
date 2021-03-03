@@ -15,11 +15,10 @@ const SavedRecipes = () => {
     getUserById(userId).then((response) => {
       setSaved(response.data.saved_recipes);
     });
-  }, [saved]);
+  }, [userId]);
 
   const removeRecipe = (recipe) => {
     removeSavedRecipe(userId, recipe).then((response) => {
-      console.log(response.data);
       setSaved(response.data.saved_recipes);
       setInfo(`obrisan recept ${recipe.title}`);
     });
@@ -28,6 +27,9 @@ const SavedRecipes = () => {
   return (
     <div className="main">
       <label>{info}</label>
+      <label style={{ display: saved.length > 0 ? "none" : "inline-block" }}>
+        trenutno nema sačuvanih recepata
+      </label>
       <Carousel>
         {saved.map((recipe) => (
           <div key={recipe._id} className="saved-recipe">

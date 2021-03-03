@@ -5,9 +5,9 @@ import { isLogIn } from "../../services/auth_service";
 
 export const Header = () => {
   return (
-    <div className="header">
+    <header>
       <h1>RECEPTI ZA PRIJATELJE</h1>
       {isLogIn() ? <LogOut /> : null}
-    </div>
+    </header>
   );
 };

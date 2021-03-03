@@ -196,6 +196,7 @@ const AddRecipe = () => {
             <b>
               <u>Sastojci:</u>
             </b>
+            <br />
             <sup>
               *za uporedjivanje jedinica mere pogledaj odeljak
               <Link to="/tips"> saveti</Link>

@@ -8,7 +8,7 @@ const Navbar = () => {
     <div style={{ display: isLogIn() ? "block" : "none" }}>
       <ul className="nav_bar">
         <Link to="/main" className="nav_item">
-          <li>početna</li>
+          <li>svi recepti</li>
         </Link>
         <Link to="/tips" className="nav_item">
           <li>saveti</li>
