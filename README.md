@@ -1,7 +1,8 @@
 # Friendly recipes
 
 The web app for recipes and cooking tips sharing between users.
-For the frontend development is used ReactJS and for the backend NodeJS.
+Used frameworks:
+For the frontend development is used ReactJS and for the backend NodeJS and MongoDB.
 
 https://friendlyrecipes.netlify.app/
 
@@ -51,7 +52,7 @@ https://friendlyrecipes.netlify.app/
 
 ## Functionalities
 
-- Creating and signing in users
+- Creating user and signing in
 - Search recipes by name and filtering by category or difficulty
 - Saving recipes, preview the list of saved and deleting recipes from it.
 - Adding cooking tips on tips list that can be seen by all users
