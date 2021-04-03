@@ -54,17 +54,21 @@ const Main = () => {
   return (
     <div className="main">
       <section className="nav_main">
-        <Select handleChange={handleChange} />
-        <Search handleSearch={handleSearch} />
-        <button
-          // style={{ opacity: uniqueSaved.length > 0 ? "1" : "0.6" }}
-          onClick={() => setShow(!show)}
-        >
-          Sačuvani recepti
-          {/* ({uniqueSaved.length}) */}
-        </button>
+        <article>
+          <button
+            // style={{ opacity: uniqueSaved.length > 0 ? "1" : "0.6" }}
+            onClick={() => setShow(!show)}
+          >
+            Sačuvani recepti
+            {/* ({uniqueSaved.length}) */}
+          </button>
+          {show && <SavedRecipes />}
+        </article>
+        <article className="filters">
+          <Select handleChange={handleChange} />
+          <Search handleSearch={handleSearch} />
+        </article>
       </section>
-      {show && <SavedRecipes />}
       <section className="display_main">
         <RecipeList filtered={filtered} />
       </section>

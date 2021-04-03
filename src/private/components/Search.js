@@ -5,7 +5,7 @@ const Search = ({ handleSearch }) => {
     <div>
       <label>pronadji recept:</label>
       <br />
-      <input onChange={handleSearch} />
+      <input onChange={handleSearch} placeholder="...pronadji recept" />
     </div>
   );
 };
