@@ -1,7 +1,7 @@
 import React from "react";
 import Recipe from "./Recipe";
-import "../../App.css";
-import "./recipe.css";
+
+import "../../utils&assets/css/recipe.css";
 
 const RecipeList = ({ filtered, handleClick }) => {
   return (

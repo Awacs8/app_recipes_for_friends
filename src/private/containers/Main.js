@@ -20,8 +20,7 @@ const Main = () => {
   }, []);
 
   useEffect(() => {
-    setFiltered(recipes);
-    // console.log(JSON.stringify(recipes));
+    setFiltered(recipes)
   }, [recipes]);
 
   const handleChange = (e) => {

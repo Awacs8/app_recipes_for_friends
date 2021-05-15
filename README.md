@@ -6,22 +6,26 @@ For the frontend development is used ReactJS and for the backend NodeJS and Mong
 
 https://friendlyrecipes.netlify.app/
 
+.
 ├── private<br/>
 │ ├── components<br/>
 │ │ ├── AddTip.js<br/>
 │ │ ├── LogOut.js<br/>
 │ │ ├── Navbar.js<br/>
-│ │ ├── recipe.css<br/>
+│ │ ├── NewRecipeForm.js<br/>
+│ │ ├── NewRecipePreview.js<br/>
 │ │ ├── Recipe.js<br/>
 │ │ ├── RecipeList.js<br/>
 │ │ ├── SavedRecipes.js<br/>
 │ │ ├── Search.js<br/>
 │ │ ├── Select.js<br/>
+│ │ ├── SingleRecipe.js<br/>
 │ │ ├── TipsList.js<br/>
 │ │ └── UserChange.js<br/>
 │ ├── containers<br/>
 │ │ ├── AddRecipe.js<br/>
 │ │ ├── Main.js<br/>
+│ │ ├── NewRecipe.js<br/>
 │ │ ├── Profile.js<br/>
 │ │ └── Tips.js<br/>
 │ └── PrivateRoute.js<br/>
@@ -38,17 +42,19 @@ https://friendlyrecipes.netlify.app/
 ├── services<br/>
 │ ├── api_service.js<br/>
 │ └── auth_service.js<br/>
-├── utils<br/>
+├── utils&assets<br/>
+│ ├── css<br/>
+│ │ ├── App.css<br/>
+│ │ ├── index.css<br/>
+│ │ └── recipe.css<br/>
 │ ├── img<br/>
 │ │ ├── chef.jpg<br/>
-│ │ └── loading.gif<br/>
+│ │ ├── loading.gif<br/>
+│ │ └── vegetables.jpg<br/>
 │ └── Pagination.js<br/>
-├── App.css<br/>
 ├── App.js<br/>
 ├── App.test.js<br/>
-├── index.css<br/>
-├── index.js<br/>
-└── logo.svg<br/>
+└── index.js<br/>
 
 ## Functionalities
 

@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./recipe.css";
-import "../../App.css";
+import "../../utils&assets/css/recipe.css";
 
 const Recipe = ({ recipe }) => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import "../../App.css";
+//import "../../App.css";
 import LogOut from "../../private/components/LogOut";
 import { isLogIn } from "../../services/auth_service";
 

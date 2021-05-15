@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./recipe.css";
-import "../../App.css";
+import "../../utils&assets/css/recipe.css";
 import { v4 as uuidv4 } from "uuid";
 import { saveRecipe, getRecipeById } from "../../services/api_service";
 import { getId } from "../../services/auth_service";

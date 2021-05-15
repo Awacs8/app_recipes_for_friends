@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getId, getUserById, getAllUsers } from "../../services/auth_service";
 // import UserChange from './UserChange'
-import chef from "../../utils/img/chef.jpg";
+import chef from "../../utils&assets/img/chef.jpg";
 
 const Profile = () => {
   const [user, setUser] = useState({});
