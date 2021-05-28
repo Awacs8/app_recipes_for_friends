@@ -1,12 +1,11 @@
 # Friendly recipes
 
 The web app for recipes and cooking tips sharing between users.
-Used frameworks:
-For the frontend development is used ReactJS and for the backend NodeJS and MongoDB.
+Used frameworks/libraries:
+ReactJS for the frontend, NodeJS for the backend.
 
 https://friendlyrecipes.netlify.app/
 
-.
 ├── private<br/>
 │ ├── components<br/>
 │ │ ├── AddTip.js<br/>

@@ -2,14 +2,13 @@ import React, { useState, useEffect } from "react";
 import RecipeList from "../components/RecipeList";
 import Select from "../components/Select";
 import Search from "../components/Search";
-import SavedRecipes from "../components/SavedRecipes";
 import { getRecipes } from "../../services/api_service";
 // import Pagination from "../../utils/Pagination";
 
 const Main = () => {
   const [recipes, setRecipes] = useState([]);
   const [filtered, setFiltered] = useState([]);
-  const [show, setShow] = useState(false);
+  //const [show, setShow] = useState(false);
   // const [currentPage, setCurrentPage] = useState(1);
   // const [itemsPerPage] = useState(6);
 
@@ -20,7 +19,7 @@ const Main = () => {
   }, []);
 
   useEffect(() => {
-    setFiltered(recipes)
+    setFiltered(recipes);
   }, [recipes]);
 
   const handleChange = (e) => {
@@ -52,22 +51,11 @@ const Main = () => {
 
   return (
     <div className="main">
-      <section className="nav_main">
-        <article>
-          <button
-            // style={{ opacity: uniqueSaved.length > 0 ? "1" : "0.6" }}
-            onClick={() => setShow(!show)}
-          >
-            Sačuvani recepti
-            {/* ({uniqueSaved.length}) */}
-          </button>
-          {show && <SavedRecipes />}
-        </article>
-        <article className="filters">
-          <Select handleChange={handleChange} />
-          <Search handleSearch={handleSearch} />
-        </article>
+      <section className="filters">
+        <Select handleChange={handleChange} />
+        <Search handleSearch={handleSearch} />
       </section>
+
       <section className="display_main">
         <RecipeList filtered={filtered} />
       </section>

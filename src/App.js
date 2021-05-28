@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Redirect,
+  Route,
+} from "react-router-dom";
 import "./utils&assets/css/App.css";
 import PrivateRoute from "./private/PrivateRoute";
 import PublicRoute from "./public/PublicRoute";
@@ -15,6 +20,7 @@ import { LogIn } from "./public/components/LogIn";
 import { Register } from "./public/components/Register";
 import SingleRecipe from "./private/components/SingleRecipe";
 import NewRecipe from "./private/containers/NewRecipe";
+import SavedRecipes from "./private/components/SavedRecipes";
 
 function App() {
   return (
@@ -25,12 +31,13 @@ function App() {
         <Switch>
           <PublicRoute component={LogIn} path="/login" />
           <PublicRoute component={Register} path="/register" />
-          <PrivateRoute component={Main} path="/main" />
+          <Route component={Main} path="/main" />
           <PrivateRoute component={SingleRecipe} path="/recipe/:_id" />
           <PrivateRoute component={Tips} path="/tips" />
           <PrivateRoute component={AddTip} path="/addtip" />
           <PrivateRoute component={NewRecipe} path="/addrecipe" />
           <PrivateRoute component={Profile} path="/profile" />
+          <PrivateRoute component={SavedRecipes} path="/saved" />
           <PublicRoute component={Welcome} exact path="/" />
           <Redirect from="/" to="/main" />
         </Switch>

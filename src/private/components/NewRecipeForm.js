@@ -20,7 +20,8 @@ const NewRecipeForm = ({ recipe, setRecipe }) => {
     setIngredient({ ...ingredient, [name]: value });
   };
 
-  const addIngredient = () => {
+  const addIngredient = (e) => {
+    e.preventDefault();
     const tmp = [...recipe.ingredients, ingredient];
     setRecipe({
       ...recipe,
@@ -33,7 +34,8 @@ const NewRecipeForm = ({ recipe, setRecipe }) => {
     });
   };
 
-  const addStep = () => {
+  const addStep = (e) => {
+    e.preventDefault();
     const tmp = [...recipe.preparation_steps, preparation_step];
     setRecipe({
       ...recipe,
@@ -43,7 +45,7 @@ const NewRecipeForm = ({ recipe, setRecipe }) => {
   };
 
   return (
-    <div className="add_recipe">
+    <form>
       <label htmlFor="name">Naziv recepta: </label>
       <input
         type="text"
@@ -68,35 +70,33 @@ const NewRecipeForm = ({ recipe, setRecipe }) => {
         <option value="glavna jela">glavna jela</option>
         <option value="dezerti">dezerti</option>
       </select>
-      <br />
-      <label htmlFor="difficulty">Težina: </label>
-      <label>lako</label>
-      <input
-        type="radio"
-        checked={recipe.difficulty === "lako"}
-        value="lako"
-        name="difficulty"
-        onChange={handleChange}
-      />
-      <br />
-      <label>srednje</label>
-      <input
-        type="radio"
-        checked={recipe.difficulty === "srednje"}
-        value="srednje"
-        name="difficulty"
-        onChange={handleChange}
-      />
-      <br />
-      <label>teško</label>
-      <input
-        type="radio"
-        checked={recipe.difficulty === "teško"}
-        value="teško"
-        name="difficulty"
-        onChange={handleChange}
-      />
-      <br />
+      <article>
+        <label htmlFor="difficulty">Težina: </label>
+        <span>lako</span>
+        <input
+          type="radio"
+          checked={recipe.difficulty === "lako"}
+          value="lako"
+          name="difficulty"
+          onChange={handleChange}
+        />
+        <span>srednje</span>
+        <input
+          type="radio"
+          checked={recipe.difficulty === "srednje"}
+          value="srednje"
+          name="difficulty"
+          onChange={handleChange}
+        />
+        <span>teško</span>
+        <input
+          type="radio"
+          checked={recipe.difficulty === "teško"}
+          value="teško"
+          name="difficulty"
+          onChange={handleChange}
+        />
+      </article>
       <label htmlFor="preparation_time">Vreme pripreme (min): </label>
       <input
         type="number"
@@ -106,45 +106,50 @@ const NewRecipeForm = ({ recipe, setRecipe }) => {
         onChange={handleChange}
       />
       <br />
+
       <label>Sastojci: </label>
       <br />
-      <label htmlFor="ingName">naziv sastojka: </label>
-      <input
-        type="text"
-        id="ingName"
-        name="ingName"
-        value={ingredient.ingName}
-        onChange={handleIngChange}
-      />
-      <br />
-      <label htmlFor="quantity"> količina: </label>
-      <input
-        type="text"
-        id="quantity"
-        name="quantity"
-        value={ingredient.quantity}
-        onChange={handleIngChange}
-      />
-      <br />
-      <label> jedinica mere: </label>
-      <select
-        name="unit_of_measure"
-        id="unit_of_measure"
-        value={ingredient.unit_of_measure}
-        onChange={handleIngChange}
-      >
-        <option value="izaberi">izaberi...</option>
-        <option value="kom">kom</option>
-        <option value="kg">kg</option>
-        <option value="g">g</option>
-        <option value="l">l</option>
-        <option value="ml">ml</option>
-        <option value="šolja">šolja</option>
-        <option value="tsp (kafena kašičica)">tsp (kafena kašičica)</option>
-        <option value="tbsp (supena kašika)">tbsp (supena kašika)</option>
-      </select>
-      <br />
-      <button onClick={addIngredient}>dodaj sledeći sastojak</button>
+      <article>
+        {/* <label htmlFor="ingName">naziv sastojka: </label> */}
+        <input
+          type="text"
+          id="ingName"
+          name="ingName"
+          value={ingredient.ingName}
+          onChange={handleIngChange}
+          placeholder="naziv"
+        />
+
+        {/* <label htmlFor="quantity">količina: </label> */}
+        <input
+          type="text"
+          id="quantity"
+          name="quantity"
+          value={ingredient.quantity}
+          onChange={handleIngChange}
+          placeholder="količina"
+        />
+
+        {/* <label> jedinica mere: </label> */}
+        <select
+          name="unit_of_measure"
+          id="unit_of_measure"
+          value={ingredient.unit_of_measure}
+          onChange={handleIngChange}
+        >
+          <option value="izaberi">jedinica mere</option>
+          <option value="kom">kom</option>
+          <option value="kg">kg</option>
+          <option value="g">g</option>
+          <option value="l">l</option>
+          <option value="ml">ml</option>
+          <option value="šolja">šolja</option>
+          <option value="tsp (kafena kašičica)">tsp (kafena kašičica)</option>
+          <option value="tbsp (supena kašika)">tbsp (supena kašika)</option>
+        </select>
+      </article>
+      <button onClick={addIngredient}>+</button>
+      <span>dodaj sastojak</span>
       <br />
       <label htmlFor="preparation_step">Koraci: </label>
       <br />
@@ -156,9 +161,10 @@ const NewRecipeForm = ({ recipe, setRecipe }) => {
         onChange={(e) => setPreparation_step(e.target.value)}
       />
       <br />
-      <button onClick={addStep}>dodaj sledeći korak</button>
+      <button onClick={addStep}>+</button>
+      <span>sledeći korak</span>
       <br />
-    </div>
+    </form>
   );
 };
 

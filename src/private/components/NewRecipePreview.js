@@ -8,13 +8,13 @@ const NewRecipePreview = ({ recipe }) => {
       <h2>{recipe.title}</h2>
       <p>
         <b>
-          <u>Kategorija:</u>
+          <u>Kategorija: </u>
         </b>
         {recipe.category}
       </p>
       <p>
         <b>
-          <u>Težina:</u>
+          <u>Težina: </u>
         </b>
         {recipe.difficulty}
       </p>
@@ -26,9 +26,8 @@ const NewRecipePreview = ({ recipe }) => {
       </p>
       <ul>
         <b>
-          <u>Sastojci:</u>
+          <u>Sastojci: </u>
         </b>
-        <br />
         <sup>
           *za uporedjivanje jedinica mere pogledaj odeljak
           <Link to="/tips"> saveti</Link>
@@ -41,7 +40,7 @@ const NewRecipePreview = ({ recipe }) => {
       </ul>
       <ul>
         <b>
-          <u>Način pripreme:</u>
+          <u>Način pripreme: </u>
         </b>
         {recipe.preparation_steps.map((el) => (
           <li key={el}>{el}</li>

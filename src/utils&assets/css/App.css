@@ -1,208 +1,198 @@
-@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Pangolin&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap"); */
+:root {
+  --fontSize: 16px;
+  --primary: rgb(250, 185, 79);
+  --secondary: rgb(255, 115, 0);
+  --tertiary: rgb(14, 15, 15);
+  --boxShadow: 5px 5px 7px rgba(33, 33, 33, 1);
+}
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
-  font-family: "Gloria Hallelujah";
+  /* font-family: "Kalam", cursive; */
+  color: var(--tertiary);
+  font-family: "Pangolin";
   background-image: url("https://lostsurfboards.net/wp-content/uploads/2017/10/cork-wallpaper-25-wallpaper-background-hd.jpg");
 }
 
-/* Loader */
+/* LOADER */
 
 .loader {
   margin: 0 auto;
   width: 500px;
   height: 500px;
 }
-
 .loader > img {
   width: 100%;
   height: 100%;
   opacity: 0.5;
 }
 
+/* GLOBAL */
+
 header {
   width: 100%;
   text-align: center;
   background-size: cover;
-  background-image: url("https://st2.depositphotos.com/2013817/7377/v/950/depositphotos_73777067-stock-illustration-seamless-texture-with-kitchen-utensils.jpg");
+  background-image: url("../img/background.jpg");
 }
 h1 {
   color: rgb(255, 115, 0);
-  font-size: 50px;
-  text-shadow: 2px 5px 5px rgb(151, 16, 16);
+  font-size: 3.2rem;
+  text-shadow: 8px 8px 5px rgb(14, 10, 10);
   padding: 5%;
   width: 80%;
   display: inline-block;
 }
 h2 {
   text-align: center;
-  background-color: rgba(255, 166, 0, 0.603);
+  background-color: var(--secondary);
+  font-size: 1.8rem;
 }
-.welcome_page {
-  min-height: 500px;
-}
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  text-align: center;
-}
-.form {
+form {
   background-color: rgba(233, 133, 10, 0.733);
   width: 400px;
-  color: rgb(252, 99, 11);
   text-align: center;
   margin: 50px auto;
   padding: 30px 0px;
 }
-.form > p {
-  color: black;
-}
 a {
   text-decoration: none;
-  color: black;
+  color: var(--tertiary);
 }
 a > p {
   max-width: 200px;
   margin: 0 auto;
-  border: solid orange;
-  border-radius: 15%;
+  border: solid var(--tertiary) 2px;
+  border-radius: 10%;
 }
 a > p:hover {
   background-color: orangered;
 }
+ul {
+  list-style-type: none;
+}
 label {
   margin: 10px;
-  background-color: rgba(231, 220, 220, 0.623);
-  font-size: 16px;
+  font-size: 1.1rem;
   font-weight: 600;
   padding-left: 5px;
-  color: rgb(14, 15, 15);
+  color: var(--tertiary);
   height: 31px;
 }
-
 span {
-  color: rgb(230, 224, 224);
   font-weight: 700;
 }
-
 input {
-  font-size: 15px;
-  font-family: "Gloria Hallelujah";
-  border-radius: 30%;
-  border: darkorange solid;
-  background-color: rgb(238, 238, 76);
-  height: 30px;
+  font-size: 0.9rem;
+  font-family: "Pangolin";
+  border-radius: 10%;
+  border: var(--tertiary) solid 2px;
+  background-color: var(--secondary);
+  height: 35px;
   margin: 3px;
 }
-
 input:focus {
-  border: red solid 3px;
-  border-radius: 8%;
+  border: none;
   text-align: center;
   outline: none;
 }
-
+input::placeholder {
+  color: var(--tertiary);
+  font-weight: 800;
+  text-align: center;
+}
 textarea {
-  font-size: 15px;
+  font-size: 0.9rem;
+  font-family: "Pangolin";
   border-radius: 10%;
-  border: darkorange solid;
-  background-color: rgb(238, 238, 76);
+  border: var(--tertiary) solid 2px;
+  background-color: var(--secondary);
   width: 90%;
   height: 100px;
 }
-
 textarea:focus {
   outline: none;
-  border: red solid 3px;
+  border: none;
 }
-
 select {
-  font-family: "Gloria Hallelujah";
-  font-size: 15px;
+  font-family: "Pangolin";
+  font-size: 0.9rem;
   font-weight: 600;
-  border: darkorange solid;
+  border: var(--tertiary) solid 2px;
   height: 40px;
   width: 50%;
-  background-color: rgb(238, 238, 76);
+  background-color: var(--secondary);
 }
-
 select:focus {
-  border: red solid 3px;
-  border-radius: 3%;
   outline: none;
 }
+sup {
+  font-size: 0.7rem;
+}
+footer {
+  width: 100%;
+  height: 150px;
+  text-align: center;
+  background-image: url("../img/background.jpg");
+  background-size: cover;
+  padding-top: 50px;
+}
+footer h3 {
+  color: var(--tertiary);
+}
 
+/* COMPONENTS */
+
+.welcome_page {
+  min-height: 500px;
+}
 .nav_bar {
-  list-style: none;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 .nav_item {
+  background-color: var(--secondary);
+  box-shadow: var(--boxShadow);
+  -moz-box-shadow: var(--boxShadow);
+  -webkit-box-shadow: var(--boxShadow);
   width: 20%;
-  border: darkorange solid;
-  margin: 3px;
-  font-size: 20px;
+  margin: 5px;
+  padding: 10px 0px;
+  font-size: 1.4rem;
   font-weight: 600;
   text-align: center;
-  color: rgb(12, 12, 11);
-  padding: 5px;
-  background-color: rgba(255, 68, 0, 0.562);
+  color: var(--tertiary);
 }
 .nav_item:hover {
   background-color: orangered;
 }
-
-/* .nav_item ul li {
-  display: none;
-}
-.nav_item:hover ul li {
-  display: block;
-} */
-
-ul {
-  list-style-type: none;
-}
-
 .main {
   width: 80%;
-  padding: 3px;
   margin: 0 auto;
-}
-
-.nav_main {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin: 40px 0 40px 0;
-}
-.nav_main > article {
-  width: 100%;
-}
-.nav_main > article > button {
-  margin-left: 80%;
+  padding: 30px 0px;
 }
 .filters {
   display: flex;
   justify-content: center;
+  background-color: rgba(233, 174, 49, 0.555);
 }
-.filters > div {
+.filters > article {
   width: 45%;
 }
-.filters > div > input {
+.filters > article > input {
   width: 90%;
 }
-::placeholder {
-  color: rgb(238, 238, 76);
-}
-
 .display_main {
   overflow: auto;
-  min-height: 100vh;
-  max-height: 120vh;
+  height: 80vh;
 }
 
 /* CAROUSEL */
@@ -235,6 +225,8 @@ ul {
   box-shadow: 0 0 1px 3px orange;
 }
 
+/* PAGINATION */
+
 .pagination {
   display: flex;
   flex-direction: row;
@@ -246,7 +238,7 @@ ul {
   width: 40px;
 }
 
-/* scrollbar */
+/* SCROLLBAR */
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -261,56 +253,47 @@ ul {
 ::-webkit-scrollbar-thumb:hover {
   background: orange;
 }
-
 .add {
-  display: grid;
-  grid-template-columns: 1fr 35% 35% 1fr;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  margin: 0 auto;
 }
-.add_recipe {
-  background-color: rgba(214, 130, 35, 0.747);
-  margin: 20px;
-  padding: 40px;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  display: inline-block;
+.add > form {
+  flex: 0 40%;
+  text-align: left;
+}
+.add > form > span {
+  font-size: 0.9rem;
+}
+.add > form > article {
+  display: flex;
+}
+#ingName {
+  width: 50%;
+}
+#quantity {
+  width: 25%;
+}
+#unit_of_measure {
+  width: 25%;
 }
 .recipe_view {
-  display: flex;
-  flex-direction: column;
-  background-color: rgba(233, 133, 10, 0.842);
+  flex: 0 40%;
+  min-height: 400px;
+  background-color: var(--primary);
   margin: 20px;
   padding: 20px;
-  grid-column-start: 3;
-  grid-column-end: 4;
-  font-family: "Gloria Hallelujah";
-  -moz-box-shadow: 5px 5px 7px rgba(33, 33, 33, 1);
-  -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
-  box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
-  -webkit-transform: rotate(-3deg);
-  -o-transform: rotate(-3deg);
-  -moz-transform: rotate(-3deg);
-  transform: rotate(-3deg);
-  height: max-content;
+  font-family: "Pangolin";
 }
-.recipe_view section {
-  margin-top: auto;
-  margin-left: auto;
-}
-
 .recipe_view h3 {
   text-align: center;
 }
-
 .tips {
   width: 80%;
   min-height: 500px;
   margin: 0 auto;
-}
-.add_tip {
-  width: 40%;
-  height: 400px;
-  margin: 30px auto;
-  background-color: rgba(233, 133, 10, 0.89);
 }
 .tips_list {
   margin: 0 auto;
@@ -320,14 +303,14 @@ ul {
   justify-content: center;
 }
 .tips_list > div {
-  background-color: rgba(233, 133, 10, 0.89);
+  background-color: var(--primary);
+  font-family: "Kalam", sans-serif;
   width: 200px;
   height: 200px;
   overflow: auto;
   padding: 10px;
   margin: 10px;
 }
-
 .profile {
   margin: 5%;
 }
@@ -337,6 +320,8 @@ ul {
   background-color: rgba(233, 133, 10, 0.733);
   height: 350px;
   width: 250px;
+  font-size: 1.2rem;
+  text-align: center;
 }
 .user img {
   height: 60%;
@@ -344,31 +329,17 @@ ul {
   margin: auto 25px;
 }
 .user-list {
+  font-size: 1.2rem;
   background-color: rgba(233, 133, 10, 0.733);
-  width: 40%;
-  margin: 20px;
+  width: 50%;
+  margin: 20px auto;
   padding: 20px;
 }
-.user-list ul {
-  padding-left: 5%;
-}
 .user-list li {
-  background-color: orange;
+  background-color: var(--secondary);
   margin: 5px;
-  padding: 3px;
+  padding: 5px;
   text-align: center;
-}
-footer {
-  width: 100%;
-  height: 60px;
-  text-align: center;
-  background-color: rgb(221, 134, 21);
-  background-image: url("https://st2.depositphotos.com/2013817/7377/v/950/depositphotos_73777067-stock-illustration-seamless-texture-with-kitchen-utensils.jpg");
-  background-size: cover;
-  padding-top: 50px;
-}
-footer h3 {
-  color: rgb(8, 8, 8);
 }
 
 @media only screen and (max-width: 950px) and (min-width: 600px) {
@@ -407,8 +378,7 @@ footer h3 {
     width: 500px;
   }
   .recipe_list {
-    display: grid;
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
   .recipe {
     background-color: rgba(233, 133, 10, 0.733);
@@ -418,32 +388,20 @@ footer h3 {
     font-family: "Gloria Hallelujah";
   }
   .add {
-    display: flex;
     flex-direction: column;
-    align-items: center;
   }
-  .add_recipe {
-    background-color: rgba(214, 131, 35, 0.521);
-    margin: 20px;
-    padding: 40px;
-    width: 80%;
-    display: block;
-  }
+
   .recipe_view {
     display: block;
-    background-color: rgba(233, 133, 10, 0.733);
+    background-color: var(--primary);
     margin: 20px;
     padding: 20px;
     font-family: "Gloria Hallelujah";
   }
-  .grid {
-    display: block;
+
+  /* form > input {
     width: 70%;
-    margin: 0 auto;
-  }
-  .form > input {
-    width: 70%;
-  }
+  } */
   #login > input {
     width: 70%;
   }
@@ -455,12 +413,14 @@ footer h3 {
   }
   footer {
     height: 100px;
+    margin-top: 0px;
+    background-position: bottom;
   }
   footer > h3 {
-    font-size: 0.8em;
+    font-size: 1rem;
   }
   .welcome_page {
-    min-height: 500px;
+    min-height: 400px;
   }
   .loader {
     width: 100%;
@@ -474,48 +434,36 @@ footer h3 {
     display: none;
   }
   h1 {
-    width: 70%;
     margin: 0 auto;
-    font-size: 20px;
+    font-size: 1.6rem;
     display: block;
   }
   h2 {
-    font-size: 18px;
+    font-size: 1.2rem;
+    padding: 10px;
   }
-  .form {
+  form {
     width: 90%;
     min-height: 350px;
     padding-top: 40px;
     display: block;
   }
-  .form > input {
+  /* form > input {
     width: 80%;
-  }
+  } */
   .nav_bar {
     flex-direction: row;
     width: 100%;
     align-items: center;
   }
   .nav_item {
-    font-size: 15px;
-    width: 40%;
+    font-size: 1rem;
   }
   .filters {
     display: flex;
     flex-direction: column;
-    justify-content: center;
   }
-  .filters > div {
-    width: 100%;
-  }
-  ::placeholder {
-    color: black;
-    text-align: center;
-  }
-  .filters > div:nth-child(2) > label {
-    visibility: hidden;
-  }
-  .filters > div > input {
+  .filters > article {
     width: 100%;
   }
   .add {
@@ -523,39 +471,40 @@ footer h3 {
     flex-direction: column;
     align-items: center;
   }
-  .add_recipe {
-    background-color: rgba(214, 131, 35, 0.521);
-    width: 60%;
+  .add > form {
+    width: 100%;
+  }
+  .add > form > input,
+  select,
+  textarea {
+    width: 98%;
   }
   .recipe_view {
+    width: 100%;
     background-color: rgba(233, 133, 10, 0.733);
-    font-family: "Gloria Hallelujah";
   }
   .main {
-    width: 90%;
+    width: 95%;
+  }
+  .display_main {
+    height: max-content;
   }
   .add_tip {
-    width: 80%;
+    width: 100%;
   }
   .tips_list > div {
     width: 250px;
     height: 250px;
   }
-  /* .grid {
-    display: block;
-    width: 70%;
-    margin: 0 auto;
-  } */
-
   .user {
-    width: 80%;
+    width: 100%;
   }
   .user > img {
-    width: 60%;
-    height: 60%;
-    margin: auto 20%;
+    width: 90%;
+    height: 70%;
+    margin: auto 5%;
   }
   .user-list {
-    width: 70%;
+    width: 100%;
   }
 }

@@ -13,13 +13,16 @@ const Tips = () => {
   }, []);
 
   return (
-    <div className="tips">
-      <h2>saznaj nove trikove ili podeli svoje sa nama</h2>
-      <Link to="/addtip">
-        <button>dodaj savet</button>
-      </Link>
-      <TipsList tips={tips} />
-    </div>
+    <>
+      <h2>Saznaj nove trikove ili podeli svoje sa nama</h2>
+
+      <div className="tips">
+        <Link to="/addtip">
+          <button>dodaj savet</button>
+        </Link>
+        <TipsList tips={tips} />
+      </div>
+    </>
   );
 };
 

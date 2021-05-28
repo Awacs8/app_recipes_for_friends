@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { sendRecipes } from "../../services/api_service";
 import NewRecipeForm from "../components/NewRecipeForm";
 import NewRecipePreview from "../components/NewRecipePreview";
@@ -17,7 +17,14 @@ const NewRecipe = () => {
   const sendRecipe = (e) => {
     e.preventDefault();
     sendRecipes(recipe).then(() => {
-      console.log(recipe);
+      setRecipe({
+        title: "",
+        category: "",
+        difficulty: "",
+        preparation_time: 0,
+        ingredients: [],
+        preparation_steps: [],
+      });
       setInfo("Tvoj recept se nalazi na listi svih recepata");
     });
   };
@@ -28,11 +35,11 @@ const NewRecipe = () => {
       <div className="add">
         <NewRecipeForm recipe={recipe} setRecipe={setRecipe} />
         <NewRecipePreview recipe={recipe} />
-        <section>
-          <button onClick={sendRecipe}>dodaj recept</button>
-          <sup>{info}</sup>
-        </section>
       </div>
+      <section>
+        <button onClick={sendRecipe}>dodaj recept</button>
+        <sup>{info}</sup>
+      </section>
     </>
   );
 };

@@ -67,7 +67,7 @@ const SingleRecipe = ({ match }) => {
       <sup>
         {info}
         <Link
-          to="/main"
+          to="/saved"
           style={{ display: info.length > 0 ? "inline" : "none" }}
         >
           receptima

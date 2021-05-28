@@ -66,7 +66,7 @@ export const Register = () => {
       {loading ? (
         <Loader />
       ) : (
-        <div className="form">
+        <form>
           <label>Ime:</label>
           <br />
           <input
@@ -108,15 +108,15 @@ export const Register = () => {
           <br />
           <span>{`${error}`}</span>
           <br />
-          <button onClick={handleClick}>Kreiraj nalog</button>
+          <button onClick={handleClick}>kreiraj nalog</button>
           <br />
-          <p>
-            <b>Imaš nalog?</b>
-          </p>
+          <label>
+            <b>imaš nalog?</b>
+          </label>
           <Link to="/login">
-            <p>Klikni za prijavu.</p>
+            <p>klikni za prijavu.</p>
           </Link>
-        </div>
+        </form>
       )}
     </div>
   );

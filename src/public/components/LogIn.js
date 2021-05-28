@@ -39,7 +39,7 @@ export const LogIn = () => {
       {loading ? (
         <Loader />
       ) : (
-        <div className="form">
+        <form>
           <label>Username:</label>
           <br />
           <input
@@ -62,12 +62,12 @@ export const LogIn = () => {
           <br />
           <span>{`${error}`}</span>
           <br />
-          <button onClick={handleClick}>Prijavi se</button>
+          <button onClick={handleClick}>prijavi se</button>
           <br />
           <Link to="/register">
             <p>...ili kreiraj nalog</p>
           </Link>
-        </div>
+        </form>
       )}
     </div>
   );

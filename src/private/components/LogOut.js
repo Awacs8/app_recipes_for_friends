@@ -12,10 +12,6 @@ const LogOut = () => {
     });
   };
 
-  return (
-    <div>
-      <button onClick={handleClick}>Izloguj se</button>
-    </div>
-  );
+  return <li onClick={handleClick}>izloguj se</li>;
 };
 export default LogOut;
