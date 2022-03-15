@@ -4,6 +4,8 @@ import { v4 as uuidv4 } from "uuid";
 import { saveRecipe, getRecipeById } from "../../services/api_service";
 import { getId } from "../../services/auth_service";
 import { Link } from "react-router-dom";
+import { ReactComponent as FavIcon } from "../../utils&assets/img/star.svg";
+import { ReactComponent as FilledFavIcon } from "../../utils&assets/img/star-filled.svg";
 
 const SingleRecipe = ({ match }) => {
   const [recipe, setRecipe] = useState({});
@@ -35,6 +37,23 @@ const SingleRecipe = ({ match }) => {
 
   return (
     <div className="single_recipe">
+      <button
+        style={{ opacity: info.length > 0 ? "0.6" : "1" }}
+        onClick={() => {
+          handleClick(recipe);
+        }}
+      >
+        {info.length > 0 ? <FilledFavIcon /> : <FavIcon />}
+      </button>
+      <sup>
+        {info}
+        <Link
+          to="/saved"
+          style={{ display: info.length > 0 ? "inline" : "none" }}
+        >
+          receptima
+        </Link>
+      </sup>
       <h2>{recipe.title}</h2>
       <p>
         <b>Težina:</b> {recipe.difficulty}
@@ -56,23 +75,6 @@ const SingleRecipe = ({ match }) => {
           <li key={uuidv4()}>{el}</li>
         ))}
       </ul>
-      <button
-        style={{ opacity: info.length > 0 ? "0.6" : "1" }}
-        onClick={() => {
-          handleClick(recipe);
-        }}
-      >
-        dodaj u omiljene
-      </button>
-      <sup>
-        {info}
-        <Link
-          to="/saved"
-          style={{ display: info.length > 0 ? "inline" : "none" }}
-        >
-          receptima
-        </Link>
-      </sup>
     </div>
   );
 };

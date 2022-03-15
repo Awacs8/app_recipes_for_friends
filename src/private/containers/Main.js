@@ -8,7 +8,9 @@ import { getRecipes } from "../../services/api_service";
 const Main = () => {
   const [recipes, setRecipes] = useState([]);
   const [filtered, setFiltered] = useState([]);
-  //const [show, setShow] = useState(false);
+  const [searchByName, setSearchByName] = useState("");
+  const [filterByCategory, setFilterByCategory] = useState("");
+  const [filterByDifficulty, setFilterByDifficulty] = useState("");
   // const [currentPage, setCurrentPage] = useState(1);
   // const [itemsPerPage] = useState(6);
 
@@ -19,28 +21,20 @@ const Main = () => {
   }, []);
 
   useEffect(() => {
-    setFiltered(recipes);
-  }, [recipes]);
-
-  const handleChange = (e) => {
-    e.preventDefault();
-    let selectedValue = e.target.value;
     let tmp = [...recipes];
-    const selected = tmp.filter(
-      (el) =>
-        el.category.toLowerCase() === selectedValue ||
-        el.difficulty === selectedValue
-    );
-    selectedValue === "izaberi" ? setFiltered(recipes) : setFiltered(selected);
-  };
-
-  const handleSearch = (e) => {
-    e.preventDefault();
-    let search = recipes.filter((recipe) =>
-      recipe.title.toLowerCase().includes(e.target.value.toLowerCase())
-    );
-    setFiltered(search);
-  };
+    if (searchByName) {
+      tmp = tmp.filter((el) =>
+        el.title.toLowerCase().includes(searchByName.toLowerCase())
+      );
+    }
+    if (filterByCategory) {
+      tmp = tmp.filter((el) => el.category === filterByCategory);
+    }
+    if (filterByDifficulty) {
+      tmp = tmp.filter((el) => el.difficulty === filterByDifficulty);
+    }
+    setFiltered(tmp);
+  }, [recipes, searchByName, filterByCategory, filterByDifficulty]);
 
   // const indexOfLastItem = currentPage * itemsPerPage;
   // const indexOfFirtstItem = indexOfLastItem - itemsPerPage;
@@ -52,8 +46,13 @@ const Main = () => {
   return (
     <div className="main">
       <section className="filters">
-        <Select handleChange={handleChange} />
-        <Search handleSearch={handleSearch} />
+        <Select
+          filterByCategory={filterByCategory}
+          setFilterByCategory={setFilterByCategory}
+          filterByDifficulty={filterByDifficulty}
+          setFilterByDifficulty={setFilterByDifficulty}
+        />
+        <Search searchByName={searchByName} setSearchByName={setSearchByName} />
       </section>
 
       <section className="display_main">

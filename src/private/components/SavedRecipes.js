@@ -5,6 +5,7 @@ import Carousel from "react-elastic-carousel";
 import { v4 as uuidv4 } from "uuid";
 import { getId, getUserById } from "../../services/auth_service";
 import { removeSavedRecipe } from "../../services/api_service";
+import { ReactComponent as Delete } from "../../utils&assets/img/delete.svg";
 
 const SavedRecipes = () => {
   const [saved, setSaved] = useState([]);
@@ -19,7 +20,13 @@ const SavedRecipes = () => {
 
   const removeRecipe = (recipe) => {
     removeSavedRecipe(userId, recipe).then((response) => {
-      setSaved(response.data.saved_recipes);
+      // setSaved((prevState) => {
+      //   return {
+      //     [...prevState, response.data.saved_recipes]
+      //   }
+      // });
+      const tmp = response.data.saved_recipes;
+      setSaved(tmp);
       setInfo(`obrisan recept ${recipe.title}`);
     });
   };
@@ -33,7 +40,9 @@ const SavedRecipes = () => {
       <Carousel>
         {saved.map((recipe) => (
           <div key={recipe._id} className="saved-recipe">
-            <button onClick={() => removeRecipe(recipe)}>X</button>
+            <button onClick={() => removeRecipe(recipe)}>
+              <Delete />
+            </button>
             <h2>{recipe.title}</h2>
             <p>
               <b>Težina:</b> {recipe.difficulty}

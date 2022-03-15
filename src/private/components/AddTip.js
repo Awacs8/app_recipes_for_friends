@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { sendTips } from "../../services/api_service";
+import { ReactComponent as BackArrow } from "../../utils&assets/img/back.svg";
 
 const AddTip = () => {
   const [tip, setTip] = useState({ title: "", content: "" });
@@ -24,26 +25,34 @@ const AddTip = () => {
   };
 
   return (
-    <div className="add_tip">
+    <>
       <h2>podeli svoj savet</h2>
-      <Link to="/tips">
-        <button>lista saveta</button>
-      </Link>
-      <form>
-        <label htmlFor="title">naslov:</label>
-        <input
-          type="text"
-          name="title"
-          value={tip.title}
-          onChange={handleChange}
-        />
-        <br />
-        <label htmlFor="tip">savet:</label>
-        <textarea name="content" value={tip.content} onChange={handleChange} />
-        <button onClick={handleSubmit}>dodaj na listu</button>
-        <sup>{info}</sup>
-      </form>
-    </div>
+      <div className="add_tip">
+        <Link to="/tips">
+          <button>
+            <BackArrow />
+          </button>
+        </Link>
+        <form>
+          <label htmlFor="title">naslov:</label>
+          <input
+            type="text"
+            name="title"
+            value={tip.title}
+            onChange={handleChange}
+          />
+          <br />
+          <label htmlFor="tip">savet:</label>
+          <textarea
+            name="content"
+            value={tip.content}
+            onChange={handleChange}
+          />
+          <button onClick={handleSubmit}>dodaj na listu</button>
+          <sup>{info}</sup>
+        </form>
+      </div>
+    </>
   );
 };
 

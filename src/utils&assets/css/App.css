@@ -1,11 +1,10 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap"); */
 @import url("https://fonts.googleapis.com/css2?family=Pangolin&display=swap");
-/* @import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap"); */
+
 :root {
   --fontSize: 16px;
   --primary: rgb(250, 185, 79);
   --secondary: rgb(255, 115, 0);
-  --tertiary: rgb(14, 15, 15);
+  --black: rgb(14, 15, 15);
   --boxShadow: 5px 5px 7px rgba(33, 33, 33, 1);
 }
 * {
@@ -13,14 +12,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  /* font-family: "Kalam", cursive; */
-  color: var(--tertiary);
+  color: var(--black);
   font-family: "Pangolin";
   background-image: url("https://lostsurfboards.net/wp-content/uploads/2017/10/cork-wallpaper-25-wallpaper-background-hd.jpg");
 }
 
-/* LOADER */
+/******* LOADER ********/
 
 .loader {
   margin: 0 auto;
@@ -33,7 +32,7 @@ body {
   opacity: 0.5;
 }
 
-/* GLOBAL */
+/********* GLOBAL ********/
 
 header {
   width: 100%;
@@ -42,9 +41,9 @@ header {
   background-image: url("../img/background.jpg");
 }
 h1 {
-  color: rgb(255, 115, 0);
+  color: var(--secondary);
   font-size: 3.2rem;
-  text-shadow: 8px 8px 5px rgb(14, 10, 10);
+  text-shadow: var(--boxShadow);
   padding: 5%;
   width: 80%;
   display: inline-block;
@@ -55,7 +54,7 @@ h2 {
   font-size: 1.8rem;
 }
 form {
-  background-color: rgba(233, 133, 10, 0.733);
+  background-color: rgba(233, 133, 10, 0.808);
   width: 400px;
   text-align: center;
   margin: 50px auto;
@@ -63,16 +62,16 @@ form {
 }
 a {
   text-decoration: none;
-  color: var(--tertiary);
+  color: var(--black);
 }
 a > p {
-  max-width: 200px;
+  max-width: 150px;
   margin: 0 auto;
-  border: solid var(--tertiary) 2px;
-  border-radius: 10%;
+  transition: 0.8s;
 }
 a > p:hover {
   background-color: orangered;
+  transition: 0.8s;
 }
 ul {
   list-style-type: none;
@@ -82,20 +81,19 @@ label {
   font-size: 1.1rem;
   font-weight: 600;
   padding-left: 5px;
-  color: var(--tertiary);
+  color: var(--black);
   height: 31px;
 }
 span {
   font-weight: 700;
+  font-size: 0.9rem;
 }
 input {
   font-size: 0.9rem;
   font-family: "Pangolin";
-  border-radius: 10%;
-  border: var(--tertiary) solid 2px;
+  border: var(--black) solid 2px;
   background-color: var(--secondary);
   height: 35px;
-  margin: 3px;
 }
 input:focus {
   border: none;
@@ -103,29 +101,41 @@ input:focus {
   outline: none;
 }
 input::placeholder {
-  color: var(--tertiary);
-  font-weight: 800;
+  color: var(--black);
+  font-weight: 600;
   text-align: center;
 }
 textarea {
   font-size: 0.9rem;
   font-family: "Pangolin";
-  border-radius: 10%;
-  border: var(--tertiary) solid 2px;
+  border: var(--black) solid 2px;
   background-color: var(--secondary);
-  width: 90%;
+  width: 99%;
   height: 100px;
+  padding: 4px;
+  resize: none;
 }
 textarea:focus {
   outline: none;
   border: none;
 }
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+}
+input[type="radio"]:checked {
+  background-color: var(--black);
+}
 select {
   font-family: "Pangolin";
   font-size: 0.9rem;
   font-weight: 600;
-  border: var(--tertiary) solid 2px;
-  height: 40px;
+  border: var(--black) solid 2px;
+  height: 35px;
   width: 50%;
   background-color: var(--secondary);
 }
@@ -144,14 +154,17 @@ footer {
   padding-top: 50px;
 }
 footer h3 {
-  color: var(--tertiary);
+  color: var(--black);
 }
 
-/* COMPONENTS */
+/******** COMPONENTS *********/
 
 .welcome_page {
   min-height: 500px;
 }
+
+/******** NAVBAR *********/
+
 .nav_bar {
   display: flex;
   flex-direction: row;
@@ -169,11 +182,20 @@ footer h3 {
   font-size: 1.4rem;
   font-weight: 600;
   text-align: center;
-  color: var(--tertiary);
+  color: var(--black);
+  transition: 0.8s;
 }
 .nav_item:hover {
-  background-color: orangered;
+  width: 22%;
+  font-size: 1.8rem;
+  transition: 0.8s;
 }
+.menu-btn {
+  display: none;
+}
+
+/******** MAIN *********/
+
 .main {
   width: 80%;
   margin: 0 auto;
@@ -195,7 +217,11 @@ footer h3 {
   height: 80vh;
 }
 
-/* CAROUSEL */
+/******** CAROUSEL *********/
+
+.rec-carousel-wrapper {
+  min-height: 300px;
+}
 .rec.rec-pagination {
   margin-bottom: 15px;
 }
@@ -225,7 +251,7 @@ footer h3 {
   box-shadow: 0 0 1px 3px orange;
 }
 
-/* PAGINATION */
+/******** PAGINATION *********/
 
 .pagination {
   display: flex;
@@ -238,7 +264,7 @@ footer h3 {
   width: 40px;
 }
 
-/* SCROLLBAR */
+/******** SCROLLBAR *********/
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -253,22 +279,33 @@ footer h3 {
 ::-webkit-scrollbar-thumb:hover {
   background: orange;
 }
-.add {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+/******** NEW RECIPE *********/
+
+.new-recipe {
   width: 85%;
   margin: 0 auto;
 }
-.add > form {
-  flex: 0 40%;
-  text-align: left;
+.new-recipe > form {
+  text-align: justify;
+  width: fit-content;
 }
-.add > form > span {
-  font-size: 0.9rem;
+.new-recipe label {
+  height: auto;
+  margin: 10px 0px 10px 5px;
 }
-.add > form > article {
+.new-recipe input {
+  margin: 5px 0;
+}
+#name {
+  width: 70%;
+}
+.new-recipe > form > article {
   display: flex;
+  align-items: center;
+}
+.new-recipe ul {
+  text-align: center;
 }
 #ingName {
   width: 50%;
@@ -279,17 +316,12 @@ footer h3 {
 #unit_of_measure {
   width: 25%;
 }
-.recipe_view {
-  flex: 0 40%;
-  min-height: 400px;
-  background-color: var(--primary);
-  margin: 20px;
-  padding: 20px;
-  font-family: "Pangolin";
+.new-recipe > button {
+  margin-left: 85%;
+  border: none;
 }
-.recipe_view h3 {
-  text-align: center;
-}
+/******** TIPS *********/
+
 .tips {
   width: 80%;
   min-height: 500px;
@@ -311,6 +343,17 @@ footer h3 {
   padding: 10px;
   margin: 10px;
 }
+.add_tip {
+  width: 80%;
+  margin: 0 auto;
+}
+.add_tip input,
+.add_tip form button {
+  width: 90%;
+}
+
+/******** PROFILE *********/
+
 .profile {
   margin: 5%;
 }
@@ -322,11 +365,15 @@ footer h3 {
   width: 250px;
   font-size: 1.2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 .user img {
   height: 60%;
-  width: 80%;
-  margin: auto 25px;
+  /* width: 80%; */
+  /* margin: 25px; */
 }
 .user-list {
   font-size: 1.2rem;
@@ -342,41 +389,30 @@ footer h3 {
   text-align: center;
 }
 
-@media only screen and (max-width: 950px) and (min-width: 600px) {
+@media only screen and (max-width: 950px) and (min-width: 768px) {
   h1 {
     width: 70%;
     margin: 0 auto;
     padding-left: 10%;
   }
+
   #login {
     width: 80%;
     padding-left: 10%;
     margin: 0 auto;
   }
-  .nav_main {
-    flex-direction: column;
-  }
-  /* .nav_bar {
-    list-style: none;
-    display: block;
+  #login > input {
     width: 70%;
-    margin: 0 auto;
   }
-  .nav_item {
-    clear: both;
-    display: inline-block;
-    width: 95%;
-    margin: 0 auto;
-  }
+
   .nav_main {
     flex-direction: column;
   }
-  .nav_main > button {
-    margin-left: auto;
-  } */
-  .rec.rec-carousel {
+
+  .rec-carousel {
     width: 500px;
   }
+
   .recipe_list {
     flex-direction: column;
   }
@@ -387,10 +423,6 @@ footer h3 {
     width: 80%;
     font-family: "Gloria Hallelujah";
   }
-  .add {
-    flex-direction: column;
-  }
-
   .recipe_view {
     display: block;
     background-color: var(--primary);
@@ -398,16 +430,9 @@ footer h3 {
     padding: 20px;
     font-family: "Gloria Hallelujah";
   }
-
-  /* form > input {
-    width: 70%;
-  } */
-  #login > input {
-    width: 70%;
-  }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   header {
     width: 100%;
   }
@@ -418,20 +443,6 @@ footer h3 {
   }
   footer > h3 {
     font-size: 1rem;
-  }
-  .welcome_page {
-    min-height: 400px;
-  }
-  .loader {
-    width: 100%;
-    height: 60%;
-    margin-top: 20%;
-  }
-  .rec.rec-carousel-wrapper {
-    width: 95%;
-  }
-  .rec.rec-arrow {
-    display: none;
   }
   h1 {
     margin: 0 auto;
@@ -448,17 +459,63 @@ footer h3 {
     padding-top: 40px;
     display: block;
   }
-  /* form > input {
-    width: 80%;
-  } */
-  .nav_bar {
-    flex-direction: row;
+
+  .welcome_page {
+    min-height: 400px;
+  }
+  .loader {
     width: 100%;
-    align-items: center;
+    height: 60%;
+    margin-top: 20%;
+  }
+
+  .rec-carousel-wrapper {
+    width: 95%;
+  }
+  .rec-arrow {
+    display: none;
+  }
+
+  .nav_bar {
+    flex-direction: column;
+    width: 100%;
+
+    transition: 0.8s;
   }
   .nav_item {
     font-size: 1rem;
+    width: 90%;
+    margin: 1px;
+    box-shadow: none;
   }
+  .menu-btn {
+    background-color: var(--secondary);
+    width: 40px;
+    height: 40px;
+    border: none;
+    margin-left: 90%;
+    display: block;
+  }
+  .menu-btn-line {
+    width: 50%;
+    margin: 4px auto;
+    height: 2px;
+    background-color: var(--black);
+    transition: 0.8s;
+  }
+  .btn-close div {
+    display: none;
+    margin: 0 auto;
+  }
+  .btn-close > div:first-child {
+    display: block;
+    transform: rotate(-45deg) translate(-2px);
+  }
+  .btn-close > div:last-child {
+    display: block;
+    transform: rotate(45deg) translate(-1px);
+  }
+
   .filters {
     display: flex;
     flex-direction: column;
@@ -466,17 +523,15 @@ footer h3 {
   .filters > article {
     width: 100%;
   }
-  .add {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  #name {
+    width: 98%;
   }
-  .add > form {
+  .new-recipe > form {
     width: 100%;
+    text-align: left;
   }
-  .add > form > input,
-  select,
-  textarea {
+  .new-recipe > form > input,
+  select {
     width: 98%;
   }
   .recipe_view {
@@ -486,6 +541,7 @@ footer h3 {
   .main {
     width: 95%;
   }
+
   .display_main {
     height: max-content;
   }
@@ -496,8 +552,9 @@ footer h3 {
     width: 250px;
     height: 250px;
   }
+
   .user {
-    width: 100%;
+    height: auto;
   }
   .user > img {
     width: 90%;
@@ -506,5 +563,13 @@ footer h3 {
   }
   .user-list {
     width: 100%;
+  }
+  @media only screen and (max-width: 398px) {
+    .menu-btn {
+      margin-left: 80%;
+    }
+    .user {
+      width: 95%;
+    }
   }
 }

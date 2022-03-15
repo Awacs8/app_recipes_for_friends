@@ -7,11 +7,10 @@
   justify-content: center;
 }
 .recipe {
-  flex: 0 30%;
+  flex: 0 1 30%;
   background-color: var(--primary);
   margin: 8px;
   padding: 20px;
-  width: 100%;
   font-family: "Kalam", sans-serif;
   font-size: 1.2rem;
   -moz-box-shadow: var(--boxShadow);
@@ -23,9 +22,9 @@
   transform: rotate(-3deg);
 }
 .recipe > a > button {
-  font-family: "Kalam", sans-serif;
-  padding: 5px;
-  margin-left: 60%;
+  margin-left: 75%;
+  width: 42px;
+  height: 42px;
 }
 .single_recipe {
   font-family: "Kalam", sans-serif;
@@ -39,9 +38,10 @@
   box-shadow: var(--boxShadow);
 }
 .single_recipe > button {
-  font-family: "Kalam", sans-serif;
-  padding: 5px;
-  margin-left: 80%;
+  padding: 0px;
+  border: none;
+  margin-left: 95%;
+  background-color: transparent;
 }
 sup > a {
   text-decoration: underline;
@@ -52,11 +52,18 @@ button {
   font-family: "Pangolin";
   font-size: 0.9rem;
   font-weight: 600;
-  padding: 8px 5px;
-  border-radius: 10%;
-  border: solid var(--tertiary) 2px;
+  padding: 4px;
+  border: solid var(--black) 2px;
   margin: 8px;
   cursor: pointer;
+  transition: 0.8s;
+}
+button:focus {
+  outline: none;
+}
+button:hover {
+  background-color: orangered;
+  transition: 0.8s;
 }
 
 .saved-recipe {
@@ -72,19 +79,7 @@ button {
   box-shadow: var(--boxShadow);
 }
 
-button:focus {
-  outline: none;
-}
-
-button:hover {
-  background-color: orangered;
-}
-
 @media only screen and (max-width: 950px) {
-  /* .recipe_list {
-    display: grid;
-    grid-template-columns: 1fr;
-  } */
   .recipe {
     flex: 0 80%;
     background-color: var(--primary);
@@ -93,6 +88,9 @@ button:hover {
     padding: 20px;
     width: 90%;
     transform: none;
+  }
+  .recipe > a > button {
+    margin-left: 80%;
   }
   .single_recipe {
     width: 90%;

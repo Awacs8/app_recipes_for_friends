@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { sendRecipes } from "../../services/api_service";
 import NewRecipeForm from "../components/NewRecipeForm";
-import NewRecipePreview from "../components/NewRecipePreview";
+import { ReactComponent as Check } from "../../utils&assets/img/check.svg";
 
 const NewRecipe = () => {
   const [recipe, setRecipe] = useState({
@@ -32,14 +32,13 @@ const NewRecipe = () => {
   return (
     <>
       <h2>Popuni formu i podeli recept sa nama</h2>
-      <div className="add">
-        <NewRecipeForm recipe={recipe} setRecipe={setRecipe} />
-        <NewRecipePreview recipe={recipe} />
-      </div>
-      <section>
-        <button onClick={sendRecipe}>dodaj recept</button>
+      <div className="new-recipe">
+        <button onClick={sendRecipe}>
+          <Check />
+        </button>
         <sup>{info}</sup>
-      </section>
+        <NewRecipeForm recipe={recipe} setRecipe={setRecipe} />
+      </div>
     </>
   );
 };

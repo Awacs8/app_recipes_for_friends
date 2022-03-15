@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../utils&assets/css/recipe.css";
+import { ReactComponent as Open } from "../../utils&assets/img/open.svg";
 
 const Recipe = ({ recipe }) => {
   return (
@@ -13,7 +14,9 @@ const Recipe = ({ recipe }) => {
         <b>Vreme pripreme:</b> {recipe.preparation_time} min
       </p>
       <Link to={`/recipe/${recipe._id}`}>
-        <button>pogledaj recept</button>
+        <button>
+          <Open />
+        </button>
       </Link>
     </div>
   );

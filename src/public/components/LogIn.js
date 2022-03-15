@@ -35,7 +35,7 @@ export const LogIn = () => {
   };
 
   return (
-    <div className="welcome_page">
+    <>
       {loading ? (
         <Loader />
       ) : (
@@ -69,6 +69,6 @@ export const LogIn = () => {
           </Link>
         </form>
       )}
-    </div>
+    </>
   );
 };

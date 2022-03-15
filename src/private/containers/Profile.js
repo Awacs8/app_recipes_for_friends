@@ -32,12 +32,12 @@ const Profile = () => {
             <p>
               {user.first_name} {user.last_name}
             </p>
-            <p>Kontakt: {user.email}</p>
-            <Link to="/saved">
-              <p>Sačuvani recepti</p>
-            </Link>
+            <p>{user.email}</p>
             {/* <button onClick={UserChange}>izmeni podatke</button> */}
           </div>
+          <Link to="/saved">
+            <p>sačuvani recepti</p>
+          </Link>
         </div>
         <div className="user-list">
           <label>Ostatak ekipe:</label>
