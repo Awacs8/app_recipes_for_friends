@@ -12,7 +12,7 @@ import { Welcome } from "./public/containers/Welcome";
 import Main from "./private/containers/Main";
 import { Header } from "./public/components/Header";
 import Footer from "./public/components/Footer";
-import Navbar from "./private/components/Navbar";
+import Navbar from "./public/components/Navbar";
 import Profile from "./private/containers/Profile";
 import Tips from "./private/containers/Tips";
 import AddTip from "./private/components/AddTip";

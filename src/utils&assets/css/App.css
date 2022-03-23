@@ -19,19 +19,6 @@ body {
   background-image: url("https://lostsurfboards.net/wp-content/uploads/2017/10/cork-wallpaper-25-wallpaper-background-hd.jpg");
 }
 
-/******* LOADER ********/
-
-.loader {
-  margin: 0 auto;
-  width: 500px;
-  height: 500px;
-}
-.loader > img {
-  width: 100%;
-  height: 100%;
-  opacity: 0.5;
-}
-
 /********* GLOBAL ********/
 
 header {
@@ -160,7 +147,7 @@ footer h3 {
 /******** COMPONENTS *********/
 
 .welcome_page {
-  min-height: 500px;
+  min-height: 600px;
 }
 
 /******** NAVBAR *********/
@@ -209,8 +196,8 @@ footer h3 {
 .filters > article {
   width: 45%;
 }
-.filters > article > input {
-  width: 90%;
+.filters input {
+  width: 98%;
 }
 .display_main {
   overflow: auto;
@@ -289,6 +276,7 @@ footer h3 {
 .new-recipe > form {
   text-align: justify;
   width: fit-content;
+  margin-bottom: 0;
 }
 .new-recipe label {
   height: auto;
@@ -487,6 +475,10 @@ footer h3 {
     width: 90%;
     margin: 1px;
     box-shadow: none;
+  }
+  .nav_item:hover {
+    width: 90%;
+    font-size: 1.2rem;
   }
   .menu-btn {
     background-color: var(--secondary);

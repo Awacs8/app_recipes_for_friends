@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { isLogIn } from "../../services/auth_service";
-import LogOut from "../components/LogOut";
+import LogOut from "../../private/components/LogOut";
 
 const Navbar = () => {
   const [expanded, setExpanded] = useState(false);
@@ -29,7 +29,7 @@ const Navbar = () => {
         <div className="menu-btn-line"></div>
       </button>
       {(expanded || screenWidth > 768) && (
-        <ul className="nav_bar">
+        <ul className="nav_bar" onClick={() => setExpanded(false)}>
           <Link to="/main" className="nav_item">
             <li>svi recepti</li>
           </Link>

@@ -33,11 +33,11 @@ const NewRecipe = () => {
     <>
       <h2>Popuni formu i podeli recept sa nama</h2>
       <div className="new-recipe">
+        <NewRecipeForm recipe={recipe} setRecipe={setRecipe} />
         <button onClick={sendRecipe}>
           <Check />
         </button>
         <sup>{info}</sup>
-        <NewRecipeForm recipe={recipe} setRecipe={setRecipe} />
       </div>
     </>
   );
