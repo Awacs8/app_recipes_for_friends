@@ -1,0 +1,52 @@
+.new-recipe {
+  width: 85%;
+  margin: 0 auto;
+}
+.new-recipe > form {
+  text-align: justify;
+  width: 500px;
+  margin-bottom: 0;
+}
+.new-recipe label {
+  height: auto;
+  margin: 10px 0px 10px 5px;
+}
+.new-recipe input {
+  margin: 5px 0;
+}
+#name {
+  width: 70%;
+}
+.new-recipe > form > article {
+  display: flex;
+  align-items: center;
+}
+.new-recipe ul {
+  text-align: center;
+}
+#ingName {
+  width: 50%;
+}
+#quantity {
+  width: 25%;
+}
+#unit_of_measure {
+  width: 25%;
+}
+.new-recipe > button {
+  margin-left: 85%;
+  border: none;
+}
+@media only screen and (max-width: 768px) {
+  #name {
+    width: 98%;
+  }
+  .new-recipe > form {
+    width: 100%;
+    text-align: left;
+  }
+  .new-recipe > form > input,
+  select {
+    width: 98%;
+  }
+}

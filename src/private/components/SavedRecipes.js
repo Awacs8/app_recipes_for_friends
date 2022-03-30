@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../../utils&assets/css/carousel.css";
 import "../../utils&assets/css/recipe.css";
 import { Link } from "react-router-dom";
 import Carousel from "react-elastic-carousel";

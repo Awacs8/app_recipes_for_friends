@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../../utils&assets/css/newRecipe.css";
 import { sendRecipes } from "../../services/api_service";
 import NewRecipeForm from "../components/NewRecipeForm";
 import { ReactComponent as Check } from "../../utils&assets/img/check.svg";

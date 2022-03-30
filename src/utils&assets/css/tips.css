@@ -1,0 +1,38 @@
+.tips {
+  width: 80%;
+  min-height: 500px;
+  margin: 0 auto;
+}
+.tips_list {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  justify-content: center;
+}
+.tips_list > div {
+  background-color: var(--primary);
+  font-family: "Kalam", sans-serif;
+  width: 200px;
+  height: 200px;
+  overflow: auto;
+  padding: 10px;
+  margin: 10px;
+}
+.add_tip {
+  width: 80%;
+  margin: 0 auto;
+}
+.add_tip input,
+.add_tip form button {
+  width: 90%;
+}
+@media only screen and (max-width: 768px) {
+  .add_tip {
+    width: 100%;
+  }
+  .tips_list > div {
+    width: 250px;
+    height: 250px;
+  }
+}

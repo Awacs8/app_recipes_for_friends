@@ -80,6 +80,9 @@ button:hover {
 }
 
 @media only screen and (max-width: 950px) {
+  .recipe_list {
+    flex-direction: column;
+  }
   .recipe {
     flex: 0 80%;
     background-color: var(--primary);

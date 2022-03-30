@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../../utils&assets/css/main.css";
 import RecipeList from "../components/RecipeList";
 import Select from "../components/Select";
 import Search from "../components/Search";

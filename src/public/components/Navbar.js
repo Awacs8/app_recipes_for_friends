@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "../../utils&assets/css/navbar.css";
 import { Link } from "react-router-dom";
 import { isLogIn } from "../../services/auth_service";
 import LogOut from "../../private/components/LogOut";

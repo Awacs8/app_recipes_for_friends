@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../../utils&assets/css/profile.css";
 import { Link } from "react-router-dom";
 import { getId, getUserById, getAllUsers } from "../../services/auth_service";
 // import UserChange from './UserChange'

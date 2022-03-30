@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../../utils&assets/css/tips.css";
 import { Link } from "react-router-dom";
 import { getTips } from "../../services/api_service";
 import TipsList from "../components/TipsList";
