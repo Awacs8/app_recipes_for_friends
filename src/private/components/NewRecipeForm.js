@@ -95,7 +95,7 @@ const NewRecipeForm = ({ recipe, setRecipe }) => {
       <AddIngredient addIngredient={addIngredient} />
       <ul>
         {recipe.ingredients.map((el) => (
-          <li key={el.ingName}>
+          <li key={el.ingName} contentEditable={true}>
             {el.ingName} {el.quantity} {el.unit_of_measure}
           </li>
         ))}
@@ -103,7 +103,9 @@ const NewRecipeForm = ({ recipe, setRecipe }) => {
       <AddPreparationStep addStep={addStep} />
       <ul>
         {recipe.preparation_steps.map((el) => (
-          <li key={el}>{el}</li>
+          <li key={el} contentEditable={true}>
+            {el}
+          </li>
         ))}
       </ul>
     </form>

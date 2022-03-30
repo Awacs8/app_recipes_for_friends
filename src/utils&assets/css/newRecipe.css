@@ -1,15 +1,17 @@
 .new-recipe {
   width: 85%;
+  min-height: 500px;
   margin: 0 auto;
 }
 .new-recipe > form {
   text-align: justify;
   width: 500px;
-  margin-bottom: 0;
+  margin: 50px auto 0 auto;
 }
 .new-recipe label {
   height: auto;
-  margin: 10px 0px 10px 5px;
+  margin: 10px;
+  margin-right: 3px;
 }
 .new-recipe input {
   margin: 5px 0;

@@ -5,6 +5,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 .recipe {
   flex: 0 1 30%;
@@ -43,29 +44,6 @@
   margin-left: 95%;
   background-color: transparent;
 }
-sup > a {
-  text-decoration: underline;
-}
-
-button {
-  background-color: var(--secondary);
-  font-family: "Pangolin";
-  font-size: 0.9rem;
-  font-weight: 600;
-  padding: 4px;
-  border: solid var(--black) 2px;
-  margin: 8px;
-  cursor: pointer;
-  transition: 0.8s;
-}
-button:focus {
-  outline: none;
-}
-button:hover {
-  background-color: orangered;
-  transition: 0.8s;
-}
-
 .saved-recipe {
   background-color: var(--primary);
   margin: 8px;

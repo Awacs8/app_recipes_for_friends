@@ -113,7 +113,7 @@ export const Register = () => {
           <label>
             <b>imaš nalog?</b>
           </label>
-          <Link to="/login">
+          <Link to="/">
             <p>klikni za prijavu.</p>
           </Link>
         </form>

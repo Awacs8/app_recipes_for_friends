@@ -55,10 +55,8 @@ const Main = () => {
         />
         <Search searchByName={searchByName} setSearchByName={setSearchByName} />
       </section>
+      <RecipeList filtered={filtered} />
 
-      <section className="display_main">
-        <RecipeList filtered={filtered} />
-      </section>
       {/* <Pagination
         paginate={paginate}
         totalItems={filtered.length}

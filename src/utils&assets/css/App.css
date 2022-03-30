@@ -45,7 +45,7 @@ form {
   background-color: rgba(233, 133, 10, 0.808);
   width: 400px;
   text-align: center;
-  margin: 50px auto;
+  margin: 50px 0;
   padding: 30px 0px;
 }
 a {
@@ -98,8 +98,8 @@ textarea {
   font-family: "Pangolin";
   border: var(--black) solid 2px;
   background-color: var(--secondary);
-  width: 99%;
-  height: 100px;
+  width: 90%;
+  height: 60px;
   padding: 4px;
   resize: none;
 }
@@ -133,6 +133,28 @@ select:focus {
 sup {
   font-size: 0.7rem;
 }
+sup > a {
+  text-decoration: underline;
+}
+
+button {
+  background-color: var(--secondary);
+  font-family: "Pangolin";
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 4px;
+  border: solid var(--black) 2px;
+  margin: 8px;
+  cursor: pointer;
+  transition: 0.8s;
+}
+button:focus {
+  outline: none;
+}
+button:hover {
+  background-color: orangered;
+  transition: 0.8s;
+}
 footer {
   width: 100%;
   height: 150px;
@@ -148,7 +170,10 @@ footer h3 {
 /******** COMPONENTS *********/
 
 .welcome_page {
-  min-height: 600px;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /******** SCROLLBAR *********/

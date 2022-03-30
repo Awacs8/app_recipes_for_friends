@@ -1,5 +1,6 @@
 .main {
   width: 80%;
+  min-height: 500px;
   margin: 0 auto;
   padding: 30px 0px;
 }
@@ -14,17 +15,12 @@
 .filters input {
   width: 98%;
 }
-.display_main {
-  overflow: auto;
-  height: 80vh;
-}
+
 @media only screen and (max-width: 768px) {
   .main {
     width: 95%;
   }
-  .display_main {
-    height: max-content;
-  }
+
   .filters {
     display: flex;
     flex-direction: column;
