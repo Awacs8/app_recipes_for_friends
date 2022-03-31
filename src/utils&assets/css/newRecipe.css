@@ -1,5 +1,5 @@
 .new-recipe {
-  width: 85%;
+  width: 500px;
   min-height: 500px;
   margin: 0 auto;
 }
@@ -7,6 +7,15 @@
   text-align: justify;
   width: 500px;
   margin: 50px auto 0 auto;
+}
+.new-recipe > form > article {
+  display: flex;
+  align-items: center;
+}
+.new-recipe > form > article > button {
+  border: none;
+  padding: 0;
+  background-color: transparent;
 }
 .new-recipe label {
   height: auto;
@@ -18,10 +27,6 @@
 }
 #name {
   width: 70%;
-}
-.new-recipe > form > article {
-  display: flex;
-  align-items: center;
 }
 .new-recipe ul {
   text-align: center;
@@ -36,19 +41,40 @@
   width: 25%;
 }
 .new-recipe > button {
-  margin-left: 85%;
+  margin: 0;
+  margin-left: 92%;
   border: none;
 }
 @media only screen and (max-width: 768px) {
+  .new-recipe {
+    width: 100%;
+    margin-bottom: 50px;
+    position: relative;
+  }
+
+  .new-recipe > form {
+    width: 90%;
+    text-align: left;
+  }
+  .new-recipe > button {
+    position: absolute;
+    right: 5%;
+  }
+  .new-recipe > form > input,
+  select,
   #name {
     width: 98%;
   }
-  .new-recipe > form {
-    width: 100%;
-    text-align: left;
-  }
-  .new-recipe > form > input,
-  select {
-    width: 98%;
+  @media only screen and (max-width: 320px) {
+    .new-recipe > form {
+      width: 100%;
+    }
+    .new-recipe label {
+      margin: 0px;
+      margin-right: 3px;
+    }
+    .new-recipe > button {
+      right: 0;
+    }
   }
 }
