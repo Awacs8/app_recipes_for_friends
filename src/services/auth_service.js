@@ -1,6 +1,6 @@
 import axios from "axios";
 // const url = `http://localhost:4000/api`;
-const url = `https://recipes-for-friends-api.herokuapp.com/api`;
+const url = `https://recipes-for-friends-api.onrender.com/api`;
 
 export const registerUser = async (user) => {
   return await axios.post(`${url}/users`, user);
